@@ -1,0 +1,201 @@
+/*
+    > Add toggle icon from Font Awesome before Portfolio filters
+    > Populate Portfolio filters with fields from the Behance projects (JS)
+*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Neue Hans Kendrick;
+    letter-spacing: .02em;/*
+    background: #121212;*/
+    background: #3a3a3a;
+
+    display: flex;
+}
+
+p {
+    padding: 0;
+    margin:0;
+}
+
+a {
+    text-decoration: none;
+}
+/* ---------- PAGE CONTAINERS---------- */
+.main-nav-cont-wrapper {
+    flex: 0 0 220px;/*
+    border: 1px dashed black;*/
+}
+.main-nav-cont {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 50px;/*
+    border-right: 1px solid #ddd;*/
+    display: flex;
+    flex-direction: column;
+    background: #121212;
+}
+.nav-bottom {
+    margin-top: auto;
+    margin-bottom: 100px;/*
+    background: tomato;*/
+}
+.main-cont {
+    flex: 1 1;
+    overflow: auto;
+    padding: 50px;/*
+    background: lightblue;*/
+}
+
+/* -------------------- MAIN NAV -------------------- */
+.logo-cont {/*
+    background: black;*/
+}
+#logo {
+    height: 50px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+.logo {
+    fill: #dfdfdf;
+    transition: fill .3s;
+}
+.logo:hover {
+    fill: #67bbcc;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.nav-menu { /*ul*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-menu li { /*ul li*/
+    margin-bottom: 8px;
+}
+.nav-menu a { /*nav items*/
+    color: #dfdfdf;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: normal;
+    transition: .3s;
+}
+.nav-menu a:hover { /*nav items*/
+    color: #67bbcc;/*
+    text-decoration: underline;*/
+}
+
+.active-link { /* a */
+    color: #67bbcc !important;
+    text-decoration: underline;
+}
+
+.sub-nav { /*ul*/
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+.sub-nav a { /*sub-nav items*/
+    color: #999;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+/* ---------- SOCIAL ---------- */
+
+.social-cont {
+    max-width: 120px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;/*
+    background: black;*/
+}
+.social-cont i {
+    font-size: 20px;
+    margin: 8px 6px;
+}
+.social-cont a {
+    color: #dfdfdf;
+    transition: color .3s;
+}
+.social-cont a:hover {
+    color: #67bbcc;
+}
+
+/* ---------- COPYRIGHT ---------- */
+
+.copyright-info {
+    margin-top: 10px;/*
+    text-align: center;*/
+    font-size: .8em;
+    color: #dfdfdf;/*
+    background: lightblue;*/
+}
+
+/* ---------- GRID TEMPLATE ---------- */
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-2 {
+    width: 50%;
+    background: lightblue;
+}
+.col-3 {
+    width: calc(100% / 3);/*
+    background: salmon;*/
+}
+.col-4 {
+    width: calc(25% - 40px);
+    margin: 0 10px;
+    background: #E3AB72;
+}
+.col-6 {
+    width: calc(100% / 6 - 25px);
+    margin-right: 30px;
+    margin-bottom: 30px;/*
+    background: #E3AB72;*/
+}
+.col-6:nth-child(6n+6) {
+    margin-right: 0;
+}
+@media screen and (max-width: 1366px) {
+    .col-6 {
+        width: calc(100% / 4 - 25px);
+        margin-bottom: 30px;
+    }
+    .col-6:nth-child(6n+6) {
+        margin-right: 30px;
+    }
+    .col-6:nth-child(4n+0) {
+        margin-right: 0;/*
+        background: salmon;*/
+    }
+}
+
+
+/* ---------- BLOG CSS ---------- */
+/*
+color palette
+#e67373 #804d4d
+#f6c34a #806c40
+#35af8a #598074
+#67bbcc #4d6e81
+#1877eb #405d80
+#9982cc #6d5a80
+#f7f7f7 #dfdfdf #b3b3b3 #121212
+*/
+
+
+/* ---------- MEDIA QUERIES ---------- */
