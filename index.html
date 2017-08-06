@@ -1,68 +1,244 @@
 <!DOCTYPE html>
+
+<!--
+    > Hide Scrollbar in modal windows
+    > Make Portfolio Gallery responsive
+    > Fix footer links (social media)
+-->
+
 <html>
     <head>
-        <meta charset="utf-8" lang="en">
-        <meta name="description" content="Diogo Ribeiro's latest projects">
-        <meta name="keywords" content="Diogo,Ribeiro,Portfolio,diogommr">
-        <meta name="author" content="Diogo Ribeiro">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HOME - diogommr</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>diogommr HOME</title>
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/portfolio.css">
+        <link rel="stylesheet" href="css/modal.css">
         <link rel="stylesheet" href="css/project-modal.css">
+        <link rel="stylesheet" href="css/media_queries.css">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/neue_hans_kendrick/neue_hans_kendrick.css">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400i,600i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Zilla+Slab:300,400,500,700" rel="stylesheet">
+        <!-- https://fonts.google.com/specimen/Zilla+Slab -->
     </head>
     <body>
-        <div class="main-nav-cont-wrapper">
-            <nav class="main-nav-cont">
-                <a href="index.html" class="logo-cont">
-                    <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.77 46.02">
-                        <!--<title>logo</title>-->
-                        <g class="logo" fill="#3f9">
-                            <polygon points="61.77 23.01 38.77 0.01 33.82 4.96 51.87 23.01 33.82 41.06 38.77 46.02 47.16 37.62 55.56 46.02 60.51 41.06 52.11 32.67 61.77 23.01" />
-                            <polygon points="0 9.79 7.25 17.03 12.07 12.2 22.89 23.01 4.83 41.06 9.78 46.02 32.79 23.01 9.78 0 0 9.79" />
-                            <rect width="61.77" height="46.01" fill="rgba(0,0,0,0)"/>
+        <nav class="top-bar">
+            <div class="top-bar-content">
+                <div class="logo-wrapper"><a href="#home">
+                    <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                        <style type="text/css">
+                        	.st0{fill:none;}
+                        	.logo{fill:#CCD1D9;}
+                        </style>
+                        <g>
+                        	<rect x="0.1" class="st0" width="60" height="60"/>
+                        	<polygon class="logo" points="60.1,30 37.7,7.6 32.8,12.5 50.5,30 32.8,47.6 37.7,52.4 45.9,44.2 54.1,52.4 58.8,47.6 50.7,39.4"/>
+                        	<polygon class="logo" points="-0.1,17.1 7,24.2 11.7,19.5 22.2,30 4.6,47.6 9.4,52.4 31.9,30 9.4,7.6"/>
                         </g>
                     </svg>
-                </a>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="active-link">Portfolio</a></li>
-                    <li><a href="store.html">Store</a></li>
-                    <li><a href="about.html" class="">About</a></li>
+                </a></div>
+                <ul class="top-bar-links">
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#resources">resources</a></li>
+                    <li><a href="#shop">products</a></li>
+                    <li><a href="#about">about</a></li>
                 </ul>
-                <div class="nav-bottom">
-                    <div class="social-cont">
-                        <a href="http://be.net/diogommr" target="_blank" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="https://www.linkedin.com/in/diogommr" target="_blank" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="https://www.youtube.com/diogommr" target="_blank" title="YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                    <!--
-                        <a href="https://soundcloud.com/diogommr" target="_blank" title="SoundCloud"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
-                        <a href="http://codepen.io/diogommr" target="_blank" title="CodePen"><i class="fa fa-codepen" aria-hidden="true"></i></a>
-                        <a href="https://github.com/diogommr" target="_blank" title="GitHub"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
-                    -->
+            </div>
+        </nav>
+        <section id="home">
+            <video class="bg_video" autoplay loop muted poster="images/show_reel_poster.jpg">
+               <source src="videos/show_reel_simple.mp4" type="video/mp4">
+               <source src="videos/show_reel_simple.webm" type="video/webm">
+               <source src="videos/show_reel_simple.ogv" type="video/ogg">
+            </video>
+        </section>
+        <section id="portfolio">
+            <div class="section-content">
+                <h2>PORTFOLIO</h2>
+                <h4>Latest projects</h4>
+                <div class="portfolio-gallery"></div>
+                <div class="portfolio-project-modal-wrapper">
+                    <div class="modal-top-bar">
+                        <h3 class="modal-title"></h3>
+                        <div class="close-button">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 66 66" style="enable-background:new 0 0 66 66;" xml:space="preserve">
+                            <style type="text/css">
+                            	.x-line{fill:none;stroke:#ffffff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;}
+                            </style>
+                            <title>close</title>
+                            	<g class="x-icon">
+                            		<g>
+                            			<line class="x-line" x1="3" y1="3" x2="63" y2="63"/>
+                            			<line class="x-line" x1="3" y1="63" x2="63" y2="3"/>
+                            		</g>
+                            	</g>
+                            </svg>
+                        </div>
                     </div>
-                    <p class="copyright-info">© Diogo Ribeiro<br />All rights reserved</p>
-                </div>
-            </nav>
-        </div>
-        <div class="main-cont">
-                <div class="portfolio-cont"></div>
-                <div class="project-modal-wrapper">
-                    <div class="project-modal-body">
+                    <div class="portfolio-project-modal-body">
                     </div>
-                    <i class="fa fa-window-close" aria-hidden="true"></i>
                 </div>
             </div>
+        </section>
+        <section id="resources">
+            <div class="section-content">
+                <h2>RESOURCES</h2>
+                <h4>References and Cheat Sheets</h4>
+                <p>
+                    Coming soon!
+                </p>
+                <!--
+                <div class="resources-gallery">
+                    <div class="resource" data-url="https://codepen.io/diogommr/embed/pReQaY?height=300&amp;theme-id=dark&amp;default-tab=result&amp;embed-version=2">
+                        <div class="resource-img"></div>
+                        <p class="resource-name">DOM reference</p>
+                    </div>
+                    <div class="resource" data-url="https://codepen.io/k-ya/embed/xVMVJa?height=300&amp;theme-id=dark&amp;default-tab=result&amp;embed-version=2">
+                        <div class="resource-img"></div>
+                        <p class="resource-name">Languages reference</p>
+                    </div>
+                </div>
+                <div class="modal-wrapper">
+                    <div class="modal-top-bar">
+                        <h3 class="modal-title"></h3>
+                        <div class="close-button">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 66 66" style="enable-background:new 0 0 66 66;" xml:space="preserve">
+                            <style type="text/css">
+                            	.x-line{fill:none;stroke:#ffffff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;}
+                            </style>
+                            <title>close</title>
+                            	<g class="x-icon">
+                            		<g>
+                            			<line class="x-line" x1="3" y1="3" x2="63" y2="63"/>
+                            			<line class="x-line" x1="3" y1="63" x2="63" y2="3"/>
+                            		</g>
+                            	</g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="modal-body">
 
+                    </div>
+                </div>
+            -->
+            </div>
+        </section>
+        <section id="shop">
+            <div class="section-content">
+                <h2>PRODUCTS</h2>
+                <h4>Tools and courses made just for you</h4>
+                <div class="shop-gallery">
+                    <div class="shop-item" data-url="https://www.youtube.com/embed/H0su1Kg6mrA?rel=0&amp;showinfo=0">
+                        <div class="shop-item-img">
+                            <div class="shop-item-img-info">+ info</div>
+                            <img src="images/course_image-square.jpg" />
+                        </div>
+                        <p class="shop-item-name">Adobe Illustrator CC - Master the Tools</p>
+                        <p class="shop-item-type">course</p>
+                        <div class="shop-item-footer">
+                            <p><span class="line-through">$95</span> 25$</p>
+                            <a href="https://www.udemy.com/illustrator-cc-master-the-tools/?couponCode=AICC_TOOLS_25" target="_blank"><button class="shop-item-buy"><i class="fa fa-external-link green-fg" aria-hidden="true"></i>
+ Buy</button></a>
+                        </div>
+                    </div>
+                    <div class="shop-item" data-url="https://www.youtube.com/embed/_gEU7PBnMCo?rel=0&amp;showinfo=0">
+                        <div class="shop-item-img">
+                            <div class="shop-item-img-info">+ info</div>
+                            <img src="images/line_animation_toolkit_capa.jpg" />
+                        </div>
+                        <p class="shop-item-name">Line Animation Toolkit</p>
+                        <p class="shop-item-type">After Effects script</p>
+                        <div class="shop-item-footer">
+                            <p>10$</p>
+                            <script src="https://gumroad.com/js/gumroad.js"></script>
+                            <a class="gumroad-button" href="https://gum.co/VDeWF" target="_blank">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-wrapper">
+                    <div class="modal-top-bar">
+                        <h3 class="modal-title"></h3>
+                        <div class="close-button">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 66 66" style="enable-background:new 0 0 66 66;" xml:space="preserve">
+                            <style type="text/css">
+                            	.x-line{fill:none;stroke:#ffffff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;}
+                            </style>
+                            <title>close</title>
+                            	<g class="x-icon">
+                            		<g>
+                            			<line class="x-line" x1="3" y1="3" x2="63" y2="63"/>
+                            			<line class="x-line" x1="3" y1="63" x2="63" y2="3"/>
+                            		</g>
+                            	</g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="section-content">
+                <h2>ABOUT</h2>
+                <h4>Comfort zone? What's that?</h4>
+                <div class="about-bio">
+                    <p>Hi there! My name is Diogo Ribeiro and I build experiences.</p>
+                    <p>I am a designer, maker, developer, photographer, videographer, and much more.</p>
+                    <p>I enjoy working on creative projects that involve different disciplines and mediums, but my main passion is all things interactivity (both physical and digital).</p>
+                    <p>I love to learn new skills and to share my passions with the world. That is why I am also an instructor. I want to help others achieve their education goals in a way that I didn't have the opportunity: <strong>the fun and engaging way</strong>.</p>
+                    <p>Check out my <a href="https://www.youtube.com/channel/UCqNMSjX1BmS6Rph_Ovj3JNw" target="_blank">Youtube channel Learn with Diogo</a> where I post new tutorials and tips and tricks weekly.</p>
+                </div>
+                <div class="about-skills">
 
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="section-content">
+                <div class="col">
+                    <p>© Diogo Ribeiro<br />All rights reserved</p>
+                </div>
+                <div class="col">
+                    <p>Site map:
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#resources">Resources</a></li>
+                            <li><a href="#shop">Products</a></li>
+                            <li><a href="#about">About</a></li>
+                        </ul>
+                    </p>
 
-        <!-- Font Awesome -->
-        <!-- http://fontawesome.io/icons/ -->
-        <script src="https://use.fontawesome.com/d3e37d3134.js"></script>
+                </div>
+                <div class="col">
+                    <p>Find me on the web at:</p>
+                    <ul class="social-media">
+                        <li><a href="http://be.net/diogommr" target="_blank" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i> Behance</a></li>
+                        <li><a href="http://codepen.io/diogommr" target="_blank" title="CodePen"><i class="fa fa-codepen" aria-hidden="true"></i> CodePen</a></li>
+                        <!--
+                        <li><a href="https://github.com/diogommr" target="_blank" title="GitHub"><i class="fa fa-github-alt" aria-hidden="true"></i></a></li>
+                    -->
+                        <li><a href="https://soundcloud.com/diogommr" target="_blank" title="SoundCloud"><i class="fa fa-soundcloud" aria-hidden="true"></i> SoundCloud</a></li>
+                        <li><a href="https://www.linkedin.com/in/diogommr" target="_blank" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+                        <li><a href="https://www.youtube.com/diogommr" target="_blank" title="YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <!-- Document Scrips -->
-        <script src="scripts/behance_portfolio.js"></script>
-        <script src="scripts/google_analytics.js"></script>
-
+        <!-- Top Bar -->
+        <script src="js/top_bar.js"></script>
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/d3e37d3134.js"></script>
+        <!-- Behance Portfolio -->
+        <script src="js/behance_portfolio.js"></script>
+        <!-- Resources | Products -->
+        <script src="js/modal.js"></script>
+        <!-- Google Analytics
+        <script src="js/google_analytics.js"></script>
+        -->
     </body>
 </html>

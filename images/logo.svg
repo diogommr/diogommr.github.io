@@ -1,8 +1,15 @@
-<svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.77 46.02">
-  <title>logo</title>
-  <g>
-    <polygon points="61.77 23.01 38.77 0.01 33.82 4.96 51.87 23.01 33.82 41.06 38.77 46.02 47.16 37.62 55.56 46.02 60.51 41.06 52.11 32.67 61.77 23.01" fill="#3f9"/>
-    <polygon points="0 9.79 7.25 17.03 12.07 12.2 22.89 23.01 4.83 41.06 9.78 46.02 32.79 23.01 9.78 0 0 9.79" fill="#3f9"/>
-  </g>
-  <rect width="61.77" height="46.01" fill="none"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:#434A54;}
+</style>
+<g>
+	<rect x="0.1" class="st0" width="60" height="60"/>
+	<polygon class="st1" points="60.1,30 37.7,7.6 32.8,12.5 50.5,30 32.8,47.6 37.7,52.4 45.9,44.2 54.1,52.4 58.8,47.6 50.7,39.4 	
+		"/>
+	<polygon class="st1" points="-0.1,17.1 7,24.2 11.7,19.5 22.2,30 4.6,47.6 9.4,52.4 31.9,30 9.4,7.6 	"/>
+</g>
 </svg>
