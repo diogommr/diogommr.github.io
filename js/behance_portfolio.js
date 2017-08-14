@@ -13,9 +13,14 @@ var userID  = 'diogommr';
             var projectName = projectsObj.projects[proj].name;
             var projectImage = projectsObj.projects[proj].covers[404];
             var projectID = projectsObj.projects[proj].id;
-            $('.portfolio-gallery').append('<div class="portfolio-project" data-id="'+projectID+'" style="background: url('+projectImage+') no-repeat center; background-size: cover">'+
-            '<div class="portfolio-project-overlay"></div>'+
-            '</div>');
+            var projectURL = projectsObj.projects[proj].url;
+
+            if ( projectURL !== "#" ){ // if project is valid, add to gallery
+                $('.portfolio-gallery').append('<div class="portfolio-project" data-id="'+projectID+'" style="background: url('+projectImage+') no-repeat center; background-size: cover">'+
+                '<div class="portfolio-project-overlay"></div>'+
+                '</div>');
+            }
+
         }
 
         /* ---------- Blur fx ---------- */
