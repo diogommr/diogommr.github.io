@@ -5,15 +5,18 @@ checkActive();
 
 function checkActive(){
     for (var i = 0; i < tags.length; i++){
+		//alert($(tags[i]).attr('data-language'));
         if ($(tags[i]).hasClass('active-tag')){
-            $('.' + tags[i].innerHTML.toLowerCase() + '-col').show();
+
+            $('.' + $(tags[i]).attr('data-language') + '-col').show();
+
             if ($('.active-tag').length === 1){
-                $('.' + tags[i].innerHTML.toLowerCase() + '-col').css('border', 'none');
+                $('.' + $(tags[i]).attr('data-language') + '-col').css('border', 'none');
             }else{
-                $('.' + tags[i].innerHTML.toLowerCase() + '-col:not(:first-child)').css('border-left', '1px dotted var(--grey-3)');
+                $('.' + $(tags[i]).attr('data-language') + '-col:not(:first-child)').css('border-left', '1px dotted var(--grey-3)');
             }
         }else{
-            $('.' + tags[i].innerHTML.toLowerCase() + '-col').hide();
+            $('.' + $(tags[i]).attr('data-language') + '-col').hide();
         }
     }
 }
@@ -40,4 +43,5 @@ $('.nav-show-hide').click(function(){
 });
 
 // ACTIVE AT START
-$('.language-tag').click();
+/*
+$('.language-tag').click();*/
