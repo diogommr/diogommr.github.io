@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<!--
+    To Do
+    > external links - add popup window with content (no need to change tab)
+    > Fix behaviour when clicking on method or property that doesn't have a link (window.localStorage)
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DOM</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="tree.css">
+        <link rel="stylesheet" href="css/tooltip.css">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="content-cont">
+            <div class="left-cont">
+                <div class="tree">
+                    <!-- TREE START -->
+
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewbox="0 0 714.8 668.5" style="enable-background:new 0 0 714.8 668.5;" xml:space="preserve">
+<g>
+	<g id="lines">
+		<line class="st0" x1="251.5" y1="446.1" x2="251.5" y2="542.4"/>
+		<line class="st0" x1="324.2" y1="22.4" x2="324.2" y2="70.5"/>
+		<line class="st0" x1="40.4" y1="70.5" x2="40.4" y2="118.7"/>
+		<line class="st0" x1="182.3" y1="70.5" x2="182.3" y2="118.7"/>
+		<line class="st0" x1="324.2" y1="70.5" x2="324.2" y2="118.7"/>
+		<line class="st0" x1="466" y1="70.5" x2="466" y2="118.7"/>
+		<line class="st0" x1="607.9" y1="70.5" x2="607.9" y2="118.7"/>
+		<line class="st0" x1="40.4" y1="70.5" x2="607.9" y2="70.5"/>
+		<line class="st0" x1="324.2" y1="129.7" x2="324.2" y2="225.3"/>
+		<line class="st0" x1="106.8" y1="340.7" x2="106.8" y2="436.3"/>
+		<line class="st0" x1="106.8" y1="446.1" x2="106.8" y2="541.7"/>
+		<line class="st0" x1="324.2" y1="233.5" x2="324.2" y2="281.6"/>
+		<line class="st0" x1="106.8" y1="281.6" x2="106.8" y2="329.8"/>
+		<line class="st0" x1="374.8" y1="281.6" x2="374.8" y2="329.8"/>
+		<line class="st0" x1="106.8" y1="281.6" x2="374.8" y2="281.6"/>
+		<line class="st0" x1="374.8" y1="340.7" x2="374.8" y2="388.8"/>
+		<line class="st0" x1="251.4" y1="388.8" x2="251.4" y2="436.9"/>
+		<line class="st0" x1="537.6" y1="388.8" x2="537.6" y2="436.9"/>
+		<line class="st0" x1="251.4" y1="388.8" x2="537.6" y2="388.8"/>
+		<line class="st0" x1="537.6" y1="446.1" x2="537.6" y2="494.3"/>
+		<line class="st0" x1="440.8" y1="494.3" x2="440.8" y2="542.4"/>
+		<line class="st0" x1="537.6" y1="494.3" x2="537.6" y2="542.4"/>
+		<line class="st0" x1="440.8" y1="494.3" x2="537.6" y2="494.3"/>
+		<line class="st0" x1="634.4" y1="494.3" x2="634.4" y2="542.4"/>
+		<line class="st0" x1="537.6" y1="494.3" x2="634.4" y2="494.3"/>
+		<line class="st0" x1="440.6" y1="551.8" x2="440.6" y2="647.4"/>
+		<line class="st0" x1="251.4" y1="551.8" x2="251.4" y2="647.4"/>
+		<line class="st0" x1="537.6" y1="551.8" x2="537.6" y2="647.4"/>
+		<line class="st0" x1="634.6" y1="551.8" x2="634.6" y2="647.4"/>
+		<line class="st0" x1="606.4" y1="441.6" x2="558.3" y2="441.6"/>
+		<line class="st0" x1="320.4" y1="441.6" x2="272.3" y2="441.6"/>
+		<line class="st0" x1="312.9" y1="547.3" x2="264.8" y2="547.3"/>
+	</g>
+	<g id="nodes">
+		<g class="document-node">
+			<text transform="matrix(1 0 0 1 282.2063 129.6782)" class="st1 st2 st3">document</text>
+			<path class="document-tag" d="M273.7,134.5c0,3.1,2.5,5.7,5.7,5.7h89.6c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-89.6
+				c-3.1,0-5.7,2.5-5.7,5.7V134.5z"/>
+			<text transform="matrix(1 0 0 1 282.2063 129.6782)" class="st1 st2 st3">document</text>
+		</g>
+		<g class="history-node">
+			<text transform="matrix(1 0 0 1 438.1613 129.6792)" class="st1 st2 st3">history</text>
+			<path class="document-tag" d="M429.7,134.5c0,3.1,2.5,5.7,5.7,5.7h61.1c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-61.1
+				c-3.1,0-5.7,2.5-5.7,5.7V134.5z"/>
+			<text transform="matrix(1 0 0 1 438.1613 129.6792)" class="st1 st2 st3">history</text>
+		</g>
+		<g class="location-node">
+			<text transform="matrix(1 0 0 1 570.2668 129.6792)" class="st1 st2 st3">location</text>
+			<path class="document-tag" d="M561.8,134.5c0,3.1,2.5,5.7,5.7,5.7h71.2c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-71.2
+				c-3.1,0-5.7,2.5-5.7,5.7V134.5z"/>
+			<text transform="matrix(1 0 0 1 570.2668 129.6792)" class="st1 st2 st3">location</text>
+		</g>
+		<g class="navigator-node">
+			<text transform="matrix(1 0 0 1 134.5608 129.6792)" class="st1 st2 st3">navigator</text>
+			<path class="document-tag" d="M126.1,134.5c0,3.1,2.5,5.7,5.7,5.7h83.1c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-83.1
+				c-3.1,0-5.7,2.5-5.7,5.7V134.5z"/>
+			<text transform="matrix(1 0 0 1 134.5608 129.6792)" class="st1 st2 st3">navigator</text>
+		</g>
+		<g class="screen-node">
+			<text transform="matrix(1 0 0 1 9.0725 129.6787)" class="st1 st2 st3">screen</text>
+			<path class="document-tag" d="M0.6,134.5c0,3.1,2.5,5.7,5.7,5.7h58.5c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7H6.2
+				c-3.1,0-5.7,2.5-5.7,5.7V134.5z"/>
+			<text transform="matrix(1 0 0 1 9.0725 129.6787)" class="st1 st2 st3">screen</text>
+		</g>
+		<g class="window-node">
+			<text transform="matrix(1 0 0 1 291.4914 22.375)" class="st1 st2 st3">window</text>
+			<path class="window-tag" d="M283,27.2c0,3.1,2.5,5.7,5.7,5.7h71c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-71
+				c-3.1,0-5.7,2.5-5.7,5.7V27.2z"/>
+			<text transform="matrix(1 0 0 1 291.4914 22.375)" class="st1 st2 st3">window</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 305.2199 235.3154)" class="st1 st2 st3">html</text>
+			<path class="element-tag" d="M296.7,240.2c0,3.1,2.5,5.7,5.7,5.7h43.5c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-43.5
+				c-3.1,0-5.7,2.5-5.7,5.7V240.2z"/>
+			<text transform="matrix(1 0 0 1 305.2199 235.3154)" class="st1 st2 st3">html</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 86.4038 340.6552)" class="st1 st2 st3">head</text>
+			<path class="element-tag" d="M77.9,345.5c0,3.1,2.5,5.7,5.7,5.7h46.4c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7H83.6
+				c-3.1,0-5.7,2.5-5.7,5.7V345.5z"/>
+			<text transform="matrix(1 0 0 1 86.4038 340.6552)" class="st1 st2 st3">head</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 90.9448 446.1425)" class="st1 st2 st3">title</text>
+			<path class="element-tag" d="M82.4,451c0,3.1,2.5,5.7,5.7,5.7h37.3c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7H88.1
+				c-3.1,0-5.7,2.5-5.7,5.7V451z"/>
+			<text transform="matrix(1 0 0 1 90.9448 446.1425)" class="st1 st2 st3">title</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 239.1382 446.1425)" class="st1 st2 st3">div</text>
+			<path class="element-tag" d="M230.6,451c0,3.1,2.5,5.7,5.7,5.7h30.4c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-30.4
+				c-3.1,0-5.7,2.5-5.7,5.7V451z"/>
+			<text transform="matrix(1 0 0 1 239.1382 446.1425)" class="st1 st2 st3">div</text>
+		</g>
+		<g class="attribute-node">
+			<text transform="matrix(1 0 0 1 587.4365 446.1421)" class="st1 st2 st3">class = “article”</text>
+			<path class="attribute-tag" d="M578.9,451c0,3.1,2.5,5.7,5.7,5.7h126.6c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7H584.6
+				c-3.1,0-5.7,2.5-5.7,5.7V451z"/>
+			<text transform="matrix(1 0 0 1 587.4365 446.1421)" class="st1 st2 st3">class = “article”</text>
+		</g>
+		<g class="attribute-node">
+			<text transform="matrix(1 0 0 1 301.4365 446.1421)" class="st1 st2 st3">class = “article”</text>
+			<path class="attribute-tag" d="M292.9,451c0,3.1,2.5,5.7,5.7,5.7h126.6c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7H298.6
+				c-3.1,0-5.7,2.5-5.7,5.7V451z"/>
+			<text transform="matrix(1 0 0 1 301.4365 446.1421)" class="st1 st2 st3">class = “article”</text>
+		</g>
+		<g class="attribute-node">
+			<text transform="matrix(1 0 0 1 293.9365 551.8322)" class="st1 st2 st3">id= “intro”</text>
+			<path class="attribute-tag" d="M285.4,556.7c0,3.1,2.5,5.7,5.7,5.7h89.1c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-89.1
+				c-3.1,0-5.7,2.5-5.7,5.7V556.7z"/>
+			<text transform="matrix(1 0 0 1 293.9365 551.8322)" class="st1 st2 st3">id= “intro”</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 525.1982 446.1425)" class="st1 st2 st3">div</text>
+			<path class="element-tag" d="M516.7,451c0,3.1,2.5,5.7,5.7,5.7h30.4c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-30.4
+				c-3.1,0-5.7,2.5-5.7,5.7V451z"/>
+			<text transform="matrix(1 0 0 1 525.1982 446.1425)" class="st1 st2 st3">div</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 53.7104 551.832)" class="st1 st2 st3">Lorem ipsum</text>
+			<path class="text-tag" d="M45.2,556.7c0,3.1,2.5,5.7,5.7,5.7h111.8c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7H50.9
+				c-3.1,0-5.7,2.5-5.7,5.7V556.7z"/>
+			<text transform="matrix(1 0 0 1 53.7104 551.832)" class="st1 st2 st3">Lorem ipsum</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 435.0982 551.8321)" class="st1 st2 st3">p</text>
+			<path class="element-tag" d="M426.6,556.7c0,3.1,2.5,5.7,5.7,5.7H449c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-16.7
+				c-3.1,0-5.7,2.5-5.7,5.7V556.7z"/>
+			<text transform="matrix(1 0 0 1 435.0982 551.8321)" class="st1 st2 st3">p</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 406.568 657.5215)" class="st1 st2 st3">Lorem ...</text>
+			<path class="text-tag" d="M398.1,662.4c0,3.1,2.5,5.7,5.7,5.7h73.7c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-73.7
+				c-3.1,0-5.7,2.5-5.7,5.7V662.4z"/>
+			<text transform="matrix(1 0 0 1 406.568 657.5215)" class="st1 st2 st3">Lorem ...</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 245.852 551.8321)" class="st1 st2 st3">p</text>
+			<path class="element-tag" d="M237.3,556.7c0,3.1,2.5,5.7,5.7,5.7h16.7c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7H243
+				c-3.1,0-5.7,2.5-5.7,5.7V556.7z"/>
+			<text transform="matrix(1 0 0 1 245.852 551.8321)" class="st1 st2 st3">p</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 217.3217 657.5215)" class="st1 st2 st3">Lorem ...</text>
+			<path class="text-tag" d="M208.8,662.4c0,3.1,2.5,5.7,5.7,5.7h73.7c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-73.7
+				c-3.1,0-5.7,2.5-5.7,5.7V662.4z"/>
+			<text transform="matrix(1 0 0 1 217.3217 657.5215)" class="st1 st2 st3">Lorem ...</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 532.0735 551.8321)" class="st1 st2 st3">p</text>
+			<path class="element-tag" d="M523.6,556.7c0,3.1,2.5,5.7,5.7,5.7h16.7c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-16.7
+				c-3.1,0-5.7,2.5-5.7,5.7V556.7z"/>
+			<text transform="matrix(1 0 0 1 532.0735 551.8321)" class="st1 st2 st3">p</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 503.5432 657.5215)" class="st1 st2 st3">Lorem ...</text>
+			<path class="text-tag" d="M495,662.4c0,3.1,2.5,5.7,5.7,5.7h73.7c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-73.7
+				c-3.1,0-5.7,2.5-5.7,5.7V662.4z"/>
+			<text transform="matrix(1 0 0 1 503.5432 657.5215)" class="st1 st2 st3">Lorem ...</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 629.0487 551.8321)" class="st1 st2 st3">p</text>
+			<path class="element-tag" d="M620.5,556.7c0,3.1,2.5,5.7,5.7,5.7h16.7c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-16.7
+				c-3.1,0-5.7,2.5-5.7,5.7V556.7z"/>
+			<text transform="matrix(1 0 0 1 629.0487 551.8321)" class="st1 st2 st3">p</text>
+		</g>
+		<g>
+			<text transform="matrix(1 0 0 1 600.5184 657.5215)" class="st1 st2 st3">Lorem ...</text>
+			<path class="text-tag" d="M592,662.4c0,3.1,2.5,5.7,5.7,5.7h73.7c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-73.7
+				c-3.1,0-5.7,2.5-5.7,5.7V662.4z"/>
+			<text transform="matrix(1 0 0 1 600.5184 657.5215)" class="st1 st2 st3">Lorem ...</text>
+		</g>
+		<g class="element-node">
+			<text transform="matrix(1 0 0 1 353.9607 340.6552)" class="st1 st2 st3">body</text>
+			<path class="element-tag" d="M345.5,345.5c0,3.1,2.5,5.7,5.7,5.7h47.4c3.1,0,5.7-2.5,5.7-5.7v-21c0-3.1-2.5-5.7-5.7-5.7h-47.4
+				c-3.1,0-5.7,2.5-5.7,5.7V345.5z"/>
+			<text transform="matrix(1 0 0 1 353.9607 340.6552)" class="st1 st2 st3">body</text>
+		</g>
+	</g>
+</g>
+</svg>
+                    <!-- TREE END -->
+                    <div class="tree-caption">
+                        <ul>
+                            <li>Browser Object Model</li>
+                            <li>Element Node</li>
+                            <li>Attribute Node</li>
+                            <li>Text Node</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right-cont">
+
+                <button class="accordion active"><i class="fa fa-mouse-pointer" aria-hidden="true"></i>
+ Interactive Mode</button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <div class="">
+                            Click on a node on the tree to view its properties and methods.
+                        </div>
+                        <div id="doc-cont-window" class="hidden">
+                            <span class="window-tag tag">window</span>
+                            <div class="flex-cont">
+                                <div class="properties-cont">
+                                    <span class="code-comment">// Properties</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_closed.asp" target="_blank" data-tooltip="Returns a Boolean value indicating whether a window has been closed or not">.closed</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_defaultstatus.asp" target="_blank" data-tooltip="Sets or returns the default text in the statusbar of a window">.defaultStatus</a><br />
+                                    <a href="https://www.w3schools.com/jsref/dom_obj_document.asp" target="_blank" data-tooltip="Returns the Document object for the window (See Document object)">.document</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_frameElement.asp" target="_blank" data-tooltip="Returns the &lt;iframe&gt; element in which the current window is inserted">.frameElement</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_frames.asp" target="_blank" data-tooltip="Returns all &lt;iframe&gt; elements in the current window">.frames</a><br />
+                                    <a href="https://www.w3schools.com/jsref/obj_history.asp" target="_blank" data-tooltip="Returns the History object for the window (See History object)">.history</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_innerheight.asp" target="_blank" data-tooltip="Returns the inner height of a window's content area">.innerHeight</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_innerheight.asp" target="_blank" data-tooltip="Returns the inner width of a window's content area">.innerWidth</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_length.asp" target="_blank" data-tooltip="Returns the number of &lt;iframe&gt; elements in the current window">.length</a><br />
+                                    <a href="" data-tooltip="Returns a reference to the local storage object used to store data. Stores data with no expiration date">.localStorage</a><br />
+                                    <a href="https://www.w3schools.com/jsref/obj_location.asp" target="_blank" data-tooltip="Returns the Location object for the window (See Location object)">.location</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_name.asp" target="_blank" data-tooltip="Sets or returns the name of a window">.name</a><br />
+                                    <a href="https://www.w3schools.com/jsref/obj_navigator.asp" target="_blank" data-tooltip="Returns the Navigator object for the window (See Navigator object)">.navigator</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_opener.asp" target="_blank" data-tooltip="Returns a reference to the window that created the window">.opener</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_outerheight.asp" target="_blank" data-tooltip="Returns the outer height of a window, including toolbars/scrollbars">.outerHeight</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_outerheight.asp" target="_blank" data-tooltip="Returns the outer width of a window, including toolbars/scrollbars">.outerWidth</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_pagexoffset.asp" target="_blank" data-tooltip="Returns the pixels the current document has been scrolled (horizontally) from the upper left corner of the window">.pageXOffset</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_pagexoffset.asp" target="_blank" data-tooltip="Returns the pixels the current document has been scrolled (vertically) from the upper left corner of the window">.pageYOffset</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_parent.asp" target="_blank" data-tooltip="Returns the parent window of the current window">.parent</a><br />
+                                    <a href="https://www.w3schools.com/jsref/obj_screen.asp" target="_blank" data-tooltip="Returns the Screen object for the window (See Screen object)">.screen</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_screenleft.asp" target="_blank" data-tooltip="Returns the horizontal coordinate of the window relative to the screen">.screenLeft</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_screenleft.asp" target="_blank" data-tooltip="Returns the vertical coordinate of the window relative to the screen">.screenTop</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_screenx.asp" target="_blank" data-tooltip="Returns the horizontal coordinate of the window relative to the screen">.screenX</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_screenx.asp" target="_blank" data-tooltip="Returns the vertical coordinate of the window relative to the screen">.screenY</a><br />
+                                    <a href="" data-tooltip="Returns a reference to the local storage object used to store data. Stores data for one session (lost when the browser tab is closed)">.sessionStorage</a><br />
+                                    <a href="" data-tooltip="An alias of pageXOffset">.scrollX</a><br />
+                                    <a href="" data-tooltip="An alias of pageYOffset">.scrollY</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_self.asp" target="_blank" data-tooltip="Returns the current window">.self</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_status.asp" target="_blank" data-tooltip="Sets or returns the text in the statusbar of a window">.status</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_win_top.asp" target="_blank" data-tooltip="Returns the topmost browser window">.top</a><br />
+                                </div>
+                                <div class="methods-cont">
+                                    <span class="code-comment">// Methods</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_alert.asp" target="_blank" data-tooltip="Displays an alert box with a message and an OK button">.alert()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_atob.asp" target="_blank" data-tooltip="Decodes a base-64 encoded string">.atob()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_blur.asp" target="_blank" data-tooltip="Removes focus from the current window">.blur()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_btoa.asp" target="_blank" data-tooltip="Encodes a string in base-64">.btoa()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_clearinterval.asp" target="_blank" data-tooltip="Clears a timer set with setInterval()">.clearInterval()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_cleartimeout.asp" target="_blank" data-tooltip="Clears a timer set with setTimeout()">.clearTimeout()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_close.asp" target="_blank" data-tooltip="Closes the current window">.close()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_confirm.asp" target="_blank" data-tooltip="Displays a dialog box with a message and an OK and a Cancel button">.confirm()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_focus.asp" target="_blank" data-tooltip="Sets focus to the current window">.focus()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp" target="_blank" data-tooltip="Gets the current computed CSS styles applied to an element">.getComputedStyle()</a><br />
+                                    <a href="" data-tooltip="Returns a Selection object representing the range of text selected by the user">.getSelection()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_matchmedia.asp" target="_blank" data-tooltip="Returns a MediaQueryList object representing the specified CSS media query string">.matchMedia()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_moveby.asp" target="_blank" data-tooltip="Moves a window relative to its current position">.moveBy()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_moveto.asp" target="_blank" data-tooltip="Moves a window to the specified position">.moveTo()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_open.asp" target="_blank" data-tooltip="Opens a new browser window">.open()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_print.asp" target="_blank" data-tooltip="Prints the content of the current window">.print()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_prompt.asp" target="_blank" data-tooltip="Displays a dialog box that prompts the visitor for input">.prompt()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_resizeby.asp" target="_blank" data-tooltip="Resizes the window by the specified pixels">.resizeBy()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_resizeto.asp" target="_blank" data-tooltip="Resizes the window to the specified width and height">.resizeTo()</a><br />
+                                    <a href="" data-tooltip="This method has been replaced by the scrollTo() method.">.scroll()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_scrollby.asp" target="_blank" data-tooltip="Scrolls the document by the specified number of pixels">.scrollBy()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_scrollto.asp" target="_blank" data-tooltip="Scrolls the document to the specified coordinates">.scrollTo()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_setinterval.asp" target="_blank" data-tooltip="Calls a function or evaluates an expression at specified intervals (in milliseconds)">.setInterval()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_settimeout.asp" target="_blank" data-tooltip="Calls a function or evaluates an expression after a specified number of milliseconds">.setTimeout()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_win_stop.asp" target="_blank" data-tooltip="Stops the window from loading">.stop()</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="doc-cont-screen" class="hidden">
+                            <span class="document-tag tag">screen</span>
+                            <div class="flex-cont">
+                                <div class="properties-cont">
+                                    <span class="code-comment">// Properties</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/prop_screen_availheight.asp" target="_blank" data-tooltip="Returns the height of the screen (excluding the Windows Taskbar)">.availHeight</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_screen_availwidth.asp" target="_blank" data-tooltip="Returns the width of the screen (excluding the Windows Taskbar)">.availWidth</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_screen_colordepth.asp" target="_blank" data-tooltip="Returns the bit depth of the color palette for displaying images">.colorDepth</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_screen_height.asp" target="_blank" data-tooltip="Returns the total height of the screen">.height</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_screen_pixeldepth.asp" target="_blank" data-tooltip="Returns the color resolution (in bits per pixel) of the screen">.pixelDepth</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_screen_width.asp" target="_blank" data-tooltip="Returns the total width of the screen">.width</a><br />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="doc-cont-navigator" class="hidden">
+                            <span class="document-tag tag">navigator</span>
+                            <div class="flex-cont">
+                                <div class="properties-cont">
+                                    <span class="code-comment">// Properties</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nav_appcodename.asp" target="_blank" data-tooltip="Returns the code name of the browser">.appCodeName</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nav_appname.asp" target="_blank" data-tooltip="Returns the name of the browser">.appName</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nav_appversion.asp" target="_blank" data-tooltip="Returns the version information of the browser">.appVersion</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nav_cookieenabled.asp" target="_blank" data-tooltip="Determines whether cookies are enabled in the browser">.cookieEnabled</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nav_geolocation.asp" target="_blank" data-tooltip="Returns a Geolocation object that can be used to locate the user's position">.geolocation</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nav_language.asp" target="_blank" data-tooltip="Returns the language of the browser">.language</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nav_online.asp" target="_blank" data-tooltip="Determines whether the browser is online">.onLine</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nav_platform.asp" target="_blank" data-tooltip="Returns for which platform the browser is compiled">.platform</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nav_product.asp" target="_blank" data-tooltip="Returns the engine name of the browser">.product</a><br />
+                                </div>
+                                <div class="methods-cont">
+                                    <span class="code-comment">// Methods</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/met_nav_javaenabled.asp" target="_blank" data-tooltip="Specifies whether or not the browser has Java enabled">.javaEnabled()</a><br />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="doc-cont-document" class="hidden">
+                            <span class="document-tag tag">document</span>
+                            <div class="flex-cont">
+                                <div class="properties-cont">
+                                    <span class="code-comment">// Properties</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/prop_document_activeelement.asp" target="_blank" data-tooltip="Returns the currently focused element in the document">.activeElement</a><br />
+                                    <a href="https://www.w3schools.com/jsref/coll_doc_anchors.asp" target="_blank" data-tooltip="Returns a collection of all &lt;a&gt; elements in the document that have a name attribute">.anchors</a><br />
+                                    <a href="https://www.w3schools.com/jsref/coll_doc_applets.asp" target="_blank" data-tooltip="Returns a collection of all &lt;applet&gt; elements in the document">.applets</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_baseuri.asp" target="_blank" data-tooltip="Returns the absolute base URI of a document">.baseURI</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_body.asp" target="_blank" data-tooltip="Sets or returns the document's body (the &lt;body&gt; element)">.body</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_cookie.asp" target="_blank" data-tooltip="Returns all name/value pairs of cookies in the document">.cookie</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_document_characterset.asp" target="_blank" data-tooltip="Returns the character encoding for the document">.characterSet</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_document_doctype.asp" target="_blank" data-tooltip="Returns the Document Type Declaration associated with the document">.doctype</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_document_documentelement.asp" target="_blank" data-tooltip="Returns the Document Element of the document (the &lt;html&gt; element)">.documentElement</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_documentmode.asp" target="_blank" data-tooltip="Returns the mode used by the browser to render the document">.documentMode</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_document_documenturi.asp" target="_blank" data-tooltip="Sets or returns the location of the document">.documentURI</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_domain.asp" target="_blank" data-tooltip="Returns the domain name of the server that loaded the document">.domain</a><br />
+                                    <a href="https://www.w3schools.com/jsref/coll_doc_embeds.asp" target="_blank" data-tooltip="Returns a collection of all &lt;embed&gt; elements the document">.embeds</a><br />
+                                    <a href="https://www.w3schools.com/jsref/coll_doc_forms.asp" target="_blank" data-tooltip="Returns a collection of all &lt;form&gt; elements in the document">.forms</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_head.asp" target="_blank" data-tooltip="Returns the &lt;head&gt; element of the document">.head</a><br />
+                                    <a href="https://www.w3schools.com/jsref/coll_doc_images.asp" target="_blank" data-tooltip="Returns a collection of all &lt;img&gt; elements in the document">.images</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_document_implementation.asp" target="_blank" data-tooltip="Returns the DOMImplementation object that handles this document">.implementation</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_document_inputencoding.asp" target="_blank" data-tooltip="Returns the encoding, character set, used for the document">.inputEncoding</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_lastmodified.asp" target="_blank" data-tooltip="Returns the date and time the document was last modified">.lastModified</a><br />
+                                    <a href="https://www.w3schools.com/jsref/coll_doc_links.asp" target="_blank" data-tooltip="Returns a collection of all &lt;a&gt; and &lt;area&gt; elements in the document that have a href attribute">.links</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_readystate.asp" target="_blank" data-tooltip="Returns the (loading) status of the document">.readyState</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_referrer.asp" target="_blank" data-tooltip="Returns the URL of the document that loaded the current document">.referrer</a><br />
+                                    <a href="https://www.w3schools.com/jsref/coll_doc_scripts.asp" target="_blank" data-tooltip="Returns a collection of &lt;script&gt; elements in the document">.scripts</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_document_stricterrorchecking.asp" target="_blank" data-tooltip="Sets or returns whether error-checking is enforced or not">.strictErrorChecking</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_title.asp" target="_blank" data-tooltip="Sets or returns the title of the document">.title</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_doc_url.asp" target="_blank" data-tooltip="Returns the full URL of the HTML document">.URL</a><br />
+                                </div>
+                                <div class="methods-cont">
+                                    <span class="code-comment">// Methods</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_addeventlistener.asp" target="_blank" data-tooltip="Attaches an event handler to the document">.addEventListener()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_adoptnode.asp" target="_blank" data-tooltip="Adopts a node from another document">.adoptNode()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_doc_close.asp" target="_blank" data-tooltip="Closes the output stream previously opened with document.open()">.close()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_createattribute.asp" target="_blank" data-tooltip="Creates an attribute node">.createAttribute()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_createcomment.asp" target="_blank" data-tooltip="Creates a Comment node with the specified text">.createComment()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_createdocumentfragment.asp" target="_blank" data-tooltip="Creates an empty DocumentFragment node">.createDocumentFragment()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_createelement.asp" target="_blank" data-tooltip="Creates an Element node">.createElement()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_createtextnode.asp" target="_blank" data-tooltip="Creates a Text node">.createTextNode()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_getelementbyid.asp" target="_blank" data-tooltip="Returns the element that has the ID attribute with the specified value">.getElementById()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_getelementsbyclassname.asp" target="_blank" data-tooltip="Returns a NodeList containing all elements with the specified class name">.getElementsByClassName()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_doc_getelementsbyname.asp" target="_blank" data-tooltip="Returns a NodeList containing all elements with a specified name">.getElementsByName()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_getelementsbytagname.asp" target="_blank" data-tooltip="Returns a NodeList containing all elements with the specified tag name">.getElementsByTagName()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_hasfocus.asp" target="_blank" data-tooltip="Returns a Boolean value indicating whether the document has focus">.hasFocus()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_importnode.asp" target="_blank" data-tooltip="Imports a node from another document">.importNode()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_normalize.asp" target="_blank" data-tooltip="Removes empty Text nodes, and joins adjacent nodes">.normalize()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_normalizedocument.asp" target="_blank" data-tooltip="Removes empty Text nodes, and joins adjacent nodes">.normalizeDocument()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_doc_open.asp" target="_blank" data-tooltip="Opens an HTML output stream to collect output from document.write()">.open()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_queryselector.asp" target="_blank" data-tooltip="Returns the first element that matches a specified CSS selector(s) in the document">.querySelector()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_queryselectorall.asp" target="_blank" data-tooltip="Returns a static NodeList containing all elements that matches a specified CSS selector(s) in the document">.querySelectorAll()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_removeeventlistener.asp" target="_blank" data-tooltip="Removes an event handler from the document (that has been attached with the addEventListener() method)">.removeEventListener()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_document_renamenode.asp" target="_blank" data-tooltip="Renames the specified node">.renameNode()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_doc_write.asp" target="_blank" data-tooltip="Writes HTML expressions or JavaScript code to a document">.write()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_doc_writeln.asp" target="_blank" data-tooltip="Same as write(), but adds a newline character after each statement">.writeln()</a><br />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="doc-cont-history" class="hidden">
+                            <span class="document-tag tag">history</span>
+                            <div class="flex-cont">
+                                <div class="properties-cont">
+                                    <span class="code-comment">// Properties</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/prop_his_length.asp" target="_blank" data-tooltip="Returns the number of URLs in the history list">.length</a><br />
+                                </div>
+                                <div class="methods-cont">
+                                    <span class="code-comment">// Methods</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/met_his_back.asp" target="_blank" data-tooltip="Loads the previous URL in the history list">.back()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_his_forward.asp" target="_blank" data-tooltip="Loads the next URL in the history list">.forward()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_his_go.asp" target="_blank" data-tooltip="Loads a specific URL from the history list">.go()</a><br />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="doc-cont-location" class="hidden">
+                            <span class="document-tag tag">location</span>
+                            <div class="flex-cont">
+                                <div class="properties-cont">
+                                    <span class="code-comment">// Properties</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/prop_loc_hash.asp" target="_blank" data-tooltip="Sets or returns the anchor part (#) of a URL">.hash</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_loc_host.asp" target="_blank" data-tooltip="Sets or returns the hostname and port number of a URL">.host</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_loc_hostname.asp" target="_blank" data-tooltip="Sets or returns the hostname of a URL">.hostname</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_loc_href.asp" target="_blank" data-tooltip="Sets or returns the entire URL">.href</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_loc_origin.asp" target="_blank" data-tooltip="Returns the protocol, hostname and port number of a URL">.origin</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_loc_pathname.asp" target="_blank" data-tooltip="Sets or returns the path name of a URL">.pathname</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_loc_port.asp" target="_blank" data-tooltip="Sets or returns the port number of a URL">.port</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_loc_protocol.asp" target="_blank" data-tooltip="Sets or returns the protocol of a URL">.protocol</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_loc_search.asp" target="_blank" data-tooltip="Sets or returns the querystring part of a URL">.search</a><br />
+                                </div>
+                                <div class="methods-cont">
+                                    <span class="code-comment">// Methods</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/met_loc_assign.asp" target="_blank" data-tooltip="Loads a new document">.assign()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_loc_reload.asp" target="_blank" data-tooltip="Reloads the current document">.reload()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_loc_replace.asp" target="_blank" data-tooltip="Replaces the current document with a new one">.replace()</a><br />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="doc-cont-element" class="hidden">
+                            <span class="element-tag tag">element</span>
+                            <div class="flex-cont">
+                                <div class="properties-cont">
+                                    <span class="code-comment">// Properties</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_accesskey.asp" target="_blank" data-tooltip="Sets or returns the accesskey attribute of an element">.accessKey</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_attributes.asp" target="_blank" data-tooltip="Returns a NamedNodeMap of an element's attributes">.attributes</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_childelementcount.asp" target="_blank" data-tooltip="Returns the number of child elements an element has">.childElementCount</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_childnodes.asp" target="_blank" data-tooltip="Returns a collection of an element's child nodes (including text and comment nodes)">.childNodes</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_children.asp" target="_blank" data-tooltip="Returns a collection of an element's child element (excluding text and comment nodes)">.children</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_classlist.asp" target="_blank" data-tooltip="Returns the class name(s) of an element">.classList</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_classname.asp" target="_blank" data-tooltip="Sets or returns the value of the class attribute of an element">.className</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_clientheight.asp" target="_blank" data-tooltip="Returns the height of an element, including padding">.clientHeight</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_clientleft.asp" target="_blank" data-tooltip="Returns the width of the left border of an element">.clientLeft</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_clienttop.asp" target="_blank" data-tooltip="Returns the width of the top border of an element">.clientTop</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_clientwidth.asp" target="_blank" data-tooltip="Returns the width of an element, including padding">.clientWidth</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_contenteditable.asp" target="_blank" data-tooltip="Sets or returns whether the content of an element is editable or not">.contentEditable</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_dir.asp" target="_blank" data-tooltip="Sets or returns the value of the dir attribute of an element">.dir</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_firstchild.asp" target="_blank" data-tooltip="Returns the first child node of an element">.firstChild</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_firstelementchild.asp" target="_blank" data-tooltip="Returns the first child element of an element">.firstElementChild</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_id.asp" target="_blank" data-tooltip="Sets or returns the value of the id attribute of an element">.id</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank" data-tooltip="Sets or returns the content of an element">.innerHTML</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_iscontenteditable.asp" target="_blank" data-tooltip="Returns true if the content of an element is editable, otherwise false">.isContentEditable</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_lang.asp" target="_blank" data-tooltip="Sets or returns the value of the lang attribute of an element">.lang</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_lastchild.asp" target="_blank" data-tooltip="Returns the last child node of an element">.lastChild</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_lastelementchild.asp" target="_blank" data-tooltip="Returns the last child element of an element">.lastElementChild</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_namespaceuri.asp" target="_blank" data-tooltip="Returns the namespace URI of an element">.namespaceURI</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_nextsibling.asp" target="_blank" data-tooltip="Returns the next node at the same node tree level">.nextSibling</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_nextelementsibling.asp" target="_blank" data-tooltip="Returns the next element at the same node tree level">.nextElementSibling</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_nodename.asp" target="_blank" data-tooltip="Returns the name of a node">.nodeName</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_nodetype.asp" target="_blank" data-tooltip="Returns the node type of a node">.nodeType</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_nodevalue.asp" target="_blank" data-tooltip="Sets or returns the value of a node">.nodeValue</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_offsetheight.asp" target="_blank" data-tooltip="Returns the height of an element, including padding, border and scrollbar">.offsetHeight</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_offsetwidth.asp" target="_blank" data-tooltip="Returns the width of an element, including padding, border and scrollbar">.offsetWidth</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_offsetleft.asp" target="_blank" data-tooltip="Returns the horizontal offset position of an element">.offsetLeft</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_offsetparent.asp" target="_blank" data-tooltip="Returns the offset container of an element">.offsetParent</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_offsettop.asp" target="_blank" data-tooltip="Returns the vertical offset position of an element">.offsetTop</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_ownerdocument.asp" target="_blank" data-tooltip="Returns the root element (document object) for an element">.ownerDocument</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_parentnode.asp" target="_blank" data-tooltip="Returns the parent node of an element">.parentNode</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_parentelement.asp" target="_blank" data-tooltip="Returns the parent element node of an element">.parentElement</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_previoussibling.asp" target="_blank" data-tooltip="Returns the previous node at the same node tree level">.previousSibling</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_previouselementsibling.asp" target="_blank" data-tooltip="Returns the previous element at the same node tree level">.previousElementSibling</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_scrollheight.asp" target="_blank" data-tooltip="Returns the entire height of an element, including padding">.scrollHeight</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_scrollleft.asp" target="_blank" data-tooltip="Sets or returns the number of pixels an element's content is scrolled horizontally">.scrollLeft</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_scrolltop.asp" target="_blank" data-tooltip="Sets or returns the number of pixels an element's content is scrolled vertically">.scrollTop</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_scrollwidth.asp" target="_blank" data-tooltip="Returns the entire width of an element, including padding">.scrollWidth</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_style.asp" target="_blank" data-tooltip="Sets or returns the value of the style attribute of an element">.style</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_tabindex.asp" target="_blank" data-tooltip="Sets or returns the value of the tabindex attribute of an element">.tabIndex</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_element_tagname.asp" target="_blank" data-tooltip="Returns the tag name of an element">.tagName</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_node_textcontent.asp" target="_blank" data-tooltip="Sets or returns the textual content of a node and its descendants">.textContent</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_html_title.asp" target="_blank" data-tooltip="Sets or returns the value of the title attribute of an element">.title</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_nodelist_length.asp" target="_blank" data-tooltip="Returns the number of nodes in a NodeList">.length</a><br />
+                                </div>
+                                <div class="methods-cont">
+                                    <span class="code-comment">// Methods</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_addeventlistener.asp" target="_blank" data-tooltip="Attaches an event handler to the specified element">.addEventListener()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_appendchild.asp" target="_blank" data-tooltip="Adds a new child node, to an element, as the last child node">.appendChild()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_html_blur.asp" target="_blank" data-tooltip="Removes focus from an element">.blur()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_html_click.asp" target="_blank" data-tooltip="Simulates a mouse-click on an element">.click()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_clonenode.asp" target="_blank" data-tooltip="Clones an element">.cloneNode()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_comparedocumentposition.asp" target="_blank" data-tooltip="Compares the document position of two elements">.compareDocumentPosition()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_contains.asp" target="_blank" data-tooltip="Returns true if a node is a descendant of a node, otherwise false">.contains()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_html_focus.asp" target="_blank" data-tooltip="Gives focus to an element">.focus()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_getattribute.asp" target="_blank" data-tooltip="Returns the specified attribute value of an element node">.getAttribute()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_getattributenode.asp" target="_blank" data-tooltip="Returns the specified attribute node">.getAttributeNode()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_getelementsbyclassname.asp" target="_blank" data-tooltip="Returns a collection of all child elements with the specified class name">.getElementsByClassName()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_getelementsbytagname.asp" target="_blank" data-tooltip="Returns a collection of all child elements with the specified tag name">.getElementsByTagName()</a><br />
+                                    <a href="" data-tooltip="Returns an object which implements the APIs of a specified feature">.getFeature()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_hasattribute.asp" target="_blank" data-tooltip="Returns true if an element has the specified attribute, otherwise false">.hasAttribute()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_hasattributes.asp" target="_blank" data-tooltip="Returns true if an element has any attributes, otherwise false">.hasAttributes()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_haschildnodes.asp" target="_blank" data-tooltip="Returns true if an element has any child nodes, otherwise false">.hasChildNodes()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_insertbefore.asp" target="_blank" data-tooltip="Inserts a new child node before a specified, existing, child node">.insertBefore()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_isdefaultnamespace.asp" target="_blank" data-tooltip="Returns true if a specified namespaceURI is the default, otherwise false">.isDefaultNamespace()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_isequalnode.asp" target="_blank" data-tooltip="Checks if two elements are equal">.isEqualNode()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_issamenode.asp" target="_blank" data-tooltip="Checks if two elements are the same node">.isSameNode()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_issupported.asp" target="_blank" data-tooltip="Returns true if a specified feature is supported on the element">.isSupported()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_normalize.asp" target="_blank" data-tooltip="Joins adjacent text nodes and removes empty text nodes in an element">.normalize()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_queryselector.asp" target="_blank" data-tooltip="Returns the first child element that matches a specified CSS selector(s) of an element">.querySelector()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_queryselectorall.asp" target="_blank" data-tooltip="Returns all child elements that matches a specified CSS selector(s) of an element">.querySelectorAll()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_removeattribute.asp" target="_blank" data-tooltip="Removes a specified attribute from an element">.removeAttribute()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_removeattributenode.asp" target="_blank" data-tooltip="Removes a specified attribute node, and returns the removed node">.removeAttributeNode()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_removechild.asp" target="_blank" data-tooltip="Removes a child node from an element">.removeChild()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_node_replacechild.asp" target="_blank" data-tooltip="Replaces a child node in an element">.replaceChild()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_removeeventlistener.asp" target="_blank" data-tooltip="Removes an event handler that has been attached with the addEventListener() method">.removeEventListener()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_scrollintoview.asp" target="_blank" data-tooltip="Scrolls the specified element into the visible area of the browser window">.scrollIntoView()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_setattribute.asp" target="_blank" data-tooltip="Sets or changes the specified attribute, to the specified value">.setAttribute()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_element_setattributenode.asp" target="_blank" data-tooltip="Sets or changes the specified attribute node">.setAttributeNode()</a><br />
+                                    <a href="" data-tooltip="Converts an element to a string">.toString()</a><br />
+                                    <a href="https://www.w3schools.com/jsref/met_nodelist_item.asp" target="_blank" data-tooltip="Returns the node at the specified index in a NodeList">.item()</a><br />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="doc-cont-attribute" class="hidden">
+                            <span class="attribute-tag tag">attribute</span>
+                            <div class="flex-cont">
+                                <div class="properties-cont">
+                                    <span class="code-comment">// Properties</span>
+                                    <br />
+                                    <a href="https://www.w3schools.com/jsref/prop_attr_isid.asp" target="_blank" data-tooltip="Returns true if the attribute is of type Id, otherwise it returns false">.isId</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_attr_name.asp" target="_blank" data-tooltip="Returns the name of an attribute">.name</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_attr_value.asp" target="_blank" data-tooltip="Sets or returns the value of the attribute">.value</a><br />
+                                    <a href="https://www.w3schools.com/jsref/prop_attr_specified.asp" target="_blank" data-tooltip="Returns true if the attribute has been specified, otherwise it returns false">.specified</a><br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="accordion">Accessing the DOM Elements</button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <span class="document-tag tag">document</span><br />
+                        <span class="code-comment">// Select an Element Node</span><br />
+                        .getElementById(<span class = "code-id"><i>id</i></span>)
+                        <br />
+                        .querySelector(<span class="code-css">css_selector</span>)
+                        <code>
+
+                        </code>
+                        <hr />
+                        <code>
+                            <span class="code-comment">// Select a Nodelist</span><br />
+                            .getElementsByClassName(<span class = "code-class">class</span>)
+                            <br />
+                            .getElementsByTagName(<span class = "code-element">element</span>)
+                            <br />
+                            .querySelectorAll(<span class="code-css">css_selector</span>)
+                        </code>
+                        <hr />
+                        <span class="element-tag tag">element</span><br />
+                        <code>
+                            <span class="code-comment">// Select Children/Parent Nodes</span><br />
+                            .parentNode<br />
+                            .previousSibling<br />
+                            .nextSibling<br />
+                            .firstChild<br />
+                            .lastChild
+                        </code>
+                    </div>
+                </div>
+
+                <button class="accordion">Create DOM Elements</button>
+                <div class="panel">
+                    <div class="panel-content">
+                        Click on a node on the tree to the left to view its methods and  properties.
+                    </div>
+                </div>
+
+                <button class="accordion">Add Elements to the DOM</button>
+                <div class="panel">
+                    <div class="panel-content">
+                        Click on a node on the tree to the left to view its methods and  properties.
+                    </div>
+                </div>
+
+                <button class="accordion">Add/Remove/Toggle/Check Classes</button>
+                <div class="panel">
+                    <div class="panel-content">
+                        Click on a node on the tree to the left to view its methods and  properties.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="accordion.js"></script>
+        <script src="https://use.fontawesome.com/d3e37d3134.js"></script>
+
+
+    </body>
+</html>

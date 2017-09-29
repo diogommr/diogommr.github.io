@@ -1,0 +1,140 @@
+* { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; letter-spacing: 0.01em; }
+
+body {
+    background: #efefef;
+    --window-tag-color: #6C3AF5;
+    --document-tag-color: #34BDF7;
+    --element-tag-color: #58F7D2;
+    --tooltip-bg: #546E7A;
+}
+
+div.content-cont {
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.left-cont {
+    width: 50%;
+    margin-right: 40px;
+    background: #fefefe;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ccc;
+}
+
+div.right-cont {
+    width: 50%;
+    margin-left: 40px;
+    border: 1px solid #ccc;
+}
+
+/*********** ACCORDION ***********/
+
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: normal
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0;
+    background-color: #fefefe;
+    max-height: 0;
+    overflow-y: scroll;
+}
+
+div.panel-content {
+    padding: 20px;
+}
+
+/*********** TAGS ***********/
+.tag {
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.window-tag { background: var(--window-tag-color); }
+.document-tag { background: var(--document-tag-color); }
+.element-tag { background: var(--element-tag-color); }
+.attribute-tag { background: steelblue; }
+.text-tag { background: lightblue; }
+
+/*********** DOCUMENTATION ***********/
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.properties-cont, .methods-cont {
+    min-width: 180px;
+}
+
+.properties-cont {
+    z-index: 3;
+}
+
+div.flex-cont {
+    display: flex;
+}
+
+div.flex-cont > div {
+    margin-right: 80px;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+}
+a[href=""] {
+    cursor: default;
+}/*
+a:not([href=""])::after {
+    color: #ccc;
+    font-family: FontAwesome;
+    content: " \f08e";
+}*/
+
+hr {
+    border: none;
+    border-bottom: 1px dashed #ddd;
+    margin: 20px 0;
+}
+
+code, code * {
+    font-family: 'Cutive Mono', monospace;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.code-id { color: steelblue; }
+.code-css { color: tomato; }
+.code-class { color: steelblue; }
+.code-element { color: lightgreen; }
+.code-comment { color: #999; }

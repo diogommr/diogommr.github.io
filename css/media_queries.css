@@ -55,7 +55,6 @@
         width: 100%;
         height: auto;
         position: static;
-        display: none;
     }
     .top-bar:hover {
         height: auto;
@@ -97,19 +96,8 @@
     .section-content {
         width: var(--content-width);
     }
-
-    .portfolio-gallery {
-        width: var(--caontent-width);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;/*
-        background: black;*/
-    }
-
-    .portfolio-project {
-        width: calc((var(--content-width)/2) - 10px);
-        height: calc(var(--content-width)/3);
-        margin: 5px;
+    #home {
+        height: 50vh;
     }
 
     /* ===== FOOTER ===== */

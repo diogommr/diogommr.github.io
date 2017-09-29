@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sections Layout</title>
+        <meta name="viewport" content="width=device-width, initial-scale=2, maximum-scale=1">
+        <link rel="stylesheet" href="css/sections.css">
+        <link rel="stylesheet" href="css/prism.css">
+    </head>
+    <body>
+        <div class="top-bar">
+            <span class="nav-show-hide"><i class="fa fa-bars" aria-hidden="true"></i></span>
+            Languages: <span class="language-tag javascript-tag active-tag">Javascript</span>
+            <span class="language-tag python-tag active-tag">Python</span>
+            <span class="language-tag php-tag active-tag">PHP</span>
+            <span class="language-tag cplusplus-tag active-tag">C++</span>
+			<span class="language-tag csharp-tag active-tag">C#</span>
+            <span class="language-tag ruby-tag active-tag">Ruby</span>
+        </div>
+        <div class="body-wrapper">
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="#comments">Comments</a></li>
+                    <li><a href="#variables">Variables</a></li>
+                    <li><a href="#constants">Constants</a></li>
+                    <li><a href="#arrays">Arrays</a></li>
+                    <li><a href="#functions">Functions</a></li>
+                    <li><a href="#conditional_statements">Conditional Statements</a></li>
+                    <li><a href="#switch_statements">Switch Statements</a></li>
+                    <li><a href="#for_loops">For Loops</a></li>
+                    <li><a href="#for_each_loops">For Each Loops</a></li>
+                    <li><a href="#while_loops">While Loops</a></li>
+                    <li><a href="#do_while_loops">Do While Loops</a></li>
+                    <li><a href="#console">Console</a></li>
+                    <li><a href="#concatenation">Concatenation</a></li>
+                    <li><a href="#loop_keywords">Loop Keywords</a></li>
+                    <li><a href="#operators">Operators</a></li>
+                    <li><a href="#escape_sequences">Escape Sequences</a></li>
+                    <li><a href="#import_libraries">Import Libraries</a></li>
+                    <li><a href="#file_io">File IO</a></li>
+                    <li><a href="#oop">OOP</a></li>
+                </ul>
+            </div>
+            <div class="content-cont dragscroll">
+                <div class="row">
+                    <h3>Comments</h3>
+                </div>
+                <div id="comments" class="row">
+                    <div class="javascript-col col">
+                        <h4>JavaScript</h4>
+                        <pre class="line-numbers"><code class="language-javascript">// single line comment
+
+/*
+    multiple line comment
+*/</code></pre>
+                    </div>
+                    <div class="python-col col">
+                        <h4>Python</h4>
+                        <pre class="line-numbers"><code class="language-python"># single line comment
+
+"""
+    docstring /
+    multiple line comment
+"""</code></pre>
+                    </div>
+                    <div class="php-col col">
+                        <h4>PHP</h4>
+                        <pre class="line-numbers"><code class="language-php">// single line comment
+# single line comment
+
+/*
+    multiple line comment
+*/ </code></pre>
+                    </div>
+                    <div class="cplusplus-col col">
+                        <h4>C++</h4>
+                        <pre class="line-numbers"><code class="language-c++">// single line comment
+
+/*
+    multiple line comment
+*/ </code></pre>
+                    </div>
+					<div class="csharp-col col">
+                        <h4>C#</h4>
+                        <pre class="line-numbers"><code class="language-c#">// single line comment
+
+/*
+    multiple line comment
+*/ </code></pre>
+                    </div>
+                    <div class="ruby-col col">
+                        <h4>Ruby</h4>
+                        <pre class="line-numbers"><code class="language-ruby"># single line comment
+
+=begin
+    multiple line comment
+=end </code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Variables</h3>
+                </div>
+                <div id="variables" class="row">
+                    <div class="javascript-col col">
+                        <h4>JavaScript</h4>
+                        <pre class="line-numbers"><code class="language-javascript">//defining a variable
+var age = 20;
+
+//defining multiple variables
+var price, quantity, total;
+
+//calling a variable
+age; // 20</code></pre>
+                    </div>
+                    <div class="python-col col">
+                        <h4>Python</h4>
+                        <pre class="line-numbers"><code class="language-python"># create name
+age = 20
+
+# access name value
+age # 20</code></pre>
+                    </div>
+                    <div class="php-col col">
+                        <h4>PHP</h4>
+                        <pre class="line-numbers"><code class="language-php">//defining a variable
+//value assignment
+$varname = 0;
+
+//reference assignment
+$varname1 =& $varname2;
+
+//calling a variable
+$varname;</code></pre>
+                    </div>
+                    <div class="cplusplus-col col">
+                        <h4>C++</h4>
+                        <pre class="line-numbers"><code class="language-c++">//defining a variable
+int varname = 0;
+
+//calling a variable
+varname;</code></pre>
+                    </div>
+					<div class="csharp-col col">
+                        <h4>C#</h4>
+                        <pre class="line-numbers"><code class="language-c#">//defining a variable
+int age = 20;
+float pi = 3.14f;
+bool on = true;
+string name = "Diogo";
+
+//calling a variable
+age;</code></pre>
+                    </div>
+                    <div class="ruby-col col">
+                        <h4>Ruby</h4>
+                        <pre class="line-numbers"><code class="language-ruby"># create name
+age = 20
+
+# access name value
+age # 20</code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Constants</h3>
+                </div>
+                <div id="constants" class="row">
+                    <div class="php-col col">
+                        <h4>PHP</h4>
+                        <pre class="line-numbers"><code class="language-php">// defining a constant
+define("constName", 0);
+
+// calling a constant
+constName;</code></pre>
+                    </div>
+                    <div class="cplusplus-col col">
+                        <h4>C++</h4>
+                        <pre class="line-numbers"><code class="language-c++">// defining a constant
+const int constname = 10;
+
+// defining a constant
+#define CONSTNAME 10;
+#define CONSTNAME ´name´;
+
+// calling a constant
+CONSTNAME;</code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Arrays</h3>
+                </div>
+                <div id="arrays" class="row">
+                    <div class="javascript-col col">
+                        <h4>JavaScript</h4>
+                        <pre class="line-numbers"><code class="language-javascript">/* defining Arrays */
+// array literal
+colors = array['red', 'green', 'blue'];
+
+// array constructor
+colors = new Array('red', 'green', 'blue');
+
+/* retrieving a value */
+// array literal
+colors[1]; // green
+
+// array constructor
+colors.item(1); // green</code></pre>
+                    </div>
+                    <div class="python-col col">
+                        <h4>Python</h4>
+                        <pre class="line-numbers"><code class="language-python"># defining a list
+# empty list through constructor
+a_list = list()
+
+list_name = ["Rita", "Mila", "John"]
+
+list_name[0] = "Rita"
+list_name[1] = "Mila"
+list_name[2] = "John"
+
+# retrieving a value
+list_name[1] # Mila</code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Functions</h3>
+                </div>
+                <div id="functions" class="row">
+                    <div class="javascript-col col">
+                        <h4>JavaScript</h4>
+                        <pre class="line-numbers"><code class="language-javascript">// define function
+function add(a, b){
+    return a + b;
+}
+
+// call function
+add(2, 3); // 5</code></pre>
+                    </div>
+                    <div class="python-col col">
+                        <h4>Python</h4>
+                        <pre class="line-numbers"><code class="language-python"># define function
+def add(a, b):
+    return a + b
+
+# call function
+add(2, 3) # 5</code></pre>
+                    </div>
+                    <div class="php-col col">
+                        <h4>PHP</h4>
+                        <pre class="line-numbers"><code class="language-php">// define function
+function add(a, b){
+    return a + b;
+}
+
+// call function
+add(2, 3); // 5</code></pre>
+                    </div>
+                    <div class="cplusplus-col col">
+                        <h4>C++</h4>
+                        <pre class="line-numbers"><code class="language-c++">// define function
+int add(a, b){
+    return a + b;
+}
+
+// call function
+add(2, 3); // 5</code></pre>
+                    </div>
+					<div class="csharp-col col">
+                        <h4>C#</h4>
+                        <pre class="line-numbers"><code class="language-c#">// define function
+int add(int a, int b){
+    return a + b;
+}
+
+// call function
+add(2, 3); // 5</code></pre>
+                    </div>
+                    <div class="ruby-col col">
+                        <h4>Ruby</h4>
+                        <pre class="line-numbers"><code class="language-ruby"># defining a function
+# function w/out parameters
+def hello_world
+    print "Hello World!"
+end
+
+# function w/ parameters
+def hello(name)
+    print "Hello " + name
+end
+
+# splat arguments
+def greet(*friends)
+    friends.each { |friend| puts "Hi, #{friend}!" }
+end
+
+# calling a function
+hello_world # Hello World!
+
+# calling a function w/ parameters
+hello("Bob") # Hello Bob
+
+greet("Bob", "Mila", "John")
+# Hi Bob!
+# Hi Mila!
+# Hi John!</code></pre>
+                    </div>
+                </div>
+
+                <!-- CONDITIONAL STATEMENTS -->
+                <div class="row">
+                    <h3>Conditional Statements</h3>
+                </div>
+                <div id="conditional_statements" class="row">
+                    <div class="javascript-col col">
+                        <h4>JavaScript</h4>
+                        <pre class="line-numbers"><code class="language-javascript">if(5 &gt; 2){
+    //code
+}else if(5 &lt; 2){
+    //code
+}else{
+    //code
+}</code></pre>
+                    </div>
+                    <div class="python-col col">
+                        <h4>Python</h4>
+                        <pre class="line-numbers"><code class="language-python">if 5 &gt; 2:
+    print("Hello World!")
+elif 5 &lt; 2:
+    print("Try again")
+else:
+    print("No luck!")</code></pre>
+                    </div>
+                    <div class="php-col col">
+                        <h4>PHP</h4>
+                        <pre class="line-numbers"><code class="language-php">if(5 &gt; 2){
+    //code
+}else if(5 &lt; 2){
+    //code
+}else{
+    //code
+}</code></pre>
+                    </div>
+                    <div class="cplusplus-col col">
+                        <h4>C++</h4>
+                        <pre class="line-numbers"><code class="language-c++">if(5 &gt; 2){
+    //code
+}else if(5 &lt; 2){
+    //code
+}else{
+    //code
+}</code></pre>
+                    </div>
+                    <div class="ruby-col col">
+                        <h4>Ruby</h4>
+                        <pre class="line-numbers"><code class="language-ruby"># check for false
+unless num &lt; 0
+    print "Num is positive"
+
+# check for true
+if num &lt; 0
+    print "Num is negative"
+elsif num &gt; 0
+    print "Num is positive"
+else
+    print "Num is zero"
+end</code></pre>
+                    </div>
+                </div>
+
+                <!-- SWITCH STATEMENTS -->
+                <div class="row">
+                    <h3>Switch Statements</h3>
+                </div>
+                <div id="switch_statements" class="row">
+                    <div class="php-col col">
+                        <h4>PHP</h4>
+                        <pre class="line-numbers"><code class="language-php">switch ($category) {
+case "news":
+    echo "What's happening";
+    break;
+case "wheather":
+    echo "Weekly forecast";
+    break;
+case "sports":
+    echo "Sports highlights";
+    break;
+default:
+    echo "Welcome to my site";
+}</code></pre>
+                    </div>
+                    <div class="cplusplus-col col">
+                        <h4>C++</h4>
+                        <pre class="line-numbers"><code class="language-c++">switch (category) {
+case "news":
+    // code
+    break;
+case "wheather":
+    // code
+    break;
+case "sports":
+    // code
+    break;
+default:
+    // code
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+        <!-- Syntax Highlighting -->
+        <script src="js/prism.js"></script>
+        <!-- Top Bar -->
+        <script src="js/top-bar.js"></script>
+        <!-- Content -->
+        <script src="js/content.js"></script>
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/d3e37d3134.js"></script>
+
+    </body>
+</html>

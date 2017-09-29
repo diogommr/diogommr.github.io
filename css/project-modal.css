@@ -1,27 +1,8 @@
-/* ========== PORTFOLIO MODAL ========== */
 
-.portfolio-project-modal-wrapper {
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.85);
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    overflow: auto;
-}
-
-.portfolio-project-modal-body {
-    margin: auto;
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 .portfolio-project-modal-content {
-    padding: 10px 40px 30px 40px;
+	max-width: 1170px;
+    padding: 10px 40px 0px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,16 +21,15 @@
 
 .caption {
     margin-top: 10px;
+	margin-bottom: 20px;
 }
-
 
 /* ---------- FOOTER ---------- */
 
 .portfolio-project-modal-footer {
     display: flex;
-    justify-content: center;
-    padding: 25px;/*
-    background: black;*/
+	justify-content: center;
+	padding-bottom: 50px;
 }
 
 .powered_by_behance {

@@ -1,31 +1,47 @@
 $(document).ready(function(){
 
+	/* ========== WATCH REEL MODAL ========== */
+
+    $('#reel-btn').click(function(){
+        $('body, html').css('overflow', 'hidden');
+
+        $('.modal-wrapper').show();
+        $('.modal-wrapper').css('display', 'flex');
+        $('.modal-title').html("Diogo Ribeiro 2017 Demo Reel"); /* Top Bar Resource Name */
+        $('.modal-body').append('');
+    });
+
     /* ========== RESOURCES MODAL ========== */
 
     $('.resource').click(function(){
         $('body, html').css('overflow', 'hidden');
 
         var resource_url = $(this).attr('data-url');
-        var resource_name = $(this).children('p').text();
+        var resource_name = $(this).attr('data-title');
 
         $('.modal-wrapper').show();
         $('.modal-wrapper').css('display', 'flex');
         $('.modal-title').html(resource_name); /* Top Bar Resource Name */
-        $('.modal-body').append('<iframe class="codepen-embed-iframe" src="'+ resource_url +'" style="border: 0; width: 100%; height: 100%;" allowfullscreen scrolling="no"></iframe>');
+        $('.modal-body').append('<iframe class="resource-embed-iframe" src="'+ resource_url +'" style="border: 0; width: 100%; height: 100%;" allowfullscreen></iframe>');
     });
 
     /* ========== PRODUCTS MODAL ========== */
 
-    $('.shop-item-img').click(function(){
-        $('body, html').css('overflow', 'hidden');
+    $('.shop-item').click(function(){
 
-        var product_url = $(this).parent('.shop-item').attr('data-url');
-        var product_name = $(this).next('p').text();
+		var product_url = $(this).attr('data-url');
+		var product_name = $(this).attr('data-title');
 
-        $('.modal-wrapper').show();
-        $('.modal-wrapper').css('display', 'flex');
-        $('.modal-title').html(product_name); /* Top Bar Product Name */
-        $('.modal-body').append('<iframe style="border: 0; width: 100%; height: 100%;" src="'+ product_url +'" frameborder="0" allowfullscreen></iframe>');
+		if (!$(this).hasClass("external")){
+			$('body, html').css('overflow', 'hidden');
+
+	        $('.modal-wrapper').show();
+	        $('.modal-wrapper').css('display', 'flex');
+	        $('.modal-title').html(product_name); /* Top Bar Product Name */
+			$('.modal-body').append('<iframe class="resource-embed-iframe" src="'+ product_url +'" style="border: 0; width: 100%; height: 100%;" allowfullscreen></iframe>');
+		}else{
+			window.open(product_url);
+		}
     });
 
     $('.shop-item-img-info').hover(function(){

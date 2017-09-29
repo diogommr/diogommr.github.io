@@ -1,0 +1,2 @@
+
+external links - add popup window with content (no need to change tab)

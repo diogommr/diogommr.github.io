@@ -1,0 +1,53 @@
+
+.tree {
+	padding: 40px;
+}
+
+.st0{ fill: none; stroke: #ccc; stroke-miterlimit: 10; }
+.st1{ fill: #FFFFFF;}
+.st2{ font-family: 'Open Sans', sans-serif; }
+.st3{ font-size: 16.5px; }
+.st1, .st2, .st3, .document-tag, .window-tag, .element-tag, .attribute-tag, .text-tag {
+	cursor: pointer;
+}
+
+.document-tag{fill: var(--document-tag-color);}
+.window-tag{fill: var(--window-tag-color);}
+.element-tag{fill: var(--element-tag-color);}
+.attribute-tag{fill: steelblue;}
+.text-tag{fill: lightblue;}
+
+/*********** CAPTION ***********/
+.tree-caption * {
+	padding: 0;
+	margin: 0;
+}
+
+.tree-caption ul {
+	color: #666;
+	list-style: none;
+	margin-top: 20px;
+}
+
+.tree-caption li:not(:first-child)::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	margin-right: 5px;
+	display: inline-block;
+}
+.tree-caption li:first-child::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: -webkit-linear-gradient(left, var(--window-tag-color), var(--window-tag-color) 50%, var(--document-tag-color) 50%, var(--document-tag-color));
+	margin-right: 5px;
+	display: inline-block;
+}
+
+.tree-caption li:nth-child(1)::before {  }
+.tree-caption li:nth-child(2)::before { background: var(--element-tag-color); }
+.tree-caption li:nth-child(3)::before { background: steelblue; }
+.tree-caption li:nth-child(4)::before { background: lightblue; }

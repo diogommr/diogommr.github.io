@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab:300,400,500,600,700');
+
+:root {
+    --radius: 5px;
+    --main-font: 'Zilla Slab', serif;
+    --nav-bar-width: 200px;
+    --javascript-color: #ffce54;
+    --python-color: #ec87c0;
+    --php-color: #2ECC71;
+    --cplusplus-color: #4fc1e9;
+	--csharp-color: #b1a2da;
+    --ruby-color: #ed5565;
+    --grey-1: #f5f7fa;
+    --grey-2: #e6e9ed;
+    --grey-3: #ccd1d9;
+    --grey-4: #434a54;
+}
+
+html, body {
+    height: 100%; /* fix flex justification bug */
+}
+
+body {
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 1.2em;
+    letter-spacing: 0.02em;
+    color: var(--grey-4);
+    background: var(--grey-1);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+h3 {
+    position: relative;
+    left: 50%;
+}
+
+h4 {
+    margin: 0;
+    margin-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    transition: .2s;
+}
+
+/* ========== TOP BAR ========== */
+
+.top-bar {
+    background: var(--grey-2);
+    padding: 5px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-show-hide {
+    width: 18px;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.language-tag {
+    padding: 5px 10px;
+    border-radius: var(--radius);
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.language-tag:hover {
+    background: var(--javascript-color);
+    box-shadow: inset 0 0 5px rgba(200,200,200,0.5);
+}
+
+.language-tag:not(.active-tag) {
+    background: #CCD1D9;
+    box-shadow: inset 0 0 5px #bbb;
+}
+
+.javascript-tag, .javascript-tag:hover {
+    background: var(--javascript-color);
+    box-shadow: none;
+}
+.python-tag, .python-tag:hover {
+    background: var(--python-color);
+    box-shadow: none;
+}
+.php-tag, .php-tag:hover {
+    background: var(--php-color);
+    box-shadow: none;
+}
+.cplusplus-tag, .cplusplus-tag:hover {
+    background: var(--cplusplus-color);
+    box-shadow: none;
+}
+.csharp-tag, .csharp-tag:hover {
+    background: var(--csharp-color);
+    box-shadow: none;
+}
+.ruby-tag, .ruby-tag:hover {
+    background: var(--ruby-color);
+    box-shadow: none;
+}
+
+
+/* ========== BODY ========== */
+
+.body-wrapper {
+    margin-top: 54px;
+    width: 100vw;
+    height: calc(100vh - 54px);
+    display: flex;/*
+    background: lightblue;*/
+}
+
+/* ========== NAV BAR ========== */
+.nav-bar { /* div */
+    position: fixed;
+    top: 51px;
+    left: 0;
+    height: calc(100vh - 54px);
+    overflow: auto;
+    border-right: 1px solid var(--grey-2);
+    background: var(--grey-1);
+    display: none;
+    z-index: 10;
+}
+
+.nav-bar ul {
+    padding: 20px;/*
+    background: var(--grey-2);*/
+}
+
+.nav-bar li {
+    margin: 10px 5px;/*
+    background: tomato;*/
+}
+
+.nav-bar li:last-child {
+    margin-bottom: 40px;
+}
+
+.nav-bar li a {
+    color: var(--grey-3);
+    padding: 5px;
+}
+
+.nav-bar a:hover {
+    color: var(--grey-4);
+}
+
+/* ========== CONTENT ========== */
+.content-cont {
+    flex-grow: 1;/*
+    cursor: grab;*/
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.col {
+    padding: 10px;/*
+    max-width: 400px;*/
+}
+.col:not(:first-child) {
+    border-left: 1px dotted var(--grey-3);
+}
+
+.javascript-col h4 {
+    color: var(--javascript-color);
+}
+.python-col h4 {
+    color: var(--python-color);
+}
+.php-col h4 {
+    color: var(--php-color);
+}
+.cplusplus-col h4 {
+    color: var(--cplusplus-color);
+}
+.csharp-col h4 {
+    color: var(--csharp-color);
+}
+.ruby-col h4 {
+    color: var(--ruby-color);
+}
+
+/* ========== Cursor ========== */
+/*
+code, h3, h4 {
+    cursor: auto;
+}*/
+
+.heads-up {
+    font-size: 2em;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 10px;
+    background: lightsalmon;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+::-moz-selection, ::selection {
+    background-color: white !important;
+}
