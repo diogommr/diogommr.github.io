@@ -8,6 +8,18 @@
     .section-content {
         width: var(--content-width);
     }
+	.header-text {
+		font-size: 4rem;
+	}
+	.arrow {
+		display: none;
+	}
+	#home {
+		height: 100%;
+	}
+	.portfolio-project {
+	    height: 250px;
+	}
 }
 
 @media screen and (max-width: 1100px) {
@@ -17,10 +29,29 @@
     .section-content {
         width: var(--content-width);
     }
+	.header-text {
+		font-size: 3rem;
+	}
+	.bg-video {
+		position: fixed;
+		top: 40px;
+	}
+	.portfolio-project {
+	    height: 230px;
+	}
+	.resource {
+		width: calc(100% / 3 - 66px);
+	}
+	.shop-item {
+		width: calc(100% / 2 - 62px);
+	}
     .shop-item-modal-body {
         width: calc(100vw - 200px);
         height: calc( (100vw - 200px) / 1.77 );
     }
+	.about-skill {
+		width: calc(50% - 40px);
+	}
 }
 
 @media screen and (max-width: 860px) {
@@ -30,6 +61,15 @@
     .section-content {
         width: var(--content-width);
     }
+	.header-text {
+		font-size: 2.5rem;
+	}
+	.bg-video {
+		display: none;
+	}
+	.resource {
+		width: calc(100% / 2 - 62px);
+	}
 }
 
 @media screen and (max-width: 720px) {
@@ -39,6 +79,25 @@
     .section-content {
         width: var(--content-width);
     }
+	.top-bar {
+		display: none;
+	}
+	.portfolio-project {
+	    width: calc(var(--content-width) / 2 - 10px);
+	}
+	.portfolio-project:not(:nth-child(3n+3)) {
+	    margin-right: 0; /* fix previous margin */
+	}
+	.portfolio-project:not(:nth-child(2n)) {
+	    margin-right: 20px;/*
+		border: 4px solid white;*/
+	}
+	.resource-name, .shop-item-name {
+		font-size: 1.7em;
+	}
+	.shop-item {
+		width: calc(100% / 2 - 62px);
+	}
     .shop-item-modal-body {
         width: calc(100vw - 50px);
         height: calc( (100vw - 50px) / 1.77 );
@@ -50,55 +109,64 @@
         --content-width: 300px;
     }
 
-    /* ===== TOP BAR ===== */
-    .top-bar {
-        width: 100%;
-        height: auto;
-        position: static;
-    }
-    .top-bar:hover {
-        height: auto;
-    }
-    .top-bar-content {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-    }
-    .logo {
-        display: none;
-    }
-    .top-bar-links { /* ul */
-        flex-direction: column;
-        align-items: center;
-    }
-    .top-bar-links li {
-        width: 100%;
-        font-size: 1.2em;
-        text-align: center;
-        padding-bottom: 10px;/*
-        border: 1px solid var(--dark-grey-1);*/
-    }
-    .top-bar-links li:not(:last-child)::after {
-        content: "";
-        display: block;
-        width: 50px;
-        height: 10px;
-        margin: auto;
-        border-bottom: 2px solid var(--dark-grey-1);
-    }
-
     /* ===== HEADER ===== */
-    .header-text-name, .header-text-changing {
-        font-size: 40px;
+    .header-text {
+        font-size: 2em;
     }
 
     /* ===== BODY ===== */
     .section-content {
-        width: var(--content-width);
+        width: calc(100% - 40px);
     }
     #home {
         height: 50vh;
     }
+	#portfolio .section-content {
+		width: 100vw;/*
+		background: steelblue;*/
+	}
+	.portfolio-project {
+	    width: calc(50% - 30px);
+		margin: 20px;
+	}
+	.portfolio-project:not(:nth-child(2n)) {
+	    margin-right: 0; /* fix previous margin */
+	}
+
+	.resources-gallery {
+		width: 100%;
+	}
+	.resource:not(:last-of-type) {
+	    margin-right: 0px;
+	}
+	.resource {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.shop-item:not(:last-of-type) {
+	    margin-right: 0px;
+	}
+	.shop-item {
+		width: 100%;
+	}
+
+	.about-skill {
+		width: 100%;
+		text-align: left;
+		margin: 20px;
+	}
+	.about-skill-img {
+		height: 60px;
+	}
+	.about-skill-img img {
+		height: 100%;
+		margin: auto;
+	}
+
+	#contact textarea {
+		width: calc(100% - 20px);
+	}
 
     /* ===== FOOTER ===== */
     footer .section-content {
