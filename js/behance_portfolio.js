@@ -53,7 +53,7 @@ var userID  = 'diogommr';
                         $('.portfolio-project-modal-content').append(modules[module].text);
                     }*/
                     if (modules[module].type === "image"){
-                        $('.portfolio-project-modal-content').append('<img src="'+ modules[module].sizes.original +'" />');
+                        $('.portfolio-project-modal-content').append('<div class="img-wrapper"><img src="'+ modules[module].sizes.original +'" /></div>');
                     }
 					if (modules[module].type === "media_collection"){
 						for(var i = 0; i < modules[module].components.length; i++){

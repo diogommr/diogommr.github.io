@@ -1,27 +1,36 @@
 
-
 .portfolio-project-modal-content {
+	color: #eee;
 	max-width: 1170px;
-    padding: 10px 40px 0px 40px;
+	width: 100%;/*
+    padding: 10px 40px 0px 40px;*/
+	margin: 10px 40px 0px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;/*
+	background: steelblue;*/
 }
 
 /* ---------- CONTENT ---------- */
 
-.portfolio-project-modal-content * {
-    color: #ccc;
-    width: 100%;
+.portfolio-project-modal-content img {
+	width: 100%;
 }
 
-.portfolio-project-modal-content *:not(.caption) {
+.portfolio-project-modal-content p {
+	max-width: 100%;
+	word-break: normal;
+	word-wrap: break-word;
+}
+
+.portfolio-project-modal-content *:not(.caption):not(.portfolio-project-modal-footer *) {
     margin-top: 20px;
 }
 
 .caption {
     margin-top: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 20px;/*
+	word-wrap: break-word;*/
 }
 
 /* ---------- FOOTER ---------- */
@@ -29,9 +38,11 @@
 .portfolio-project-modal-footer {
     display: flex;
 	justify-content: center;
-	padding-bottom: 50px;
+	margin-bottom: 50px;/*
+	background: tomato;*/
 }
 
 .powered_by_behance {
     width: 115px;
+	margin-top: 20px;
 }
