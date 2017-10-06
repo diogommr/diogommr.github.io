@@ -1,5 +1,5 @@
 $('.logo-wrapper').hover(function(){
-    $('.logo').css('fill', 'white');
+    $('.logo').css('fill', 'var(--light-blue)');
 }, function(){
-    $('.logo').css('fill', 'var(--dark-grey-2)');
+    $('.logo').css('fill', 'var(--light-grey-1)');
 });
