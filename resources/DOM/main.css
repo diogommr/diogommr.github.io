@@ -9,6 +9,7 @@ body {
 }
 
 div.content-cont {
+	height: calc(100vh - 160px);
     padding: 80px;
     display: flex;
     justify-content: space-between;
@@ -19,7 +20,7 @@ div.left-cont {
     margin-right: 40px;
     background: #fefefe;
     display: flex;
-    justify-content: center;
+	flex-direction: column;
     border: 1px solid #ccc;
 }
 

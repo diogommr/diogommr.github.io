@@ -1,6 +1,6 @@
 var winHeight = window.innerHeight;
 var accordionHeight = 60;
-var numAccordions = 5;
+var numAccordions = 1;
 var panelHeight = (winHeight - 160) - accordionHeight * numAccordions;
 
 /* Initial State */

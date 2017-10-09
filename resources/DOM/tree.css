@@ -1,6 +1,13 @@
 
 .tree {
+	height: calc(100vh - 390px);
 	padding: 40px;
+	display: flex;
+	justify-content: center;/*
+	background: rgba(0,200,200,0.5);*/
+}
+.tree svg {
+	height: 100%;
 }
 
 .st0{ fill: none; stroke: #ccc; stroke-miterlimit: 10; }
@@ -18,6 +25,11 @@
 .text-tag{fill: lightblue;}
 
 /*********** CAPTION ***********/
+.tree-caption {
+	padding: 40px;
+	padding-top: 0;/*
+	background: rgba(200,0,200,0.5);*/
+}
 .tree-caption * {
 	padding: 0;
 	margin: 0;
