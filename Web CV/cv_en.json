@@ -1,0 +1,127 @@
+[
+	{
+		"sectionName": "Personal Info",
+		"info": {
+			"address": "Rua Sá da Bandeira 8A, 7350-279 Elvas, Portugal",
+			"phoneNumber": "967019133",
+			"email": "diogommr@gmail.com",
+			"website": "diogommr.com",
+			"birthDate": "18/08/1994"
+		}
+	},
+	{
+		"sectionName": "Certificates",
+		"certificates": ["Unity Certified Developer","Adobe Certified Expert - Photoshop CC","First Certificate in English - CEFR Level C1","Pedagogical Competencies Certificate"]
+	},
+	{
+		"sectionName": "Experience",
+		"jobs": [
+			{
+				"date": "2015 - present",
+				"location": "Elvas, Portugal",
+				"title": "Freelance Designer, Developer and Instructor",
+				"description": ["Self-published the course “Adobe Illustrator CC - Master the Tools” (https://www.udemy.com/illustrator-cc-master-the-tools).", "Developed custom scripts for Adobe Illustrator and After Effects.", "Worked on projects for local clients (mainly in graphic design)."]
+			},
+			{
+				"date": "08/2016 - 04/2017",
+				"location": "Elvas, Portugal",
+				"title": "Videographer, Designer",
+				"employer": "LB Produções",
+				"description": ["Videography and editing of the interviews for the “Oral Memories of Elvas” project.","Videography, editing, motion graphics, graphic design, and soundtrack in the “About the Aqueduct” documentary."]
+			},
+			{
+				"date": "12/2015 - 06/2016",
+				"location": "Jerez de la Frontera, Spain",
+				"title": "Instructor",
+				"employer": "Instituto Artes Visuales",
+				"description": ["Developed the following online courses: Photoshop CC Essentials, Photoshop CC Web, Illustrator CC Essentials, Behance Essentials, UX and UI with Adobe XD."]
+			}
+		]
+	},
+	{
+		"sectionName": "Education",
+		"courses": [
+			{
+				"date": "08/02/2016 - 12/02/2016",
+				"location": "Badajoz, Spain",
+				"title": "3D Printing Course",
+				"institution": "Clondex",
+				"description": ["Learned how to build a 3D printer.","Learned essential 3D printing concepts."]
+			},
+			{
+				"date": "09/2012 - 12/2014",
+				"location": "Jerez de la Frontera, Spain",
+				"title": "Visual Arts and Digital Communication Course",
+				"institution": "Instituto Artes Visuales",
+				"description": ["Developed skills in Graphic Design, Motion Graphics and Video Editing, and Web Design / Development."]
+			},
+			{
+				"date": "28/10/2011 - 30/10/2011",
+				"location": "Castro Verde, Portugal",
+				"title": "Programming++ Workshop",
+				"institution": "Fernando Colaço",
+				"description": ["Introduction and deepening of programming and interactivity techniques in AS3 with Flash and Flex."]
+			},
+			{
+				"date": "09/2009 - 07/2012",
+				"location": "Elvas, Portugal",
+				"title": "Highly Qualified Multimedia Technician Course",
+				"institution": "Escola Profissional da Região Alentejo",
+				"description": ["Learned fundamental concepts about IT, Audiovisual Production, and Graphic Design."]
+			}
+		]
+	},
+	{
+		"sectionName": "Languages",
+		"languages": [
+			"Portuguese (native)",
+			"English",
+			"Spanish"
+		]
+	},
+	{
+		"sectionName": "Skills",
+		"skills":
+			{
+				"Design" : [
+					"Graphic Design",
+					"Adobe Photoshop CC",
+					"Adobe Illustrator CC",
+					"Adobe Acrobat Pro DC"
+				],
+				"Video": [
+					"Video Editing",
+					"Motion Graphics",
+					"Adobe Premiere Pro CC",
+					"Adobe After Effects CC"
+				],
+				"Audio": [
+					"Audio Editing",
+					"Audacity",
+					"Adobe Audition CC",
+					"Ableton Live"
+				],
+				"3D": [
+					"3D Printing",
+					"3D Modeling and Rendering",
+					"Unity 3D",
+					"Luxology MODO",
+					"Autodesk 3DSMax"
+				],
+				"Web": [
+					"Web Design",
+					"Front-end Development",
+					"HTML / CSS",
+					"JavaScript",
+					"AngularJS",
+					"jQuery"
+				],
+				"Programming": [
+					"Adobe Scripting",
+					"Python",
+					"C++ / C#",
+					"IOT (Arduino / Raspberry Pi)"
+				]
+			}
+	}
+]

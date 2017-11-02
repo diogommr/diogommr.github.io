@@ -1,0 +1,197 @@
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+
+:root {
+	--page-width: 1000px;
+	--main-color: tan; /* darkturquoise, peru */
+	--dark-grey: #29323E;
+	--grey: #2C3643;
+	--light-gray: #303B49;
+}
+
+body {
+	margin: 0;
+    font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0.03em;
+	background: #303035;
+}
+
+body * {
+	margin: 0;
+}
+
+header {
+	margin-left: 20px;
+}
+
+.page {
+	width: var(--page-width);
+	height: calc( (var(--page-width) * 297) / 210 );
+	margin: auto;
+	padding: 40px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	background: #efefef;
+}
+
+section {
+	width: 100%;
+	margin-top: 10px;/*
+	background: lightblue;*/
+}
+
+p {
+	color: var(--grey);
+	margin-bottom: 4px;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.row section, .col {
+	width: calc(50% - 20px);
+}
+.col section {
+	width: 100%;
+}
+
+.name {
+	font-size: 3rem;
+}
+.sub-heading {
+	font-size: 1.5rem;
+}
+
+.section-name {
+	color: var(--main-color);
+	font-size: 1.2rem;
+	padding: 0 0 2px 20px;
+	border-bottom: 1px solid var(--main-color);
+}
+
+.section-content {
+	padding: 10px 20px 0 20px;
+}
+
+/* ========== Personal Info Icons ========== */
+#personal-info p:nth-child(1)::before { /* Home */
+	content: "\f015";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+	margin-right: 6px;/*
+	margin-left: 2px;*/
+}
+#personal-info p:nth-child(2)::before { /* Phone */
+	content: "\f095";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+	margin-right: 8px;
+	margin-left: 1px;
+}
+#personal-info p:nth-child(3)::before { /* Inbox */
+	content: "\f01c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+	margin-right: 7px;
+	margin-left: 1px;
+}
+#personal-info p:nth-child(4)::before { /* Planet */
+	content: "\f0ac";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+	margin-right: 7px;
+	margin-left: 1px;
+}
+#personal-info p:nth-child(5)::before { /* Cake */
+	content: "\f1fd";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+	margin-right: 5px;
+}
+
+#certificates p {
+	font-weight: bold;
+}
+
+.date, .location {
+	color: var(--main-color);
+}
+.title {
+	color: var(--dark-grey);
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+.institution, .employer {
+	color: var(--grey);
+	font-size: 1rem;
+	font-weight: 600;
+}
+.description {
+	color: var(--grey);
+}
+
+#skills {
+	width: 100%;
+}
+#languages {
+	margin-top: 40px;
+}
+#languages .section-content p {
+	color: var(--grey);
+	font-weight: bold;/*
+	width: calc(100% / 3);*/
+}
+
+#skills .section-content > * {/*
+	border: 1px solid lightblue;*/
+}
+
+#skills .section-content, #languages .section-content {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.skill {
+	color: var(--dark-grey);
+	margin-bottom: 4px;
+}
+.skill-group {/*
+	width: calc(100% / 3);*/
+	margin-bottom: 20px;
+}
+.skill-group p {
+	color: var(--grey);
+	margin-bottom: 2px;
+}
+
+
+button {
+	color: black;
+	font-size: 1rem;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	background: white;
+	transition: 0.3s;
+}
+button:hover {
+	background: #F4300C;
+}
