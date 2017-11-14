@@ -3,7 +3,7 @@ var app = angular.module('cvApp', []);
 
 app.controller('mainController', function($scope, $log, $http, $cacheFactory) {
 
-	$http.get("cv_front-end_en.json", { cache: true })
+	$http.get("cv_en.json", { cache: true })
 		.then(function(response) {
 			var rawData = JSON.stringify(response.data);
 			$scope.sections = JSON.parse(rawData);

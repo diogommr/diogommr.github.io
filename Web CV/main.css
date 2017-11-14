@@ -31,25 +31,22 @@ body * {
 	background: #efefef;
 }
 
-section {
-	width: calc(50% - 20px);
-	margin-top: 10px;
-}
-
 p {
 	color: var(--grey);
 	margin-bottom: 4px;
 }
 
-.row {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
+header {
+	grid-column: 1 / 7;
+	display: grid;
 }
 
-.name {
+#name {
 	font-size: 3rem;
-	margin-left: 20px;
+}
+
+#sub-heading {
+	margin-left: 3px;
 }
 
 .section-name {
@@ -63,7 +60,27 @@ p {
 	padding: 10px 20px 0 20px;
 }
 
+.row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.grid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(5, minmax(10px 1fr));
+	grid-gap: 20px;
+}
+
+.grid > * {
+	/*border: 1px solid lightblue;*/
+}
+
 /* ========== Personal Info Icons ========== */
+#personal-info {
+	grid-column: 1 / 4;
+}
 #personal-info p:nth-child(1)::before { /* Home */
 	content: "\f015";
     font-family: FontAwesome;
@@ -109,8 +126,31 @@ p {
 	margin-right: 5px;
 }
 
+#certificates {
+	grid-column: 4 / 7;
+}
+
 #certificates p {
 	font-weight: bold;
+}
+
+#experience {
+	grid-column: 1 / 4;
+	grid-row: 3 / 5;
+}
+
+#education {
+	grid-column: 4 / 7;
+	grid-row: 3 / 4;
+}
+
+#languages {
+	grid-column: 4 / 7;
+	grid-row: 4 / 5;
+}
+
+#skills {
+	grid-column: 1 / 7;
 }
 
 .date, .location {

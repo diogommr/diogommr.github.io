@@ -56,13 +56,6 @@
 				"description": ["Developed skills in Graphic Design, Motion Graphics and Video Editing, and Web Design / Development."]
 			},
 			{
-				"date": "28/10/2011 - 30/10/2011",
-				"location": "Castro Verde, Portugal",
-				"title": "Programming++ Workshop",
-				"institution": "Fernando Colaço",
-				"description": ["Introduction and deepening of programming and interactivity techniques in AS3 with Flash and Flex."]
-			},
-			{
 				"date": "09/2009 - 07/2012",
 				"location": "Elvas, Portugal",
 				"title": "Highly Qualified Multimedia Technician Course",
@@ -105,8 +98,7 @@
 					"3D Printing",
 					"3D Modeling and Rendering",
 					"Unity 3D",
-					"Luxology MODO",
-					"Autodesk 3DSMax"
+					"Luxology MODO"
 				],
 				"Web": [
 					"Web Design",
@@ -117,7 +109,7 @@
 					"jQuery"
 				],
 				"Programming": [
-					"Adobe Scripting",
+					"Adobe Scripting (jsx)",
 					"Python",
 					"C++ / C#",
 					"IOT (Arduino / Raspberry Pi)"

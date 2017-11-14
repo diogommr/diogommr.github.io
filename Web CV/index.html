@@ -3,19 +3,21 @@
 	<head>
 		<meta charset="utf-8">
 		<title>CV Template</title>
-		<link rel="stylesheet" href="frontend.css">
+		<!-- <link rel="stylesheet" href="frontend.css"> -->
+		<link rel="stylesheet" href="main.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 	</head>
 	<body>
 
 		<div class="page" ng-controller="mainController">
 
-			<header>
-				<h1 class="name">Diogo Miguel Martinho Ribeiro</h1>
-				<h4 class="sub-heading">Front-end Developer &amp; Designer</h4>
-			</header>
+			<div class="grid">
 
-			<div class="row">
+				<header>
+					<h1 id="name">Diogo Miguel Martinho Ribeiro</h1>
+					<h4 id="sub-heading">Designer &amp; Developer</h4>
+					<!-- <h4 id="sub-heading">Front-end Developer &amp; Designer</h4> -->
+				</header>
 
 				<section id="personal-info">
 					<h2 class="section-name">{{ sections[0].sectionName }}</h2>
@@ -31,65 +33,56 @@
 					</div>
 				</section>
 
-			</div>
-
-			<div class="row">
-				<div class="col">
-
-					<section id="experience">
-						<h2 class="section-name">{{ sections[2].sectionName }}</h2>
-						<div class="section-content" ng-repeat="item in sections[2].jobs">
-							<div class="row">
-								<p class="date">{{ item.date }}</p>
-								<p class="location">{{ item.location }}</p>
-							</div>
-							<p class="title">{{ item.title }}</p>
-							<p class="employer">{{ item.employer }}</p>
-							<div class="description">
-								<p ng-repeat="paragraph in item.description">{{ paragraph }}</p>
-							</div>
+				<section id="experience">
+					<h2 class="section-name">{{ sections[2].sectionName }}</h2>
+					<div class="section-content" ng-repeat="item in sections[2].jobs">
+						<div class="row">
+							<p class="date">{{ item.date }}</p>
+							<p class="location">{{ item.location }}</p>
 						</div>
-					</section>
-
-				</div><!-- end of col -->
-				<div class="col">
-
-					<section id="education">
-						<h2 class="section-name">{{ sections[3].sectionName }}</h2>
-						<div class="section-content" ng-repeat="item in sections[3].courses">
-							<div class="row">
-								<p class="date">{{ item.date }}</p>
-								<p class="location">{{ item.location }}</p>
-							</div>
-							<p class="title">{{ item.title }}</p>
-							<p class="institution">{{ item.institution }}</p>
-							<div class="description">
-								<p ng-repeat="paragraph in item.description">{{ paragraph }}</p>
-							</div>
+						<p class="title">{{ item.title }}</p>
+						<p class="employer">{{ item.employer }}</p>
+						<div class="description">
+							<p ng-repeat="paragraph in item.description">{{ paragraph }}</p>
 						</div>
-					</section>
-
-					<section id="languages">
-						<h2 class="section-name">{{ sections[4].sectionName }}</h2>
-						<div class="section-content">
-							<p class="language" ng-repeat="language in sections[4].languages">{{ language }}</p>
-						</div>
-					</section>
-
-				</div><!-- end of col -->
-			</div><!-- end of row -->
-
-			<section id="skills">
-				<h2 class="section-name">{{ sections[5].sectionName }}</h2>
-				<div class="section-content">
-					<div class="skill-group" ng-repeat="skill in skills">
-						<h3 class="skill">{{ skill }}</h3>
-						<p ng-repeat="subskill in sections[5].skills[skill]">{{ subskill }}</p>
 					</div>
-				</div>
-			</section>
+				</section>
 
-		</div>
+				<section id="education">
+					<h2 class="section-name">{{ sections[3].sectionName }}</h2>
+					<div class="section-content" ng-repeat="item in sections[3].courses">
+						<div class="row">
+							<p class="date">{{ item.date }}</p>
+							<p class="location">{{ item.location }}</p>
+						</div>
+						<p class="title">{{ item.title }}</p>
+						<p class="institution">{{ item.institution }}</p>
+						<div class="description">
+							<p ng-repeat="paragraph in item.description">{{ paragraph }}</p>
+						</div>
+					</div>
+				</section>
+
+				<section id="languages">
+					<h2 class="section-name">{{ sections[4].sectionName }}</h2>
+					<div class="section-content">
+						<p class="language" ng-repeat="language in sections[4].languages">{{ language }}</p>
+					</div>
+				</section>
+
+				<section id="skills">
+					<h2 class="section-name">{{ sections[5].sectionName }}</h2>
+					<div class="section-content">
+						<div class="skill-group" ng-repeat="skill in skills">
+							<h3 class="skill">{{ skill }}</h3>
+							<p ng-repeat="subskill in sections[5].skills[skill]">{{ subskill }}</p>
+						</div>
+					</div>
+				</section>
+
+			</div><!-- end of grid -->
+
+		</div><!-- end of page -->
 
 		<script src="app.js"></script>
 		<!-- Font Awesome -->
