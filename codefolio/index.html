@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Diogo Ribeiro - Portfolio</title>
+		<link rel="stylesheet" href="css/prism.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+
+		<h1>Portfolio de pogramação</h1>
+
+		<section class="project-section">
+			<!-- Project -->
+			<div class="tabs-wrapper">
+				<div class="tabs-header">
+					<button class="tab-btn tab-btn-show active" onclick="openTab(event, 'project-show')">Demonstração</button><button class="tab-btn tab-btn-code" onclick="openTab(event, 'project-code')">Código</button>
+				</div>
+				<div class="tab-content project-show">
+					<video controls autoplay loop>
+					  <source src="videos/codepen_embeder.mp4" type="video/mp4">
+					  Your browser does not support HTML5 video.
+					</video>
+				</div>
+				<div class="tab-content project-code">
+					<pre><code class="language-python">
+# UI
+from tkinter import ttk
+from tkinter import *
+from tkinter.ttk import *
+
+root = Tk()
+
+root.resizable(0, 0) #Don't allow resizing in the x or y direction
+root.title("Codepen Embedder Tool")
+root.iconbitmap('favicon.ico')
+
+########## Functionality ##########
+
+def get_code(user, slug, theme, default_tab, iframe_class):
+
+    #print(default_tab)
+    if iframe_class != "":
+        iframe_class = f' class="{iframe_class}"'
+    else:
+        iframe_class = ""
+
+    code = f'&lt;iframe{iframe_class} src="https://codepen.io/{user}/embed/{slug}?height=300&amp;theme-id={theme}&amp;default-tab={default_tab}&amp;embed-version=2" style="border: 0; width: 100%; height: 100%;" allowfullscreen scrolling="no"&gt;&lt;/iframe&gt;'
+
+    outputCodeText.delete('1.0', END)
+    outputCodeText.insert(END, code)
+
+###################################
+
+# Menu
+def generateAboutPopUp():
+    aboutWindow = Toplevel(root)
+    aboutWindow.resizable(0, 0) #Don't allow resizing in the x or y direction
+    aboutInfo = Label(aboutWindow, text="Codepen Embed Tool v1.0\n\nDeveloped by Diogo Ribeiro\ndiogommr.com\n\nReleased in 08/2017")
+    aboutInfo.pack(padx=15, pady=15)
+
+def donothing():
+    filewin = Toplevel(root)
+    button = Button(filewin, text="Do nothing button")
+    button.pack()
+
+menubar = Menu(root)
+# Presets Menu
+presetsMenu = Menu(menubar, tearoff=0)
+presetsMenu.add_command(label="Save As Preset", command=donothing)
+savedPresetsMenu = Menu(presetsMenu, tearoff=0)
+menubar.add_cascade(label="Presets", menu=presetsMenu)
+presetsMenu.add_cascade(label="Saved Presets", menu=savedPresetsMenu)
+# About Menu
+aboutMenu = Menu(menubar, tearoff=0)
+aboutMenu.add_command(label="Tutorials", command=donothing)
+aboutMenu.add_separator()
+aboutMenu.add_command(label="About...", command=generateAboutPopUp)
+menubar.add_cascade(label="Help", menu=aboutMenu)
+root.config(menu=menubar)
+
+# Labels
+userLabel = Label(root, text="User")
+slugLabel = Label(root, text="Slug")
+themeLabel = Label(root, text="Theme")
+defaultTabLabel = Label(root, text="Default Tab")
+iframeClassLabel = Label(root, text="iframe class=")
+# Entries
+userEntry = Entry(root)
+slugEntry = Entry(root)
+defaultTabEntry = Entry(root)
+iframeClassEntry = Entry(root)
+# List
+themeList = ttk.Combobox(textvariable="Theme", values=["light","dark","default"], width=17)
+defaultTabList = ttk.Combobox(textvariable="Default Tab", values=["html","css","js","result"], width=17)
+# Text Box
+outputCodeText = Text(root, width=50, height=12, bg="#2C3643", fg="#99A9B3")
+# Buttons
+applyButton = Button(text="Get Code", command=lambda: get_code(userEntry.get(), slugEntry.get(), themeList.get(), defaultTabList.get(), iframeClassEntry.get()))
+
+# Grid Col 1
+userLabel.grid(row=1, sticky=W, padx=5, pady=5)
+slugLabel.grid(row=2, sticky=W, padx=5, pady=5)
+themeLabel.grid(row=3, sticky=W, padx=5, pady=5)
+defaultTabLabel.grid(row=4, sticky=W, padx=5, pady=5)
+iframeClassLabel.grid(row=5, sticky=W, padx=5, pady=5)
+applyButton.grid(row=6, columnspan=2, pady=10)
+# Grid Col 2
+userEntry.grid(row=1, column=1, pady=5)
+slugEntry.grid(row=2, column=1, pady=5)
+themeList.grid(row=3, column=1, pady=5)
+defaultTabList.grid(row=4, column=1, pady=5)
+iframeClassEntry.grid(row=5, column=1, pady=5)
+# Grid Col 3
+outputCodeText.grid(row=1, column=3, rowspan=6, padx=5, pady=5)
+
+
+# Default Entry values
+userEntry.insert(0,"diogommr")
+themeList.insert(0,"default")
+defaultTabList.insert(0,"result")
+
+
+root.mainloop()
+
+					</code></pre>
+				</div>
+			</div>
+
+			<!-- Description -->
+			<div class="project-data">
+				<h2>Codepen Embeder</h2>
+				<p class="project-problem">
+					<strong>Problema:</strong> Dificuldade em personalizar aspeto responsivo de projetos de codepen.com embebidos em iframes para a realização de um portefólio digital.
+				</p>
+				<p class="project-solution">
+					<strong>Solução:</strong> Criação de um pequeno utilitário que gera sintaxe personalizada em html otimizada para design responsivo.
+				</p>
+				<p class="project-description">
+					<strong>Breve descrição:</strong> Este programa conta com uma interface desenvolvida em TKinter com Python de modo a permitir ao utilizador digitar o slug do projeto desejado (obtido através do URL do projeto em codepen.com) e obter como resultado uma iframe em html que se adapta automaticamente ao parent element.<br>
+					Outras funcionalidades: classe personalizada, tema personalizado, e vista predefinida.
+				</p>
+				<p class="project-languages">
+					<strong>Linguagens utilizadas:</strong> Python 3
+				</p>
+			</div>
+		</section>
+
+		<section class="project-section">
+			<!-- Project -->
+			<div class="tabs-wrapper">
+				<div class="tabs-header">
+					<button class="tab-btn tab-btn-show active" onclick="openTab(event, 'project-show')">Demonstração</button><button class="tab-btn tab-btn-code" onclick="openTab(event, 'project-code')">Código</button>
+				</div>
+				<div class="tab-content project-show">
+					<div class="vertical-split">
+						<pre class="split-v">
+Input Sample:
+
+010288aa@hezkuntza.net
+03011136@edu.gva.es
+03012359.secret@edu.gva.es
+13004705.eoi@edu.jccm.es
+16003682.eoi@edu.jccm.es
+18700189.edu@juntadeandalucia.es
+24017722@educa.jcyl.es
+2dieresis2@gmail.com
+2hermanas@englishconnection.es
+30000407@murciaeduca.es
+30004280@murciaeduca.es
+35009450@gobiernodecanarias.org
+37008667@educa.jcil.es
+40008536@educa.jcyl.es
+46018394@edu.gva.es
+647631959@formacionvevey.com;formacionvevey@gmail.com;info@formacionvevey.com
+913652172@colegiosantabarbara.e.telefonica.net
+955801171@telefononica.net
+976552779@telefonica.net
+976568150@telefonica.net
+a.abascal@ono.com
+a.atlantico@hotmail.com
+a.c.gitana@hotmail.es
+a.d.pasdedeux@gmail.com
+a.extraescolares@hotmail.com
+a.pitagoras@hotmail.com
+a.pitagoras@hotmail.com
+a.pitagoras@hotmail.com
+a.sofos@ono.com
+a@nuestrasenoradegador.es;secretaria@nuestrasenoradegador.es
+a3@mundo-r.com
+a8010501@centres.xtec.es
+a8036871@centres.xtec.es
+aaanavegar@yahoo.es
+						</pre>
+						<pre class="split-v">
+Output Sample:
+
+0
+
+
+360atlantico@ccb.com.pt;
+AMOVIAJAR.VERDIZELA@GMAIL.COM;
+Amazing.coast.portugal@gmail.com;
+CITYCARSERVICE3@GMAIL.COM;
+Chang_zhu@hotmail.com;
+DGTRAVEL.VIAGENS.TURISMO@GMAIL.COM;
+EUROFERIAS-ADMN@sapo.pt;
+GERAL@OKVIAGENS.COM;
+GERAL@ORIENTUR.WEBSIDE.PT;
+GERAL@SM-VIAGENS.PT;
+GERALNELSONTOUR@GMAIL.COM;
+Hugo.zagalolima@boomerangorange.com;
+INFO@CLICK2DEAL.COM;
+INFO@ORICESERVICES.COM;
+INFO@PORTOSANTOLINE.PT;
+INFO@ULTREIAYSUSEIA.COM;
+Info@intertours.com.pt;
+Info@ptdriveway.com;
+Irene.jofre@logitravel.com;
+JCCCONT@SAPO.PT;
+JOAOCAJUDA@GMAIL.COM;
+JOSE.CAVACO@GMAIL.COM;
+JTA@EUROPE.COM;
+Jose.Valente@InGolf.pt;
+KATIA.PERES@DESVIO.PT;
+Kuoniportugal@gmail.com;
+LAMACOMPANY2016@GMAIL.COM;
+MENDES75@GMAIL.COM;
+MIGUELON_1412@HOTMAIL.COM;
+Nevetur@sapo.pt;
+PaulollAndrade@gmail.com;
+Quintasepalma@gmail.com;
+RNAVT@traveltours.com.pt;
+Rbls.jacqueline@gmail.com;
+Refriturauto@gmail.com;
+SELASMATEUS@GMAIL.COM;
+Sandrine.Castres@mci-group.com;
+Susana.beleza@beletrans.pt;
+TONY.MARTINS1967@GMAIL.COM;
+TRAVELAGENCY.COM.PT@GMAIL.COM;
+TRAVELANDFUNVIAGENS@GMAIL.COM;
+VIP.RCT@GMAIL.COM;
+Viagens.Ruicar@mail.telepac.pt;
+a.a.travelline@gmail.com;
+a.cabrita@cordialtours.pt;
+a.l.rua_viagens_turismo@hotmail.com;
+abaladissa@gmail.com;
+abdulallam2@gmail.com;
+abreu969@netcabo.pt;
+absolutravel.portugal@gmail.com;
+abtaxitransfers@gmail.com;
+academialearningschool@gmail.com;
+account@clubeviajar.pt;
+accounting@oasistravel.net;
+accounts@free2fly.pt;
+activityalgarve@gmail.com;
+ad@lisboasightseeing.com;
+adaobarros@travelvip.pt;
+adavidnunesa@live.com.pt;
+adelaide.silva@donnaviagem.com;
+adeliaresiomartins@yahoo.com;
+admin@airproper.com;
+admin@bluetravel.pt;
+admin@bookviagens.pt;
+admin@happylandings.pt;
+admin@lusitanasol.com;
+admin@topgeres.com;
+admin@turisram.pt;
+admin@vincitravel.com;
+admin@yellowfishtransfers.com;
+adminis@mba-travel.com;
+adminis@rotatur.pt;
+administracao@oiviagens.com;
+administration@gbntravel.com;
+administrativo@melair.pt;
+admportugal@travelplan.es;
+adolfo-rodrigues@hotmail.com;
+adragatour@gmail.com;
+adventroopers@gmail.com;
+aerosoltur@mail.pt;
+aferreira@anvt.pt;
+afigueiras@gmail.com;
+afssantos86@gmail.com;
+ag@andreaviegas.com;
+agencia.megatravel@gmail.com;
+agencia.vialactea@gmail.com;
+agencia@interpass.pt;
+agencia@lagmundo.com;
+agencia@leguasecardeais.pt;
+agencia@protravel.pt;
+agencia@vontadetropical.pt;
+agenciaparaiso@paraiso.webside.pt;
+agendadirecta@agendadirecta.pt;
+agendarcar@gmail.com;
+agostinhomanuelsilva@gmail.com;
+agueda.oliveira@ovnitur.pt;
+agviana@avic.pt;
+airconcept@europe.com;
+ajnegrao55@hotmail.com;
+alaindomingos@sapo.pt;
+
+
+100
+
+
+albertagomesalves@ga-travel.com;
+alberto.amarall@gmail.com;
+alberto.m.turismo@gmail.com;
+alberto@viavitoria.webside.pt;
+albertomateus@ymail.com;
+albufeiratur@sapo.pt;
+alcance.oasis@gmail.com;
+alcino.araujo@hotmail.com;
+alejandrocanto@sidetour.com;
+alex.guerreiro@thetravelhost.net;
+alexandra.machado@portugaldeluxe.com;
+alexandracarneiro@turitropical.com;
+alexbezz@hotmail.com;
+alextorcato@netcabo.pt;
+alfatur@viagensalfatur.pt;
+algarve.inter.travel@gmail.com;
+algarve.wayaround@gmail.com;
+algarveemotions@gmail.com;
+algarvetrip.me@gmail.com;
+aliceleitelia@gmail.com;
+alicia@aliciastransfers.com;
+alizedesonhos@gmail.com;
+allgarview@gmail.com;
+almeidalimo@hotmail.com;
+alojadasviagens@gmail.com;
+alsdeluxetravel@gmail.com;
+alusitaniatur@gmail.com;
+alvalade@besttravel.pt;
+alvalade@smileviagens.pt;
+alvaro.pinto.taxi@gmail.com;
+alvaro@navitur.com;
+alvesfernanda1@sapo.pt;
+alxlisbon@gmail.com;
+amartins@bpltravel.com;
+amavelpimentelunipessoal@gmail.com;
+amaviagens@gmail.com;
+amiroad2@gmail.com;
+amsclemente@sapo.pt;
+ana.conde@highsun.pt;
+ana.duarte@aldlawoffice.com;
+ana.ferreira@azdestinos.pt;
+ana.martins@sw-tourism.com;
+ana.santos@on-travelsolutions.com;
+ana.sousa@trilhosdomundo.pt;
+ana.xavier@sublutour.com;
+ana1azevedo@hotmail.com;
+ana@lourencoturismo.com;
+ana_sg_ribeiro@iol.pt;
+anabela.correia@inatel.pt;
+anabela.pereira@alcoaviagens.com;
+anabela.teixeira@vefatravel.pt;
+anabela@xptomarketing.pt;
+anabelacaldas4206@hotmail.com;
+anacristinaflor906@gmail.com;
+anaineves@hotmail.com;
+anapaes@listag.pt;
+anapaulabalbino@sapo.pt;
+anapaulaoliveira@ir-eventos.pt;
+andarporai@qviagem.com;
+andre.martins@vencere.pt;
+andre@lealtours.com;
+andre_20vb@hotmail.com;
+andre_transfers@hotmail.com;
+andrea@schultz.com.br;
+andreiaingles@malaguetaviagens.pt;
+andreoparreira@hotmail.com;
+andrew.zino@naturemeetings.com;
+andrez.fernandes@gmail.com;
+angelicaribeiro@multiplasviagens.com;
+angelmarquezturismo@gmail.com;
+anibal.mucha@animucha.pt;
+anterocanarias@gmail.com;
+antonio.antunes@ecoviagens.pt;
+antonio.globalvista@gmail.com;
+antonio.pereira@mercadodasviagens.pt;
+antonio.pinheiro@douroazul.pt;
+antonio.ventura@clickviaja.com;
+antonio@flh.pt;
+antonio@leaving.pt;
+antonio@rossitur-travel.com;
+antonio@timemanagement.pt;
+antonio@viagensaquarius.com;
+antoniommbaptista@gmail.com;
+ao.contabilidade@hotmail.com;
+aoneres@hotmail.com;
+apachecocarvalho@gmail.com;
+apvmoreira@ohmyalentejo.com;
+araujotur@live.com.pt;
+arenashopping@besttravel.pt;
+armandoclemente@msn.com;
+armindo.lusitanaturismo@gmail.com;
+armindo@micaelense.pt;
+aroucatur@sapo.pt;
+artis.travel@mail.telepac.pt;
+artur@gbf.pt;
+aruncatours@gmail.com;
+asalgarve@asalgarve.com;
+asinotravel@gmail.com;
+asofia.oliveira@iol.pt;
+asovale@gmail.com;
+
+
+200
+
+
+asphaltmeridian@gmail.com;
+atlantialcance@gmail.com;
+atlantikmorning@gmail.com;
+atlantimparavel@gmail.com;
+atpireslourenco@gmail.com;
+ats.algarve@netcabo.pt;
+automoveisaluguer@gmail.com;
+autotaxismodelares@gmail.com;
+ava.jordao@netcabo.pt;
+aveiro.gerencia@besttravel.pt;
+aveirotur@gmail.com;
+avendadasviagens@gmail.com;
+avila.isabel@avila.webside.pt;
+avt@amorim.com;
+azoresexperiences@gmail.com;
+azorestours@outlook.pt;
+bacaviagens@gmail.com;
+backoffice@tourism-for-all.com;
+baiadasviagens2016@gmail.com;
+bairritur@bairritur.pt;
+bamfaria@gmail.com;
+baran_memarzia@yahoo.com;
+basteirorui@sapo.pt;
+batalha@qviagem.com;
+batalhatur@net.novis.pt;
+bbelorico@hotmail.com;
+bctravel.geral@gmail.com;
+bela.fernandes@nicetravel.com.pt;
+belem@besttravel.pt;
+bendix@bendixtours.com;
+benfica@bytravel.pt;
+bernardo@breakingportugal.com;
+betogoncalves182@gmail.com;
+bferreira@jetlimo.pt;
+bigtur@bigtur.pt;
+biotravel.mcv@gmail.com;
+bmarques@travelgest.pt;
+bmmfaustino1@gmail.com;
+bojador@geral.webside.pt;
+bomdespacho@sapo.pt;
+bonfim@clickviaja.com;
+booking@cte-transfers.com;
+bookings@lisbon-transfer.com;
+bookings@vilamourachauffeurs.com;
+bornplayer@hotmail.com;
+braga.gerencia@besttravel.pt;
+braga@clickviaja.com;
+braga@qviagem.com;
+bragaferreiros.gerencia@besttravel.pt;
+braganca@besttravel.pt;
+bruno.mota@bcmadvogados.com;
+bruno@grantur.com;
+bruno__mrs@hotmail.com;
+bruno_paulo@mundiconvenius.pt;
+btm@btm-travel.com;
+buedesucesso@gmail.com;
+buisson@multiviagens.pt;
+c.figueiras@sapo.pt;
+c.magro@sapo.pt;
+c.monteiro.viagens@gmail.com;
+cabvaratojo@gmail.com;
+cadernodesonhos@hotmail.com;
+caesfa@netc.pt;
+caima@caima.webside.pt;
+calculosevirgulas@gmail.com;
+caldasdevizela@bytravel.pt;
+campodeourique@inviagens.pt;
+camsgomes@hotmail.com;
+capital@turvela.pt;
+cardoso-anaisabel@hotmail.com;
+carla.baltasar@gmail.com;
+carla.patricio@around-parallel.pt;
+carla.reforco@crviagenseturismo.pt;
+carlareis@nunara.pt;
+carlos.cal@sapo.pt;
+carlos.neves@besttravel.pt;
+carlos.oliveira@conforcar.com;
+carlos.s@agenciaferraz.com;
+carlos.tecedeiro@mercadodasviagens.pt;
+carlos@zapveloz.com;
+carlos_santana1@hotmail.com;
+carlosateixeira@iol.pt;
+carlosdanielsilva@gmail.com;
+carloslopes9594@gmail.com;
+carmen.lisboa@cl-events.pt;
+carpediemalgarve@hotmail.com;
+carregado@besttravel.pt;
+carreiras@line-c.pt;
+cascais.gerencia@besttravel.pt;
+cascais@bytravel.pt;
+catalinanderco@gmail.com;
+catarina.duarte@jgconsultadoria.pt;
+catarina.lopes@mix2travel.com;
+catarina.lopes@yieldmaster.pt;
+catarina@melotravel.com;
+catarinamferreira@panazorica.pt;
+catchgo@outlook.com;
+catherine.deffense@cycling-centuries.com;
+catia@go2wonderland.com;
+catiacosta@kamifortravel.pt;
+						</pre>
+					</div>
+				</div>
+				<div class="tab-content project-code">
+					<pre><code class="language-python">
+import re
+
+print
+print "----------*----------*----------"
+print "filtro de email v4.0"
+print "----------*----------*----------\n"
+input_file = raw_input("Ficheiro a ser analizado: ")
+#separador = raw_input("Caracter separador: ")
+#separador_email = raw_input("Caracter separador de email: ")
+output_file = open("emails.txt", "w")
+
+#open file
+my_file = open(input_file + ".txt", "r")
+
+#body
+raw_data = my_file.read()
+
+#split data into substrings
+raw_db = raw_data.split("\n")
+
+email_db = []
+temp_email_lst = []
+
+email_db_clean = []
+
+
+for el in raw_db:
+    if "@" in el:
+        email_db.append(el)
+        #print el
+
+for item in email_db:
+
+    if ";" in item:
+        email_lst = item.split(";")
+        for item in email_lst:
+            email_db.append(item)
+
+    if item not in email_db_clean:
+        email_db_clean.append(item)
+
+email_db_clean.sort()
+
+email_count = 0
+
+while email_count < len(email_db_clean):
+
+    for item in email_db_clean:
+        print item
+        print email_count
+        if email_count % 100 == 0:
+            print "--------------------------------------------------------------------"
+            print "--------------------------------------------------------------------"
+            output_file.write("\n\n" + str(email_count) + "\n\n\n")
+        output_file.write(item + ";\n")
+        email_count += 1
+
+
+
+
+print
+print "==========> Stats <==========\n"
+print " total linhas:      ", len(raw_db)
+print " emails processados:", len(email_db)
+print " total emails:      ", len(email_db_clean), "\n"
+print "-----------------------------"
+print
+
+
+#close file
+my_file.close()
+
+					</code></pre>
+				</div>
+			</div>
+
+			<!-- Description -->
+			<div class="project-data">
+				<h2>Email Filter</h2>
+				<p class="project-problem">
+					<strong>Problema:</strong> Necessidade de enviar centenas de emails publicitários para agências de viagens e escolas com uma limitação de até 100 emails por dia imposta pelo provedor de email.
+				</p>
+				<p class="project-solution">
+					<strong>Solução:</strong> Automatizar o processo com um script de modo a poupar tempo e trabalho desnecessário.
+				</p>
+				<div class="project-description">
+					<p>
+						<strong>Breve descrição:</strong> O script aceita como input um ficheiro de texto com uma lista desorganizada de emails extraída de uma base de dados em Excel e efetua as seguintes operações:
+					</p>
+					<ol>
+						<li>Validação de emails</li>
+						<li>Remoção de emails duplicados</li>
+						<li>Distribuição em grupos de 100</li>
+						<li>Formatação adequada para envio (separar cada email com um ponto e vírgula)</li>
+					</ol>
+					<p>
+						O output consiste num ficheiro de texto formatado com as condições anteriores.
+					</p>
+				</div>
+				<p class="project-languages">
+					<strong>Linguagens utilizadas:</strong> Python 2
+				</p>
+			</div>
+		</section>
+
+		<section class="project-section">
+			<!-- Project -->
+			<div class="tabs-wrapper">
+				<div class="tabs-header">
+					<button class="tab-btn tab-btn-show active" onclick="openTab(event, 'project-show')">Demonstração</button><button class="tab-btn tab-btn-code" onclick="openTab(event, 'project-code')">Código</button>
+				</div>
+				<div class="tab-content project-show">
+					<pre>
+Script Log:
+
+
+page: 1
+
+http://ranking-empresas.eleconomista.es/VIAJES-ENOL-AGENCIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-EXCURSIONES-ELECE.html
+http://ranking-empresas.eleconomista.es/D-VIAJES-CONSULTORIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-ABELLO-AGENCIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-COMPANIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-CADI.html
+http://ranking-empresas.eleconomista.es/VIAJES-VEGUETA.html
+http://ranking-empresas.eleconomista.es/VELILLA-VIAJES.html
+http://ranking-empresas.eleconomista.es/VIAJES-BLAUMAR.html
+http://ranking-empresas.eleconomista.es/VIAJES-CATAI.html
+http://ranking-empresas.eleconomista.es/VIAJES-TURO.html
+http://ranking-empresas.eleconomista.es/VIAJES-IMPERIAL.html
+
+Links found so far: 12
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=21
+
+page: 2
+
+http://ranking-empresas.eleconomista.es/VIAJES-IGLU.html
+http://ranking-empresas.eleconomista.es/VIAJES-KRONOS.html
+http://ranking-empresas.eleconomista.es/VIAJES-TOURALBA.html
+http://ranking-empresas.eleconomista.es/VIAJES-RAUL.html
+http://ranking-empresas.eleconomista.es/VIAJES-HENRI.html
+http://ranking-empresas.eleconomista.es/ALLIVES-VIAJES.html
+http://ranking-empresas.eleconomista.es/VIAJES-ROSALEDA.html
+http://ranking-empresas.eleconomista.es/LINEA-VIAJES.html
+http://ranking-empresas.eleconomista.es/MULHACEN-VIAJES.html
+http://ranking-empresas.eleconomista.es/VIAJES-HELICE.html
+
+Links found so far: 22
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=41
+
+page: 3
+
+http://ranking-empresas.eleconomista.es/VIAJES-GRAFINTER.html
+http://ranking-empresas.eleconomista.es/VIAJES-RHODASOL.html
+http://ranking-empresas.eleconomista.es/VIAJES-MIROBRIGA.html
+http://ranking-empresas.eleconomista.es/VIAJES-RUIDERA.html
+http://ranking-empresas.eleconomista.es/VIAJES-CARIMUNDI.html
+http://ranking-empresas.eleconomista.es/VIAJES-FALCON.html
+http://ranking-empresas.eleconomista.es/VIAJES-MED.html
+http://ranking-empresas.eleconomista.es/VIAJES-ICEBERG.html
+http://ranking-empresas.eleconomista.es/VIAJES-INFINITY.html
+
+Links found so far: 31
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=61
+
+page: 4
+
+http://ranking-empresas.eleconomista.es/ILU-VIAJES.html
+http://ranking-empresas.eleconomista.es/VIAJES-NUEVOTOUR.html
+http://ranking-empresas.eleconomista.es/VIAJES-NORIS.html
+http://ranking-empresas.eleconomista.es/VIAJES-MOTRIL.html
+http://ranking-empresas.eleconomista.es/VIAJES-AEROMAR.html
+http://ranking-empresas.eleconomista.es/VIAJES-SELECTUR.html
+http://ranking-empresas.eleconomista.es/VIAJES-REGINA.html
+http://ranking-empresas.eleconomista.es/VIAJES-CONDASUR.html
+http://ranking-empresas.eleconomista.es/VIAJES-EUROCAR.html
+http://ranking-empresas.eleconomista.es/VIAJES-SIGUENZA.html
+http://ranking-empresas.eleconomista.es/VIAJES-FLORIDA.html
+http://ranking-empresas.eleconomista.es/VIAJES-CHELVAL.html
+http://ranking-empresas.eleconomista.es/VIAJES-TUROESTE.html
+http://ranking-empresas.eleconomista.es/VIAJES-ARIZONA.html
+http://ranking-empresas.eleconomista.es/VIAJES-PREMIER.html
+
+Links found so far: 46
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=81
+
+page: 5
+
+http://ranking-empresas.eleconomista.es/VIAJES-IPANEMA.html
+http://ranking-empresas.eleconomista.es/VIAJES-BERNARDO.html
+http://ranking-empresas.eleconomista.es/VIAJES-SOLERA.html
+http://ranking-empresas.eleconomista.es/VIAJES-RODRIGUEZ.html
+http://ranking-empresas.eleconomista.es/VIAJES-ANKLA.html
+http://ranking-empresas.eleconomista.es/VIAJES-SALMON.html
+http://ranking-empresas.eleconomista.es/VIAJES-MESANA.html
+http://ranking-empresas.eleconomista.es/ISOL-VIAJES.html
+http://ranking-empresas.eleconomista.es/SILVEIRA-VIAJES.html
+http://ranking-empresas.eleconomista.es/ICU-VIAJES.html
+http://ranking-empresas.eleconomista.es/VIAJES-PARETOURS.html
+http://ranking-empresas.eleconomista.es/VIAJES-EUROTRAS.html
+http://ranking-empresas.eleconomista.es/VIAJES-BETICA.html
+http://ranking-empresas.eleconomista.es/VIAJES-CIBERLUNA.html
+
+Links found so far: 60
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=101
+
+
+page: 6
+
+http://ranking-empresas.eleconomista.es/VIAJES-CANAIMA.html
+http://ranking-empresas.eleconomista.es/VIAJES-TEODOSIO.html
+http://ranking-empresas.eleconomista.es/VIAJES-ELDATOUR.html
+http://ranking-empresas.eleconomista.es/VIAJES-MKOP.html
+http://ranking-empresas.eleconomista.es/VIAJES-IMAN.html
+http://ranking-empresas.eleconomista.es/VIAJES-HESPERIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-EUROCANTABRIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-SIDETOURS.html
+http://ranking-empresas.eleconomista.es/VIAJES-ZAHARA.html
+http://ranking-empresas.eleconomista.es/VIAJES-MAMBO.html
+http://ranking-empresas.eleconomista.es/VIAJES-ESTYSOL.html
+http://ranking-empresas.eleconomista.es/VIAJES-ARTURO.html
+http://ranking-empresas.eleconomista.es/VIAJES-KANSER.html
+http://ranking-empresas.eleconomista.es/VIAJES-ILTRIDA.html
+
+Links found so far: 74
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=121
+
+
+page: 7
+
+http://ranking-empresas.eleconomista.es/VIAJES-GAVIOTA.html
+http://ranking-empresas.eleconomista.es/VIAJES-TURAVEM.html
+http://ranking-empresas.eleconomista.es/VIAJES-LORETO.html
+http://ranking-empresas.eleconomista.es/VIAJES-AUSA.html
+http://ranking-empresas.eleconomista.es/VIAJES-KARELIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-MURALLAS.html
+http://ranking-empresas.eleconomista.es/VIAJES-VERDEMAR.html
+http://ranking-empresas.eleconomista.es/VIAJES-MARZIAM.html
+http://ranking-empresas.eleconomista.es/VIAJES-TETIAROA.html
+http://ranking-empresas.eleconomista.es/VIAJES-PINEIROS.html
+http://ranking-empresas.eleconomista.es/VIAJES-URIA.html
+
+Links found so far: 85
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=141
+
+
+page: 8
+
+http://ranking-empresas.eleconomista.es/VIAJES-YACARE.html
+http://ranking-empresas.eleconomista.es/VIAJES-IBERCAN.html
+http://ranking-empresas.eleconomista.es/VIAJES-EBUSUS.html
+http://ranking-empresas.eleconomista.es/VIAJES-ESPREZ.html
+http://ranking-empresas.eleconomista.es/VIAJES-TURIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-MAZAMAR.html
+http://ranking-empresas.eleconomista.es/VIAJES-CANTOUR.html
+http://ranking-empresas.eleconomista.es/VIAJES-DELUIS.html
+http://ranking-empresas.eleconomista.es/FACIL-VIAJES.html
+http://ranking-empresas.eleconomista.es/VIAJES-BITACORA.html
+http://ranking-empresas.eleconomista.es/ALTAIR-VIAJES.html
+
+Links found so far: 96
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=161
+
+
+page: 9
+
+http://ranking-empresas.eleconomista.es/VIAJES-GOYA.html
+http://ranking-empresas.eleconomista.es/VIAJES-CATANIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-CARMO.html
+http://ranking-empresas.eleconomista.es/VIAJES-BOADILLA.html
+http://ranking-empresas.eleconomista.es/VIAJES-REVELLIN.html
+http://ranking-empresas.eleconomista.es/VIAJES-ALVENTUS.html
+http://ranking-empresas.eleconomista.es/VIAJES-ALCATOUR.html
+http://ranking-empresas.eleconomista.es/VIAJES-SIMPATIA.html
+http://ranking-empresas.eleconomista.es/VIAJES-CANAIR.html
+http://ranking-empresas.eleconomista.es/VIAJES-SUNRIDE.html
+http://ranking-empresas.eleconomista.es/VIAJES-MONTREAL.html
+http://ranking-empresas.eleconomista.es/VIAJES-ESPUNA.html
+http://ranking-empresas.eleconomista.es/ILLICE-VIAJES.html
+http://ranking-empresas.eleconomista.es/VIAJES-LYS-MADRID.html
+http://ranking-empresas.eleconomista.es/VIAJES-MONDEL.html
+
+Links found so far: 111
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=181
+
+
+page: 10
+
+http://ranking-empresas.eleconomista.es/VIAJES-HALLEY.html
+http://ranking-empresas.eleconomista.es/VIAJES-LINEMAR.html
+http://ranking-empresas.eleconomista.es/GALLERY-VIAJES.html
+http://ranking-empresas.eleconomista.es/VIAJES-SABADELL.html
+http://ranking-empresas.eleconomista.es/VIAJES-INTERNACIONALES.html
+http://ranking-empresas.eleconomista.es/VIAJES-PLAYAMARO.html
+http://ranking-empresas.eleconomista.es/ASVINTUR-VIAJES.html
+http://ranking-empresas.eleconomista.es/VIAJES-HALAFER.html
+http://ranking-empresas.eleconomista.es/VIAJES-ENOTOURS.html
+
+Links found so far: 120
+Going to:
+http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice=201
+
+
+--------------------------------------------------------------------------------
+----------------------------------------
+
+http://www.studioviajes.com
+http://www.viajescadi.es
+http://www.catai.es
+http://www.turoviatges.com
+http://www.viajesimperial.com
+http://www.viajeskronos.com
+http://www.heliceviajes.com
+http://www.rhodasol.es
+http://www.reginagroup.com
+http://www.viajesarizona.com
+http://www.viajessalmon.com
+http://www.viajesmesana.com
+http://www.icuviajes.com
+http://www.paretours.com
+http://www.viajeszahara.com
+http://www.canarias-incoming.com
+http://www.viajesgaviota.es
+http://www.autocarescomas.com
+
+18
+
+
+Process returned 0 (0x0)   execution time : 46.684 s
+Prima qualquer tecla para continuar . . .
+					</pre>
+				</div>
+				<div class="tab-content project-code">
+					<pre><code class="language-python">
+
+import urllib.request
+from bs4 import BeautifulSoup
+import re
+
+url_2 = 1
+url_1 = 'http://ranking-empresas.eleconomista.es/busqueda_rankings_VIAJES.html?indice={}'
+cur_page = 1
+links = []
+# emails = []
+websites = []
+
+def find_url(url_1, url_2):
+    return url_1.format(url_2)
+
+def parse(url):
+    html = urllib.request.urlopen(url).read()
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup
+
+page = parse(find_url(url_1, url_2))
+
+while url_2 < 200:
+    # Find and list valid links
+
+    print("\npage: {}\n".format(cur_page))
+
+    for tag in page.find_all("a", class_="ver-mas"):
+
+        matchObj = re.match(r'.*href="(http://.*)".*', str(tag))
+
+        if matchObj:
+            print(matchObj.group(1))
+            links.append(matchObj.group(1))
+
+    cur_page += 1
+    url_2 += 20
+
+    print("\nLinks found so far: {}\nGoing to:\n{}".format(len(links), find_url(url_1, url_2)))
+
+    page = parse(find_url(url_1, url_2))
+
+
+print("\n{}\n".format("-"*len(links)))
+
+
+# Search for and list website
+for link in links:
+
+    page = parse(link)
+
+    for tag in page.find_all("a", class_="url"):
+
+        matchObj = re.match(r'.*href="(http://.*)" rel=".*', str(tag))
+
+        if matchObj:
+            print(matchObj.group(1))
+            websites.append(matchObj.group(1))
+
+
+print("\n{}\n".format(len(websites)))
+
+
+					</code></pre>
+				</div>
+			</div>
+
+			<!-- Description -->
+			<div class="project-data">
+				<h2>Web Scraper</h2>
+				<p class="project-problem">
+					<strong>Problema:</strong> Necessidade de automatizar processo de busca de websites de agências de viagens em base de dados online.
+				</p>
+				<p class="project-solution">
+					<strong>Solução:</strong> Criar um web scraper que navega de forma automática por cada página listada em busca de listagens com websites.
+				</p>
+				<p class="project-description">
+					<strong>Breve descrição:</strong> O script inicia a busca na primeira página de resultados, recolhe todos os links listados, entra em cada um deles em busca de um campo de website e, caso exista, adiciona-o a uma lista de websites. Após terminar cada página repete-se o processo na seguinte.
+				</p>
+				<p class="project-languages">
+					<strong>Linguagens utilizadas:</strong> Python 3
+				</p>
+			</div>
+		</section>
+
+		<section class="project-section">
+			<!-- Project -->
+			<div class="tabs-wrapper">
+				<div class="tabs-header">
+					<button class="tab-btn tab-btn-show active" onclick="openTab(event, 'project-show')">Demonstração</button><button class="tab-btn tab-btn-code" onclick="openTab(event, 'project-code')">Código</button>
+				</div>
+				<div class="tab-content project-show">
+					<video controls autoplay loop>
+					  <source src="videos/teensy_intervalometer_demo.mp4" type="video/mp4">
+					  Your browser does not support HTML5 video.
+					</video>
+				</div>
+				<div class="tab-content project-code">
+					<pre><code class="language-python">
+#include &lt;SevSeg.h&gt;
+#include &lt;Rotary.h&gt;
+#include &lt;TimeLib.h&gt;
+
+// Instantiate a seven segment controller object
+SevSeg sevseg1;
+SevSeg sevseg2;
+SevSeg sevseg3;
+
+// Encoder Pins
+const int encPin1 = 49;
+const int encPin2 = 50;
+Rotary rotary = Rotary(encPin1, encPin2);
+
+// Pin Configuration
+const int optoPin = 33;
+const int btnEnc = 42;
+const int btnStart = 41;
+const int LED1 = 57;
+const int LED2 = 55;
+const int LED3 = 54;
+
+int optoPinState = LOW;
+int LED3State = LOW;
+
+int btnEncoderState = 0;
+int btnStartState = 0;
+// Button Debounce
+int encoderButtonState;             // the current reading from the input pin
+int lastEncoderButtonState = LOW;   // the previous reading from the input pin
+int startButtonState;             // the current reading from the input pin
+int lastStartButtonState = LOW;   // the previous reading from the input pin
+unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
+unsigned long debounceDelay = 50;    // the debounce time; increase if the output flickers
+
+int display1Value = 0; // time (min:sec)
+int display2Value = 0; // number
+int display3Value = 0; // time (hours:min)
+
+int selectedDisplay = 1; // Possible options: 1, 2
+bool capturing = false;
+
+// GLOBAL VARS
+int display1min = 0;
+int display1sec = 0;
+int display3hours = 0;
+int display3min = 0;
+
+int timelapseInterval = 0; // seconds
+int timelapseDuration; // seconds
+int optoInterval = 100; // millis
+
+
+int concat(int a, int b){
+    char c[2];
+    String strA;
+    String strB;
+    strA=String(a);
+    if (b < 10){
+      strB="0" + String(b);
+    }else{
+      strB=String(b);
+    }
+    strA.toCharArray(c,2);
+    strB.toCharArray(c,2);
+    String strAB = strA + strB;
+    return strAB.toInt();
+}
+
+// TIMER
+unsigned long lastSecond = 0;
+unsigned long lastMillis = 0;
+
+
+void takePhoto(){
+  while(true)
+  {
+
+    break;
+  } // end while
+}
+
+
+////////////////////////////////////// º Body º //////////////////////////////////////
+
+void setup()
+{
+  Serial.begin(9600);
+
+  byte numDigits = 4;
+
+  // DISPLAY 1
+  byte digitPins1[] = {10, 9, 19, 18}; //Digits: 1,2,3,4 &lt;--put one resistor (ex: 220 Ohms, or 330 Ohms, etc, on each digit pin)
+  byte segmentPins1[] = {4, 6, 23, 8, 20, 21, 5, 22}; //Segments: A,B,C,D,E,F,G,Period
+
+  sevseg1.begin(COMMON_ANODE, numDigits, digitPins1, segmentPins1);
+  sevseg1.setBrightness(10);
+
+  // DISPLAY 2
+  byte digitPins2[] = {28, 27, 53, 52}; //Digits: 1,2,3,4 &lt;--put one resistor (ex: 220 Ohms, or 330 Ohms, etc, on each digit pin)
+  byte segmentPins2[] = {24, 11, 15, 26, 14, 17, 12, 16}; //Segments: A,B,C,D,E,F,G,Period
+
+  sevseg2.begin(COMMON_ANODE, numDigits, digitPins2, segmentPins2);
+  sevseg2.setBrightness(10);
+
+  // DISPLAY 3
+  byte digitPins3[] = {45, 30, 34, 35}; //Digits: 1,2,3,4 &lt;--put one resistor (ex: 220 Ohms, or 330 Ohms, etc, on each digit pin)
+  byte segmentPins3[] = {44, 43, 37, 31, 36, 39, 29, 38}; //Segments: A,B,C,D,E,F,G,Period
+
+  sevseg3.begin(COMMON_ANODE, numDigits, digitPins3, segmentPins3);
+  sevseg3.setBrightness(10);
+
+  // DISPLAY DOTS
+  pinMode(7, OUTPUT); // display 1
+  pinMode(46, OUTPUT); // display 3
+  digitalWrite(7, HIGH);
+  digitalWrite(46, HIGH);
+
+  pinMode(optoPin, OUTPUT);
+  pinMode(btnEnc, INPUT);
+  pinMode(encPin1, INPUT);
+  pinMode(encPin2, INPUT);
+  pinMode(btnStart, INPUT);
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+
+}
+
+void loop()
+{
+  //local vars
+  static byte decPlace = 1;
+  int encoderButtonReading = digitalRead(btnEnc);
+  int startButtonReading = digitalRead(btnStart);
+
+  int timelapseDuration = ((display1min * 60) + display1sec) * display2Value; // seconds
+
+  if ( startButtonReading != lastStartButtonState ){
+    // reset the debouncing timer
+    lastDebounceTime = millis();
+  }
+
+  //////////////// º PLAY BUTTON º /////////////////////
+
+  if ( (millis() - lastDebounceTime) > debounceDelay ) {
+    if (startButtonReading != startButtonState) {
+      startButtonState = startButtonReading;
+
+      // button functionality
+      if (startButtonState == HIGH){
+        capturing = !capturing;
+      }
+
+      // end of functionality
+    }
+  }
+
+  digitalWrite(LED3, LED3State);
+
+  if(display2Value <= 0){
+    capturing = false;
+  }
+
+  if(capturing) // START TIMELAPSE
+  {
+    LED3State = HIGH;
+
+    //Serial.println(millis() - lastMillis);
+    /* * */
+    if(millis() - lastMillis < 100){ // OPTOCOUPLER INTERVAL
+      digitalWrite(optoPin, HIGH);
+      //Serial.println("HIGH");
+    }else{
+      digitalWrite(optoPin, LOW);
+      //Serial.println("LOW");
+    }
+    /* * */
+    if(millis() - lastMillis > (timelapseInterval * 1000))
+    {
+      display2Value --;
+
+      lastMillis = millis();
+    }
+
+  }
+  else // IDLE STATE
+  {
+    LED3State = LOW;
+
+    // DISPLAY 3
+    if (timelapseDuration / 60 < 60) // only minutes
+    {
+      display3Value = timelapseDuration / 60; // minutes
+    }
+    else // hours and minutes
+    {
+      int durationHoursInt = (timelapseDuration / 60) / 60;
+      int durationMinutesInt = (timelapseDuration / 60) % 60;
+      display3Value = concat(durationHoursInt, durationMinutesInt); // hours and minutes
+    }
+  } // end of if capturing else
+
+
+
+
+  ///////////////// º ENCODER BUTTON º /////////////////
+
+  if ( (millis() - lastDebounceTime) > debounceDelay ) {
+    if (encoderButtonReading != encoderButtonState) {
+      encoderButtonState = encoderButtonReading;
+
+      // button functionality
+      if (encoderButtonState == HIGH) {
+        if (selectedDisplay == 1){
+          selectedDisplay = 2;
+        }else{
+          selectedDisplay = 1;
+        }
+      }
+    }
+  }
+
+  //////////////// º ENCODER ROTATION º ////////////////
+
+  // DISPLAY 1
+  if (selectedDisplay == 1){
+    unsigned char result = rotary.process();
+    if (result == DIR_CW) {
+      if (display1sec == 59){
+        display1sec = -1;
+        display1min++;
+      }
+      display1sec++;
+    } else if (result == DIR_CCW) {
+      if (display1sec == 0){
+        display1sec = 60;
+        display1min--;
+      }
+      display1sec--;
+    }
+
+    display1Value = concat(display1min, display1sec);
+    timelapseInterval = display1min * 60 + display1sec; // seconds
+  }
+
+  // DISPLAY 2
+  if (selectedDisplay == 2){
+    unsigned char result = rotary.process();
+    if (result == DIR_CW) {
+      display2Value += 10;
+    } else if (result == DIR_CCW) {
+      display2Value -= 10;
+    }
+  }
+
+
+  //////////////// º SELECTED DISPLAY º ////////////////
+
+  if (selectedDisplay == 1){
+    digitalWrite(LED1, HIGH);
+    digitalWrite(LED2, LOW);
+  }else{
+    digitalWrite(LED2, HIGH);
+    digitalWrite(LED1, LOW);
+  }
+
+
+//////////////////// º ^ º /////////////////////////
+
+  lastEncoderButtonState = encoderButtonReading;
+  lastStartButtonState = startButtonReading;
+
+  sevseg1.setNumber(display1Value,decPlace);
+  sevseg2.setNumber(display2Value,decPlace);
+  sevseg3.setNumber(display3Value,decPlace);
+
+  // Must run repeatedly; don't use blocking code (ex: delay()) in the loop() function or this won't work right
+  sevseg1.refreshDisplay();
+  sevseg2.refreshDisplay();
+  sevseg3.refreshDisplay();
+
+}
+					</code></pre>
+				</div>
+			</div>
+
+			<!-- Description -->
+			<div class="project-data">
+				<h2>Teensy Intervalometer</h2>
+				<p class="project-problem">
+					<strong>Problema:</strong> Falta de material necessário para gravar timelapse para projeto de vídeo.
+				</p>
+				<p class="project-solution">
+					<strong>Solução:</strong> Construir e programar de raiz um intervalometro.
+				</p>
+				<div class="project-description">
+					<p>
+						<strong>Breve descrição:</strong> Este projeto consiste na criação de um intervalometro baseado num Teensy (microcontrolador para embeded systems e IOT).<br>
+						O dispositivo foi construido de raiz reaproveitando alguns componentes eletrónicos de rádios e outros aparelhos elétricos, e programado em C++.<br>
+						As suas funcionalidades incluem:
+					</p>
+					<ol>
+						<li>Regular o intervalo em segundos</li>
+						<li>Regular o número de fotogramas</li>
+						<li>Indicador de duração total do timelapse (tempo de captura)</li>
+					</ol>
+				</div>
+				<p class="project-languages">
+					<strong>Linguagens utilizadas:</strong> C++ (Arduino)
+				</p>
+			</div>
+		</section>
+
+		<section class="project-section">
+			<!-- Project -->
+			<div class="tabs-wrapper">
+				<div class="tabs-header">
+					<button class="tab-btn tab-btn-show active" onclick="openTab(event, 'project-show')">Demonstração</button><button class="tab-btn tab-btn-code" onclick="openTab(event, 'project-code')">Código</button>
+				</div>
+				<div class="tab-content project-show">
+					<video controls autoplay loop>
+					  <source src="videos/timelapse.mp4" type="video/mp4">
+					  Your browser does not support HTML5 video.
+					</video>
+				</div>
+				<div class="tab-content project-code">
+					<pre><code class="language-python">
+import cv2
+import time
+
+cam = cv2.VideoCapture(0)
+cam_exposure = cam.get(cv2.CAP_PROP_EXPOSURE)
+exposure_up_key = 97 # a
+exposure_down_key = 115 # s
+
+def show_webcam(mirror=False):
+    while True:
+        cam_exposure = cam.get(cv2.CAP_PROP_EXPOSURE)
+
+        ret_val, img = cam.read()
+        if mirror:
+        	img = cv2.flip(img, 1)
+        cv2.imshow('my webcam', img)
+        if cv2.waitKey(1) == 27:
+        	break  # esc to quit
+
+        print(cam_exposure) #this prints out 0.0
+    cv2.destroyAllWindows()
+
+def take_photo(mirror=False):
+    while True:
+        ret_val, img = cam.read()
+        if mirror:
+        	img = cv2.flip(img, 1)
+        cv2.imshow('my webcam', img)
+        if cv2.waitKey(1) == 27:
+        	break  # esc to quit
+        if cv2.waitKey(2) == exposure_up_key:
+            print("Taking image...")
+            camera_capture = img
+            file = r"D:\Ambiente de trabalho\test_image.png"
+            cv2.imwrite(file, camera_capture)
+
+def timelapse(interval, number, mirror=False):
+        name_num = 1
+        while number > 0:
+            ret_val, img = cam.read()
+            if mirror:
+            	img = cv2.flip(img, 1)
+            cv2.imshow('my webcam', img)
+            if cv2.waitKey(1) == 27:
+            	break  # esc to quit
+
+            print(f"Pose #{name_num}")
+            file = r"D:\Ambiente de trabalho\timelapse_v2\img_{}.jpg".format(name_num)
+            cv2.imwrite(file, img)
+            number -= 1
+            name_num += 1
+            time.sleep(interval) # delays for x seconds
+
+
+
+def main():
+    timelapse(5, 240, mirror=True)
+
+
+
+if __name__ == '__main__':
+    main()
+
+
+					</code></pre>
+				</div>
+			</div>
+
+			<!-- Description -->
+			<div class="project-data">
+				<h2>Pi Zero Cam</h2>
+				<p class="project-problem">
+					<strong>Problema:</strong> Necessidade de capturar timelapses com durações extensivas de forma automática e sem colocar em risco uma câmara DSLR (risco de ser roubada ou danificada devido à não possibilidade de acompanhamento 24h).
+				</p>
+				<p class="project-solution">
+					<strong>Solução:</strong> Construir uma câmara autónoma programável low-cost baseada em Raspberry Pi Zero.
+				</p>
+				<p class="project-description">
+					<strong>Breve descrição:</strong> Este projeto encontra-se em fase de execução dado que o aspeto físico do projeto ainda não está terminado.<br>
+					O firmware que opera a câmara, no entanto, já se encontra terminado e consiste essencialmente numa versão escrita em Python do projeto anteriormente apresentado.<br>
+					Ao contrário do anterior, este possui uma particularidade especial devido ao facto de que está desenhado para proporcionar a qualquer webcâmara a funcionalidade de captura de timelapses e vídeos em stop motion.
+				</p>
+				<p class="project-languages">
+					<strong>Linguagens utilizadas:</strong> Python 3
+				</p>
+			</div>
+		</section>
+
+		<section class="project-section">
+			<!-- Project -->
+			<div class="tabs-wrapper">
+				<div class="tabs-header">
+					<button class="tab-btn tab-btn-show active" onclick="openTab(event, 'project-show')">Demonstração</button><button class="tab-btn tab-btn-code" onclick="openTab(event, 'project-code')">Código</button>
+				</div>
+				<div class="tab-content project-show">
+					<iframe src="http://diogommr.com/resources/DOM/dom.html"></iframe>
+				</div>
+				<div class="tab-content project-code">
+					<pre><code class="language-python">
+import urllib.request
+from bs4 import BeautifulSoup
+import re
+
+output_html = open( 'doc_markup.txt', 'w' ) # Start Output File
+
+url = "https://www.w3schools.com/jsref/dom_obj_attributes.asp"
+
+def parse(url):
+    html = urllib.request.urlopen(url).read()
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup
+
+page = parse(url)
+
+rows = []
+parsed_rows = []
+formated_list = []
+html_list = []
+
+for table in page.find_all('table', 'w3-table-all notranslate'):
+    rows.append(table.find_all("tr"))
+
+for row in rows[0]: # (0-properties | 1-methods) CHANGE
+    for td in row:
+        search_obj = re.search( r'^<td>(.*)</td>', str(td), re.M|re.I)
+        if search_obj:
+            parsed_rows.append(search_obj.group(1))
+
+#print(parsed_rows)
+
+for idx, item in enumerate(parsed_rows):
+    #print(idx, item)
+    if idx % 2 == 0: # work on even indexed items
+        try:
+            formated_list.append([item, parsed_rows[idx+1]])
+        except Exception as e:
+            print(e)
+
+
+# Add . before name
+# Add data-atribute value
+# Validate href
+for item in formated_list:
+    search_obj = re.search( r'^&lt;a href="(.*)".*&gt;(.*)&lt;/a&gt;', item[0], re.M|re.I)
+    if search_obj:
+        item[0] = f'&lt;a href="https://www.w3schools.com/jsref/{search_obj.group(1)}" target="_blank" data-tooltip="{item[1]}"&gt;.{search_obj.group(2)}&lt;/a&gt;'
+    else:
+        item[0] = f'&lt;a href="" data-tooltip="{item[1]}"&gt;.{item[0]}&lt;/a&gt;'
+
+for item in formated_list:
+    html_list.append(item[0])
+
+# Final cleaning of the markup
+for item in html_list:
+    search_obj = re.search( r'data-tooltip=".*(&lt;a.*&gt;)(.*)(&lt;/a&gt;)"', item, re.M|re.I)
+    if search_obj:
+        item = re.sub( search_obj.group(1), "", item )
+        item = re.sub( search_obj.group(3), "", item ) # deletes all &lt;/a&gt; tags
+        item = f'{item}&lt;/a&gt;'
+
+    search_obj2 = re.search( r'\(&lt;a href=".*"&gt;(.*)&lt;/a&gt;\)', item, re.M|re.I)
+    if search_obj2:
+        #print(f'before:\n{item}')
+        item = re.sub( r'\(&lt;a href=".*"&gt;(.*)&lt;/a&gt;\)', f'({search_obj2.group(1)})', item )
+        #print(f'after:\n {item}\n\n')
+
+    item = f'{item}&lt;br /&gt;' # add &lt;br /&gt; tag at end of line
+    output_html.write(f'{item}\n')
+    print(item)
+
+
+output_html.close()
+					</code></pre>
+				</div>
+			</div>
+
+			<!-- Description -->
+			<div class="project-data">
+				<h2>W3C Web Scraper</h2>
+				<p class="project-problem">
+					<strong>Problema:</strong> Criação de uma referência online completa do BOM (Browser Object Model) com todas as suas propriedades e métodos.
+				</p>
+				<p class="project-solution">
+					<strong>Solução:</strong> Criar um script que automatiza o processo.
+				</p>
+				<p class="project-description">
+					<strong>Breve descrição:</strong> O projeto consiste na criação de uma referência online interativa e visual do BOM e do DOM para consulta regular (<a href="http://diogommr.com/resources/DOM/dom.html">http://diogommr.com/resources/DOM/dom.html</a>).<br>
+					Para cada elemento do BOM/DOM é necessário recolher todos os métodos e propriedades e para cada uma das anteriores são necessários três pedaços de informação: nome, tooltip (breve descrição), e link para a documentação oficial.<br>
+					O script recebe como input o link da página que contém estas informações e retorna o código html pertinente, automatizando não só o processo de criação de este recurso como também facilitando futuras atualizações ao código.
+				</p>
+				<p class="project-languages">
+					<strong>Linguagens utilizadas:</strong> Python 3, HTML
+				</p>
+			</div>
+		</section>
+
+		<!-- jQuery -->
+		<script
+			  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+			  crossorigin="anonymous"></script>
+		<!-- Syntax Highlighting -->
+		<script src="js/prism.js"></script>
+		<!-- Custom Scripts -->
+		<script src="js/functionality.js"></script>
+
+	</body>
+</html>
