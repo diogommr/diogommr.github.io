@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
+
+:root {
+	/* colors */
+	--text-dark: #0D0D0D;
+	--text-medium: #30333A;
+	--text-light: #b5b7bb;
+
+	--home-color: #00d2da;
+	--products-color: #6BD2D1;
+	--resources-color: #0BDAAC;
+	--blog-color: #FB8B89;
+	--about-color: #FCAC19;
+	--pale-white: #EFEDEF;
+
+	--page-margin: 30px;
+	--item-margin: 30px;
+	--title-height: 3.5em;
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+	scroll-behavior: smooth;
+	font-family: 'Roboto', sans-serif;
+}
+
+section {
+	width: calc(100% - 60px);
+	min-height: 100%;
+	padding: 30px;
+	background: var(--pale-white);
+}
+section:nth-child(even) {
+	background: white;
+}
+
+h1 {
+	color: var(--text-dark);
+	margin: 0;
+	margin-bottom: var(--item-margin);
+	font-size: var(--title-height);
+}
+
+#capa {
+	display: flex;
+	/* justify-content: center; */
+	background: url('images/shadow002.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+#capa h1 {
+	color: white;
+	position: absolute;
+	bottom: 60px;
+	left: 60px;
+	z-index: 1;
+	font-size: 6em;
+	letter-spacing: 0.03em;
+	font-weight: normal;
+	opacity: 0.7;
+}
+
+.bg-img {
+	max-width: 100%;
+}
+
+.gallery {
+	width: 100%;
+	height: calc(100vh - var(--page-margin) * 3 - var(--title-height));
+	overflow-x: auto;
+	overflow-y: hidden;
+	display: flex;
+	scroll-behavior: smooth;
+	/* background: lightblue; */
+}
+.gallery img {
+	height: 100%;
+	margin-right: var(--item-margin);
+}
+
+.gallery video {
+	max-width: 90vw;
+	margin-right: var(--item-margin);
+}
+
+section > video {
+	max-width: 100%;
+}
