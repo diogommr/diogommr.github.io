@@ -1,0 +1,715 @@
+<krpano>
+
+    <!-- DEPENDENCIES -->
+    <include url="vtourskin_base.xml" />
+
+	<!-- Flat Light Design -->
+
+	<!-- modify the <skin_settings> values -->
+	<skin_settings layout_width="100%"
+	               layout_maxwidth="100%"
+	               controlbar_width="100%"
+	               controlbar_height="40"
+                   controlbar_position="bottom"
+                   controlbar_margin="10"
+	               controlbar_offset.normal="0"
+	               controlbar_offset.mobile="0"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="0"
+	               controlbar_overlap.fractionalscaling="0"
+                   brandingbar_show="false"
+                   brandingbar_height="30"
+                   brandingbar_position="bottom"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x000000"
+	               design_bgalpha="0.0"
+	               design_bgborder="0"
+	               design_bgroundedge="0"
+	               design_bgshadow="0 4 10 0xFFFFFF 0.0"
+	               design_thumbborder_bgborder="3 0xB2B2B2 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="0"
+    />
+
+	<events onenterfullscreen=""
+        onexitfullscreen=""
+        onxmlcomplete=""
+        onpreviewcomplete=""
+        onloadcomplete=""
+        onblendcomplete=""
+        onnewpano=""
+        onremovepano=""
+        onnewscene=""
+        onxmlerror=""
+        onloaderror=""
+        onkeydown=""
+        onkeyup=""
+        onclick=""
+        onsingleclick=""
+        ondoubleclick=""
+        onmousedown=""
+        onmouseup=""
+        onmousewheel=""
+        oncontextmenu=""
+        onidle=""
+        onviewchange=""
+        onviewchanged=""
+        onresize=""
+        onautorotatestart=""
+        onautorotatestop=""
+        onautorotateoneround=""
+        onautorotatechange=""
+        oniphonefullscreen=""
+        gyro_onavailable=""
+        gyro_onunavailable=""
+        gyro_onenable=""
+        gyro_ondisable=""
+        webvr_onavailable=""
+        webvr_onunavailable=""
+        webvr_onunknowndevice=""
+        webvr_onentervr=""
+        webvr_onexitvr=""
+        />
+
+    <customskinxmlpath url="./" />
+
+    <!-- STYLES -->
+
+    <!-- skin_base - the base skin image -->
+	<style name="skin_base" url="calc:customskinxmlpath.url + skin_settings.design_skin_images" />
+
+	<style name="view_base"
+			fov="60"
+			maxpixelzoom="1.0" 
+			fovmax="80" 
+			limitview="auto"
+	/>
+
+    <style name="brandingbar_style"
+           bgcolor="0x000000" 
+           bgalpha="0.0" 
+    />
+
+	<style name="hotspot_base" 
+		type="text"
+		css="color:#FFFFFF; font-size:16px; font-weight:bold; text-align:center;"
+		url="hotspot_info.png"
+		width="80" height="100"
+		scale="0.7"
+		bgroundedge="42"
+		bgalpha="0.0"
+		bgcolor="0x555555"
+		bgborder="1 0xFFFFFF 1"
+		bgshadow="0 0 16 0x0 0.0"
+		txtshadow="0 0 3 0x0 0.0"
+		mergedalpha="false"
+		vcenter="true"
+		zoom="false"
+		onover="tween(scale, 0.75, 0.3);"
+		onout="tween(scale, 0.7, 0.3);"
+	/>
+    <style name="hotspot_video"
+			style="hotspot_base"
+			url="hotspot_video.png"
+	/>
+    <style name="hotspot_image"
+			style="hotspot_base"
+			url="hotspot_image.png"
+	/>
+    <style name="hotspot_info"
+			style="hotspot_base"
+			url="hotspot_info.png"
+	/>
+	<style name="hotspot_navigation" url="hotspot_navigate.png" edge="top" distorted="true"
+	       tooltip=""
+	       linkedscene=""
+	       linkedscene_lookat=""
+	       onclick="skin_hotspotstyle_click();"
+	       depth="1000"
+	       scale="0.5"
+	       onover="tween(scale,0.55);"
+	       onout="tween(scale,0.5);"
+	       onloaded="skin_hotspotstyle_setup();"
+	/>
+
+	<!-- Layer Styles -->
+
+	<style name="ui_container_base_style"
+		   keep="true"
+		   z-order="3"
+		   handcursor="false"
+	/>
+
+	<style name="title_container_style"
+		   style="ui_container_base_style"
+		   align="top left"
+		   x="20"
+		   y="20"
+    />
+
+	<style name="links_container_style"
+		   style="ui_container_base_style"
+		   align="top right"
+		   edge="topright"
+		   x="20"
+		   y="20"
+    />
+
+	<style name="link_style"
+		   css="font-family: Raleway, sans-serif; 
+				font-size: 24px; 
+				font-weight: 300; 
+				color: white;
+				background: lightblue;
+				padding: 10px;
+				border-radius: 5px;
+				box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+			"
+			bg="false"
+    />
+
+	<style name="branding_container_style"
+		   style="ui_container_base_style"
+		   align="bottom right"
+		   x="20"
+		   y="65"
+		   edge="bottom"
+    />
+
+	<style name="map_container_style"
+		   style="ui_container_base_style"
+		   align="bottom left"
+		   x="20"
+		   y="20"
+		   edge="bottom left"
+		   bgshadow="0 5 5 0x000000 0.5"
+		   onover="expand_map()"
+		   onout="contract_map()"
+		   handcursor="false"
+    />
+
+	<spotstyle name="CUSTOM"
+			url=""
+			overurl=""
+			activeurl=""
+			edge="center"
+			scale="1.0"
+	/>
+
+	<spotstyle name="DEFAULT" url="vtourskin_mapspot.png" activeurl="vtourskin_mapspotactive.png" edge="bottom" x="-5" y="-8" scale="0.5" />
+
+
+    <!-- UI ELEMENTS -->
+
+	<!-- Titulo -->
+    <layer name="title_container" style="title_container_style" type="container">
+
+		<layer name="title"
+			type="text"
+			renderer="webgl"
+			html="Museu Militar de Elvas"
+			css="font-family: Raleway, sans-serif; 
+				font-size: 24px; 
+				font-weight: 400; 
+				color: white;
+				text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+			"
+			bg="false"
+		    handcursor="false"
+        />
+
+    </layer>
+
+	<!-- Links -->
+    <!-- <layer name="links_container" style="links_container_style" type="container">
+
+		<layer name="book"
+			style="link_style"
+			type="text"
+			renderer="webgl"
+			html="Reservar"
+			align="topright"
+			x="130"
+        />
+		<layer name="website"
+			style="link_style"
+			type="text"
+			renderer="webgl"
+			html="Website"
+			align="topright"
+        /> 
+
+    </layer> -->
+
+	<!-- Branding Bar -->
+    <!-- <layer name="branding_container" style="branding_container_style" type="container">
+
+		<layer name="branding"
+			type="text"
+			renderer="webgl"
+			html="Dotesfera"
+			css="font-family: Raleway, sans-serif; 
+				font-size: 16px; 
+				font-weight: 400; 
+				color: white;
+			"
+			bg="false"
+			align="bottom right"
+			onclick="openurl('https://dotesfera.com', '_blank')"
+        />     
+
+    </layer> -->
+
+	
+
+	<!-- Map -->
+	<layer name="mapcontainer" type="container" width="300" height="200" style="map_container_style" open="true">
+
+		<!-- Map Toggle Btn -->
+		<layer name="map_toggle_btn"
+			type="text"
+			renderer="webgl"
+			html="[img src='skin/transit_enterexit-24px.svg'/]"
+			css="font-family: Raleway, sans-serif; 
+				font-size: 20px; 
+				font-weight: 400; 
+				color: black;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				margin: 0;
+				border-radius: 1px;
+				opacity: 0.8;
+			"
+			width="36"
+			height="36"
+			bg="true"
+			bgcolor="0xFFFFFF"
+			bgroundedge="1"
+			bgshadow="0 5 5 0x000000 0.5"
+			align="bottom left"
+			zorder="4"
+			vcenter="true"
+			onclick="toggle_map()"
+        />
+
+		
+
+		<!-- maps plugin - use Google for HTML5 and Bing for Flash -->
+		<plugin name="map" keep="true"
+				url.html5="%VIEWER%/plugins/googlemaps.js"
+				key.html5="AIzaSyAri44PlXcTAEUYr0ZFhu12zfUfs37UHRk"
+				maptype="SATELLITE"
+				lat="38.879555" lng="-7.158948" zoom="18"
+				width="300"
+				height="200"
+				align="bottom left"
+				handcursor="false"
+				>
+
+			<radar visible="true" size="50" alpha="0.33" fillcolor="0xFFFFFF" fillalpha="1.0" linecolor="0x00FF00" linealpha="0.0" linewidth="0.5" dragable="true" headingoffset="0" />
+
+			<spot name="parada_1" lat="38.879555" lng="-7.158948" heading="70" onclick="loadscene(parada_1)" active="true" />
+			<spot name="loja" lat="38.879690" lng="-7.159028" heading="70" onclick="loadscene(loja)" />
+			<spot name="parada_2" lat="38.879900" lng="-7.158449" heading="70" onclick="loadscene(parada_2)" />
+			<spot name="parada_3" lat="38.880209" lng="-7.158051" heading="60" onclick="loadscene(parada_3)" />
+			<spot name="sala_1_1" lat="38.879391" lng="-7.158949" heading="-150" onclick="loadscene(sala_1_1)" />
+			<spot name="sala_1_2" lat="38.879341" lng="-7.158893" heading="-150" onclick="loadscene(sala_1_2)" />
+			<spot name="sala_2_1" lat="38.879526" lng="-7.158739" heading="60" onclick="loadscene(sala_2_1)" />
+			<spot name="sala_2_2" lat="38.879475" lng="-7.158675" heading="60" onclick="loadscene(sala_2_2)" />
+
+		</plugin>
+
+	</layer>
+
+	<action name="toggle_map">
+		if(
+			layer[mapcontainer].open == true,
+				tween(layer[mapcontainer].width, 0); 
+				tween(layer[mapcontainer].height, 0);
+				tween(plugin[map].width, 0);
+				tween(plugin[map].height, 0);
+				set(layer[mapcontainer].open, false);
+				set(layer[map_toggle_btn].html, "[img src='skin/map-24px.svg'/]");				
+			,
+				tween(layer[mapcontainer].width, 300); 
+				tween(layer[mapcontainer].height, 200);
+				tween(plugin[map].width, 300);
+				tween(plugin[map].height, 200);
+				set(layer[mapcontainer].open, true);
+				set(layer[map_toggle_btn].html, "[img src='skin/transit_enterexit-24px.svg'/]");
+		);
+	</action>
+
+	<action name="expand_map">
+		if(
+			layer[mapcontainer].open == true,
+				tween(layer[mapcontainer].width, 500); 
+				tween(layer[mapcontainer].height, 450); 
+				tween(plugin[map].width, 500);
+				tween(plugin[map].height, 450);
+		)
+	</action>
+	<action name="contract_map">
+		if(
+			layer[mapcontainer].open === true,
+				tween(layer[mapcontainer].width, 300); 
+				tween(layer[mapcontainer].height, 200);
+				tween(plugin[map].width, 300);
+				tween(plugin[map].height, 200);
+		)
+	</action>
+
+	<action name="updateradar">
+		<!-- js(alert(get(xml.scene))); -->
+		plugin[map].activatespot(get(xml.scene));
+		plugin[map].pantospot(get(xml.scene));
+	</action>
+
+	<action name="add_scene_items" scope="local">
+		for(set(i,0), i LT scene.count, inc(i),
+			js( console.log( get(scene[get(i)].title) ) );
+		);
+	</action>
+
+
+    <!-- Options Bar -->
+    <layer name="controlbar" style="webvr_button_style" keep="true" type="container" align="bottom right" x="20" y="20" width="get:skin_settings.controlbar_width" height="calc:skin_settings.controlbar_height" zorder="3">
+
+        <!-- View Options -->
+        <layer name="view_options" type="container" align="rightbottom" width="100%" height="get:skin_settings.controlbar_height">
+
+            <!-- Web VR Toggle -->
+            <layer name="skin_btn_vr" style="skin_base|skin_glow" crop="0|0|80|64" align="right" x="50"        scale="0.5" onclick="webvr.enterVR();"/>
+
+            <!-- Fullscreen Toggle -->
+            <layer name="skin_btn_fs" style="skin_base|skin_glow" crop="0|576|64|64" align="right" scale="0.5" onclick="switch(fullscreen);" devices="fullscreensupport" />            
+            
+        </layer>
+
+    </layer>
+
+    
+
+
+	<!-- ============================== DEVELOPMENT TOOLS ============================== -->
+
+    <!-- <layer name="devbar" keep="true" type="container" align="top" width="500" height="100" bgcolor="0xffffff" bgalpha="0.8"  zorder="3" handcursor="false">
+
+		<layer name="mytext"
+			type="text"
+			align="lefttop" x="10" y="10"
+			html="teste"
+			css="font-family:Arial; font-size:16px; color:#000000;"
+			vcenter="false"
+			padding="2"
+			wordwrap="true"
+			bg="true"
+			bgcolor="0xFFFFFF"
+			bgalpha="1.0"
+			handcursor="false"
+		/>	   	
+
+    </layer>
+
+	<layer name="crosshair" keep="true" type="container" align="center" width="100" height="100" zorder="3">
+
+		<layer name="crosshair_v"
+			type="text"
+			align="center"
+			vcenter="true"
+			width="2"
+			height="100"
+			bg="true"
+			bgcolor="0xFFFFFF"
+			bgalpha="1.0"
+		/>
+		<layer name="crosshair_h"
+			type="text"
+			align="center"
+			vcenter="true"
+			width="100"
+			height="2"
+			bg="true"
+			bgcolor="0xFFFFFF"
+			bgalpha="1.0"
+		/>	  	
+
+    </layer>
+
+	<events
+		onviewchange="set(
+			layer[mytext].html, 
+			calc('H: ' +  roundval(get(view.hlookat)) + 
+				'[br]V: ' + roundval(get(view.vlookat)) +
+				'[br]H: ' + get(plugin[map].spot[get(xml.scene)].heading)
+			)
+		)"
+	/> -->
+
+	<!-- ============================== FIM de DEVELOPMENT TOOLS ============================== -->
+
+
+    <!-- GENERAL ACTIONS -->
+	
+    <action name="popup" scope="private:POPUP" args="type, content, width, height, scrollbars"><![CDATA[
+		if(popup, break(); );
+		addlayer('popup', popup);
+		set(popup,
+			type=container,
+			width=calc(min(width,global.stagewidth*0.9)),
+			height=calc(min(height,global.stageheight*0.8)),
+			align=center,
+			bgborder='1 0x555555 0',
+			bgcolor=0x555555,
+			bgalpha=0.0,
+			bgshadow='0 10 20 0xFFFFFF 0.0',
+			bgcapture=true,
+			maskchildren=true,
+			capture=true,
+			handcursor=false,
+			alpha=0
+		);
+
+		if(type == 'html',
+			copy(popup.datacontent, content);
+			calc(popup.onloaded, 'add_html_code(get(datacontent),'+scrollbars+');');
+
+		  ,type == 'iframe',
+			calc(popup.datacontent, '<iframe style="position:absolute;width:100%;height:100%;top:0px;left:0px;" src="'+content+'" frameborder="0" allowfullscreen></iframe>');
+			calc(popup.onloaded, 'add_html_code(get(datacontent),'+scrollbars+');');
+
+		  ,type == 'image',
+		 	set(popup,
+		 		bgcolor=0xFFFFFF,
+		 		bgalpha=1,
+		 	);
+			addlayer("popup_image", img);
+			set(img,
+				url=get(content),
+				align=center,
+				width=-20, height=-20,
+				parent=get(popup.name),
+				onloaded='popup_imageloaded()'
+			);
+		);
+
+		tween(global.plugin[pp_blur].range, 40.0);
+		delayedcall(0.2, tween(global.layer[popup].alpha, 1.0); );
+
+		set(global.events[popup].onclick,
+			set(global.events[popup].name, null);
+			tween(global.plugin[pp_blur].range, 0.0);
+			tween(global.layer[popup].alpha, 0.0, 0.25, default,
+				removelayer('popup', true);
+				scope(private:POPUP, delete(popup); );
+			);
+		);
+	]]></action>
+
+
+	<action name="popup_imageloaded" scope="private:POPUP">
+		calc(imgw, caller.imagewidth + 20);
+		calc(imgh, caller.imageheight + 20);
+		calc(maxw, global.stagewidth*0.9);
+		calc(maxh, global.stageheight*0.8);
+		if(imgw GT maxw,
+			calc(imgh, round(imgh * maxw / imgw));
+			copy(imgw, maxw);
+		);
+		if(imgh GT maxh,
+			calc(imgw, round(imgw * maxh / imgh));
+			copy(imgh, maxh);
+		);
+
+		set(global.layer[get(caller.parent)], width=get(imgw), height=get(imgh) );
+	</action>
+
+
+
+	<!-- arguments: 1=htmlcode, 2=scrollbars -->
+	<action name="add_html_code" type="Javascript"><![CDATA[
+		var div = document.createElement("div");
+
+		// basic styles to fit into the layer size and allow scrolling:
+		div.style.width = "100%";
+		div.style.height = "100%";
+		div.style.boxSizing = "border-box";
+		div.style.overflow = args[2] == "true" ? "auto" : "hidden";
+
+		// allow text selection (optional):
+		div.style.webkitUserSelect =
+		div.style.MozUserSelect =
+		div.style.msUserSelect =
+		div.style.userSelect = "text";
+
+		function stopPropagation(e){ e.stopPropagation(); }
+		function preventDefault(e){ e.preventDefault(); }
+
+		// enable browsed-based mouse-wheel and touch-scrolling support:
+		div.addEventListener("wheel", stopPropagation, true);
+		div.addEventListener("mousewheel", stopPropagation, true);
+		div.addEventListener("DOMMouseScroll", stopPropagation, true);
+		div.addEventListener("touchstart", function(event){ if(krpano.device.ios && window.innerHeight == krpano.display.htmltarget.offsetHeight){ /* avoid the iOS 'overscrolling' for fullpage viewers */ var bs = document.body.parentNode.style; bs.position="fixed"; bs.top=0; bs.left=0; bs.right=0; bs.bottom=0; } krpano.control.preventTouchEvents = false; event.stopPropagation(); }, true);
+		div.addEventListener("touchend", function(event){ krpano.control.preventTouchEvents = true; event.stopPropagation(); }, true);
+		div.addEventListener("gesturestart", preventDefault, true);
+
+		// add the html code:
+		div.innerHTML = args[1];
+
+		// add the div to the layer element:
+		caller.sprite.appendChild(div);
+	]]></action>
+
+
+
+	<!-- CUSTOM MODAL -->
+    <!-- <action name="modal" scope="private:MODAL" args="content"><![CDATA[
+		if(modal, break(); );
+		addlayer('modal', modal);
+		set(modal,
+			type=container,
+			width=calc(global.stagewidth*0.9),
+			height=calc(global.stageheight*0.8),
+			align=center,
+			bgborder='1 0x555555 0',
+			bgcolor=0x555555,
+			bgalpha=0.0,
+			bgshadow='0 10 20 0xFFFFFF 0.0',
+			bgcapture=true,
+			maskchildren=true,
+			capture=true,
+			handcursor=false,
+			alpha=0
+		);
+
+		calc(modal.datacontent, '<iframe style="position:absolute;width:100%;height:100%;top:0px;left:0px;" src="'+content+'" frameborder="0" allowfullscreen></iframe>');
+		calc(modal.onloaded, 'add_html_code(get(datacontent),'+true+');');
+
+		tween(global.plugin[pp_blur].range, 40.0);
+		delayedcall(0.2, tween(global.layer[modal].alpha, 1.0); );
+
+		set(global.events[modal].onclick,
+			set(global.events[modal].name, null);
+			tween(global.plugin[pp_blur].range, 0.0);
+			tween(global.layer[modal].alpha, 0.0, 0.25, default,
+				removelayer('modal', true);
+				scope(private:MODAL, delete(modal); );
+			);
+		);
+	]]></action> -->
+
+	<action name="open_modal" scope="private:MODAL" args="type, content, width, height"><![CDATA[
+		// Create <layer>
+		addLayer('modal', modal); // name, *variable (for later use)
+		addLayer('modal_bg', modal_bg);
+
+		set(local, img_width=800);
+
+		// Format BG <layer>
+		set(modal_bg,
+			type=text,
+			width=calc(global.stagewidth),
+			height=calc(global.stageheight),
+			distorted=true,
+			renderer=webgl,
+			vcenter=true,
+			bg=true,
+			bgcolor=0x000000,
+			bgalpha=0.8,
+			mergedalpha=true,
+			handcursor=true,
+			alpha=0,
+			zorder = 100,
+			onclick=close_modal(),
+		);
+
+		// Format FG <layer>
+		if(	type == 'image',
+				set(modal,
+					type=container,
+					/*
+					width=calc(min(800, global.stagewidth*0.9)),
+					height=calc(min(600, global.stageheight*0.8)),
+					*/
+					width=calc(min(800, global.stagewidth*0.9)),
+					height=calc(calc(min(800, global.stagewidth*0.9))*0.65),
+
+					align=center,
+					bgborder='1 0x555555 0',
+					bgcolor=0xffffff,
+					bgalpha=0.0,
+					bgcapture=true,
+					maskchildren=true,
+					capture=true,
+					handcursor=false,
+					alpha=0,
+					zorder = 101,
+				);
+			
+			,type == 'video',
+				set(modal,
+					type=container,
+					width=calc(min(800, global.stagewidth*0.9)),
+					height=calc(calc(min(800, global.stagewidth*0.9))*0.5625),
+					align=center,
+					bgborder='1 0x555555 0',
+					bgcolor=0x555555,
+					bgalpha=0.0,
+					bgshadow='0 10 20 0xFFFFFF 0.0',
+					bgcapture=true,
+					maskchildren=true,
+					capture=true,
+					handcursor=false,
+					alpha=0,
+					zorder = 101,
+				);
+
+			,set(modal,
+				type=container,
+				width=calc(min(500,global.stagewidth*0.9)),
+				height=calc(min(500,global.stageheight*0.8)),
+				align=center,
+				bgborder='1 0x555555 0',
+				bgcolor=0x555555,
+				bgalpha=0.0,
+				bgshadow='0 10 20 0xFFFFFF 0.0',
+				bgcapture=true,
+				maskchildren=true,
+				capture=true,
+				handcursor=false,
+				alpha=0,
+				zorder = 101,
+			);
+		);
+		
+		
+		calc(modal.datacontent, '<iframe style="position:absolute;width:100%;height:100%;top:0px;left:0px;" src="'+content+'" frameborder="0" allowfullscreen></iframe>');
+		calc(modal.onloaded, 'add_html_code(get(datacontent),'+true+');');
+
+		delayedcall(0.2, tween(global.layer[modal_bg].alpha, 1.0); );
+		delayedcall(0.2, tween(global.layer[modal].alpha, 1.0); );
+	]]></action>
+
+	
+	<action name="close_modal"><![CDATA[
+		// Remove BG <layer>
+		set(global.events[modal_bg].name, null);
+		tween(global.layer[modal_bg].alpha, 0.0, 0.25, default,
+			removelayer('modal_bg', true);
+			scope(private:MODAL, delete(modal_bg); );
+		);
+
+		// Remove FG <layer>
+		set(global.events[modal].name, null);
+		tween(global.layer[modal].alpha, 0.0, 0.25, default,
+			removelayer('modal', true);
+			scope(private:MODAL, delete(modal); );
+		);
+	]]></action>
+
+
+</krpano>

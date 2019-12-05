@@ -1,0 +1,335 @@
+﻿<krpano version="1.20" title="Virtual Tour">
+
+	<include url="skin/custom_skin.xml" />
+	<include url="loadingbar.xml" />
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">		
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );		
+	</action>
+
+	<!-- PARADA 1 - MME -->
+	<scene name="parada_1" title="parada_1" thumburl="panos/parada_1.tiles/thumb.jpg" lat="38.54858333" lng="-7.91177778" heading="0.0" onstart="updateradar(); add_scene_items();">
+
+		<include url="%VIEWER%/plugins/showtext.xml" />
+
+		<!-- view settings -->
+		<view hlookat="-160" vlookat="0" style="view_base" />
+		
+
+		<preview url="panos/parada_1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/parada_1.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		<hotspot name="muralha_fernandina_video"
+				style="hotspot_video"
+				ath="-170.020" atv="-10.248" 
+				onclick.addevent="open_modal('video', 'https://www.youtube.com/embed/bBTogVPa5hk?autoplay=1')"
+		/>
+
+		<!-- <hotspot name="muralha_fernandina_video_1"
+			url.html5="plugins/videoplayer.js"
+			videourl="panos\teste_video_2.mp4"
+			posterurl="videoposter.jpg"
+			ath="0.0" atv="0.0"
+			distorted="true"
+			scale="0.2" 
+			rx="0.0"
+			ry="0.0" 
+			rz="0.0" 
+			pausedonstart="false"
+			loop="true"
+			volume="0.0"
+			directionalsound="true"
+			range="90.0"
+			rangefalloff="1.0"
+			outofrangevolume="0.0"
+			onvideoready=""
+			onvideoplay=""
+			onvideopaused=""
+			onvideocomplete=""
+			onerror=""
+			onclick="loadscene(video_scene)"
+		/> -->
+		<!-- <layer name="video_hotspot"
+			type="text"
+			ath="0.0" atv="0.0"
+			distorted="true"
+			scale="0.2"
+			renderer="webgl"
+			html="[iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/8P3pL__udNM?controls=0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen][/iframe]"
+			css="font-family:'Raleway', sans-serif;"
+			vcenter="false"
+			wordwrap="false"
+			bg="false"
+			onclick="openurl('http://dotesfera.com');"
+        />  -->
+		<hotspot name="sala_1_1" style="hotspot_navigation" ath="122.020" atv="8.248" linkedscene="sala_1_1" />
+		<hotspot name="parada_2" style="hotspot_navigation" ath="-5.020" atv="8.248" linkedscene="parada_2" />
+		<hotspot name="loja" style="hotspot_navigation" ath="-80.020" atv="8.248" linkedscene="loja" />
+
+
+		<style name="video_hotspot"
+	       onover="copy(layer[tooltip].html, tooltip);
+	               set(layer[tooltip].visible, true);
+	               tween(layer[tooltip].alpha, 1.0, 0.5);
+				   tween(scale, 1.07, 0.3);
+				   copy(layer[tooltip].x, mouse.stagex); 
+					copy(layer[tooltip].y, mouse.stagey);
+	               "
+	       onout="tween(
+			   layer[tooltip].alpha, 0.0, 0.25, default, 
+			   set(layer[tooltip].visible,false) 
+			);
+			tween(scale, 1, 0.3);"
+	       />
+
+		<layer name="tooltip" keep="true"
+	       type="text"
+	       parent="STAGE"
+	       visible="false" alpha="0"
+	       enabled="false"
+	       edge="center"
+	       oy="-2"
+	       background="false" backgroundcolor="0xFFFFFF" backgroundalpha="1.0"
+	       border="false" bordercolor="0x000000" borderalpha="1.0"
+	       borderwidth="0.0" roundedge="0"
+	       shadow="0.0" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0"
+	       textshadow="1" textshadowrange="6.0" textshadowangle="90" textshadowcolor="0x000000" textshadowalpha="1.0"
+	       html=""
+	       />
+
+		<action name="open_video_preview" scope="private:VIDEOPREV" args="video_url, text, width, height"><![CDATA[
+			// Create <layer>
+			addLayer('video_bg', video_bg);
+			addLayer('video_text', video_text);
+
+			// Format BG <layer>
+			set(video_bg,
+				type=text,
+				visible=false,
+				alpha=0,
+				enabled=false,
+				edge=center,
+				background=false,
+				border=false,
+				html=''
+				width=500,
+				height=500
+			);
+			
+			calc(video_bg.datacontent, '<iframe width="560" height="315" src="'+video_url+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+			calc(video_bg.onloaded, 'add_html_code(get(datacontent),'+true+');');
+
+			copy(layer[video_bg].html, tooltip);
+			set(layer[video_bg].visible, true);
+			tween(layer[video_bg].alpha, 1.0, 0.5);
+			tween(scale, 1.07, 0.3);
+			copy(layer[video_bg].x, mouse.stagex); 
+			copy(layer[video_bg].y, mouse.stagey);
+
+			delayedcall(0.2, tween(global.layer[video_bg].alpha, 1.0); );
+		]]></action>
+
+
+	</scene> 
+
+	<!-- LOJA - MME -->
+	<scene name="loja" title="loja" thumburl="panos/loja.tiles/thumb.jpg" lat="38.54858333" lng="-7.91177778" heading="0.0" onstart="updateradar();">
+
+		<include url="%VIEWER%/plugins/showtext.xml" />
+
+		<!-- view settings -->
+		<view style="view_base" hlookat="-87" vlookat="-2" />
+		
+
+		<preview url="panos/loja.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/loja.tiles/pano_%s.jpg" />
+		</image>
+		
+
+		<hotspot name="peca_loja"
+				style="hotspot_image"
+				ath="90" atv="0"
+				onclick.addevent="open_modal('image', 'modals/loja_peca.html')"
+		/>
+
+		<hotspot name="parada_1" style="hotspot_navigation" ath="55" atv="8.248" linkedscene="parada_1" />
+
+
+	</scene> 
+
+	<!-- SALA 1 - 1 - MME -->
+	<scene name="sala_1_1" title="sala_1_1" thumburl="panos/sala_1_1.tiles/thumb.jpg" lat="38.54858333" lng="-7.91177778" heading="0.0" onstart="updateradar();">
+
+		<include url="%VIEWER%/plugins/showtext.xml" />
+
+		<!-- view settings -->
+		<view hlookat="-76" vlookat="4" style="view_base" />
+		
+
+		<preview url="panos/sala_1_1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/sala_1_1.tiles/pano_%s.jpg" />
+		</image>
+		
+
+		<hotspot name="sala_1_cavalo"
+				style="hotspot_image"
+				ath="-67" atv="4" 
+				onclick.addevent="open_modal('image', 'modals/sala_1_cavalo.html', 500, 500)"
+		/>
+
+		<hotspot name="sala_1_2" style="hotspot_navigation" ath="-82" atv="22" linkedscene="sala_1_2" />
+		<hotspot name="sala_2_1" style="hotspot_navigation" ath="-181" atv="22" linkedscene="sala_2_1" />
+		<hotspot name="parada_1" style="hotspot_navigation" ath="54" atv="19" linkedscene="parada_1" />
+
+
+	</scene>
+
+	<!-- SALA 1 - 2 - MME -->
+	<scene name="sala_1_2" title="sala_1_2" thumburl="panos/sala_1_2.tiles/thumb.jpg" lat="38.54858333" lng="-7.91177778" heading="0.0" onstart="updateradar();">
+
+		<include url="%VIEWER%/plugins/showtext.xml" />
+
+		<!-- view settings -->
+		<view hlookat="-52" vlookat="4" style="view_base" />
+		
+
+		<preview url="panos/sala_1_2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/sala_1_2.tiles/pano_%s.jpg" />
+		</image>
+		
+
+		<hotspot name="sala_1_expositor"
+				style="hotspot_image"
+				ath="-75" atv="4" 
+				onclick.addevent="open_modal('image', 'modals/sala_1_expositor.html', 500, 500)"
+		/>
+		<hotspot name="sala_1_arreio"
+				style="hotspot_image"
+				ath="-327" atv="15" 
+				onclick.addevent="open_modal('image', 'modals/sala_1_arreio.html', 500, 500)"
+		/>
+
+		<hotspot name="sala_1_1" style="hotspot_navigation" ath="-221" atv="28" linkedscene="sala_1_1" />
+
+
+	</scene>
+
+	<!-- SALA 2 - 1 - MME -->
+	<scene name="sala_2_1" title="sala_2_1" thumburl="panos/sala_2_1.tiles/thumb.jpg" lat="38.54858333" lng="-7.91177778" heading="0.0" onstart="updateradar();">
+
+		<include url="%VIEWER%/plugins/showtext.xml" />
+
+		<!-- view settings -->
+		<view hlookat="87" vlookat="5" style="view_base" />
+		
+
+		<preview url="panos/sala_2_1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/sala_2_1.tiles/pano_%s.jpg" />
+		</image>
+		
+
+		<hotspot name="sala_1_cavalo"
+				style="hotspot_image"
+				ath="88" atv="6" 
+				onclick.addevent="open_modal('image', 'modals/sala_2_esqueleto.html', 500, 500)"
+		/>
+
+		<hotspot name="sala_2_2" style="hotspot_navigation" ath="-253" atv="21" linkedscene="sala_2_2" />
+		<hotspot name="parada_1" style="hotspot_navigation" ath="-82" atv="22" linkedscene="parada_1" />
+		<hotspot name="sala_1_1" style="hotspot_navigation" ath="184" atv="17" linkedscene="sala_1_1" />
+
+
+	</scene>
+
+	<!-- SALA 2 - 2 - MME -->
+	<scene name="sala_2_2" title="sala_2_2" thumburl="panos/sala_2_2.tiles/thumb.jpg" lat="38.54858333" lng="-7.91177778" heading="0.0" onstart="updateradar();">
+
+		<include url="%VIEWER%/plugins/showtext.xml" />
+
+		<!-- view settings -->
+		<view hlookat="3" vlookat="19" style="view_base" />
+		
+
+		<preview url="panos/sala_2_2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/sala_2_2.tiles/pano_%s.jpg" />
+		</image>
+		
+
+		<hotspot name="sala_2_expositor"
+				style="hotspot_image"
+				ath="4" atv="6" 
+				onclick.addevent="open_modal('image', 'modals/sala_2_expositor.html')"
+		/>
+		
+		<hotspot name="sala_2_1" style="hotspot_navigation" ath="-100" atv="26" linkedscene="sala_2_1" />
+
+
+	</scene>
+
+	<!-- PARADA 2 - MME -->
+	<scene name="parada_2" title="parada_2" thumburl="panos/parada_2.tiles/thumb.jpg" lat="38.54858333" lng="-7.91177778" heading="0.0" onstart="updateradar();">
+
+		<include url="%VIEWER%/plugins/showtext.xml" />
+
+		<!-- view settings -->
+		<view hlookat="0" vlookat="0" style="view_base" />
+		
+
+		<preview url="panos/parada_2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/parada_2.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="parada_1" style="hotspot_navigation" ath="-194" atv="10" linkedscene="parada_1" />
+		<hotspot name="parada_3" style="hotspot_navigation" ath="-13" atv="9" linkedscene="parada_3" />
+
+
+	</scene> 
+
+	<!-- PARADA 3 - MME -->
+	<scene name="parada_3" title="parada_3" thumburl="panos/parada_3.tiles/thumb.jpg" lat="38.54858333" lng="-7.91177778" heading="0.0" onstart="updateradar();">
+
+		<include url="%VIEWER%/plugins/showtext.xml" />
+
+		<!-- view settings -->
+		<view hlookat="0" vlookat="0" style="view_base" />
+		
+
+		<preview url="panos/parada_3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/parada_3.tiles/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="fonte_de_s_jose"
+				style="hotspot_image"
+				ath="8" atv="-3" 
+				onclick.addevent="open_modal('image', 'modals/fonte_de_s_jose.html')"
+		/>
+
+		<hotspot name="parada_2" style="hotspot_navigation" ath="-194" atv="10" linkedscene="parada_2" />
+
+
+	</scene> 
+
+
+</krpano>
